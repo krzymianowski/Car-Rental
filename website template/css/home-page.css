@@ -37,3 +37,9 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+
+@media (max-width: 767.98px) {
+  #why-us-icons .row:nth-child(2n + 1) div:nth-child(2n) {
+    background: #f8f9fa; }
+  #why-us-icons .row:nth-child(2n) div:nth-child(2n + 1) {
+    background: #f8f9fa; } }
