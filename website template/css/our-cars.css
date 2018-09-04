@@ -1,0 +1,31 @@
+body {
+  margin-top: 105px; }
+  body > .navbar {
+    box-shadow: 2px 2px 5px rgba(22, 34, 56, 0.5);
+    background: white; }
+    body > .navbar .nav-item {
+      font-size: 1.1rem;
+      padding-right: 1.3rem; }
+  body #main-footer {
+    background: #162238;
+    color: #fff; }
+
+.btn-white {
+  background: white;
+  border: #dee2e6 1px solid; }
+
+#search-settings {
+  border-bottom: #dee2e6 1px solid; }
+  #search-settings #search-tabs {
+    margin-bottom: -1px; }
+    #search-settings #search-tabs .nav {
+      border-bottom: none !important; }
+
+@media (max-width: 767.98px) {
+  #search-settings #search-tabs {
+    margin-top: 1rem;
+    order: 3; } }
+@media (max-width: 380px) {
+  #search-tabs .nav-item .nav-link {
+    padding-left: 10px;
+    padding-right: 10px; } }

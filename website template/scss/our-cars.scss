@@ -1,0 +1,35 @@
+@import "style.scss";
+
+.btn-white {
+  background: white;
+  border: $border-gray 1px solid;
+}
+
+#search-settings {
+  border-bottom: $border-gray 1px solid;
+
+  #search-tabs {
+    margin-bottom: -1px;
+    .nav {
+      border-bottom: none !important;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  #search-settings {
+    #search-tabs {
+      margin-top: 1rem;
+      order: 3;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  #search-tabs {
+    .nav-item .nav-link {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
