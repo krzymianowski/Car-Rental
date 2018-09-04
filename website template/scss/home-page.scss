@@ -57,6 +57,10 @@
   }
 }
 
+#newsletter {
+  box-shadow: 2px -2px 5px $ptimary-ovarlay-50;
+}
+
 @media (max-width: 767.98px) {
   #why-us-icons {
     .row:nth-child(2n + 1) {

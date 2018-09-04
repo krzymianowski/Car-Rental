@@ -48,6 +48,9 @@ body {
   background: #162238 !important;
   color: white; }
 
+#newsletter {
+  box-shadow: 2px -2px 5px rgba(22, 34, 56, 0.5); }
+
 @media (max-width: 767.98px) {
   #why-us-icons .row:nth-child(2n + 1) div:nth-child(2n) {
     background: #f8f9fa; }
