@@ -56,6 +56,8 @@ body {
 
 @media (max-width: 767.98px) {
   #why-us-icons .row:nth-child(2n + 1) div:nth-child(2n) {
-    background: #f8f9fa; }
+    background: #f8f9fa;
+    border: #dee2e6 1px solid; }
   #why-us-icons .row:nth-child(2n) div:nth-child(2n + 1) {
-    background: #f8f9fa; } }
+    background: #f8f9fa;
+    border: #dee2e6 1px solid; } }
