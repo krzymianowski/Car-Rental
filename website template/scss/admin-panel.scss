@@ -1,0 +1,61 @@
+$menu-color: #526176;
+$top-height: 60px;
+
+body {
+  overflow-x: hidden;
+}
+
+.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none;
+}
+
+#collapse-menu {
+  .menu {
+    width: 250px;
+    height: 100vh;
+    background-color: $menu-color;
+
+    .menu-header {
+      height: $top-height;
+      width: 100%;
+
+      h5 {
+        font-size: 0.7rem;
+      }
+
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    #toggle-menu-1 {
+      background: none;
+    }
+  }
+}
+
+.nav {
+  height: $top-height;
+  background-color: white;
+  box-shadow: 1px 1px 5px gray;
+  color: #aaa;
+
+  i:hover {
+    color: $menu-color;
+  }
+
+  #toggle-menu-2 {
+    background: none;
+    color: $menu-color !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #collapse-menu {
+    .menu {
+      width: 100vw;
+    }
+  }
+}

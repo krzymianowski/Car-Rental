@@ -9,17 +9,84 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/admin-panel.css">
 
   <title>Car rental - Admin panel</title>
 </head>
 
 <body>
+  <div class="d-flex">
+    <div id="collapse-menu" class="collapse show">
+      <div class="menu sticky-top">
+        <div class="menu-header pl-4 pr-2 py-2 d-flex justify-content-center align-items-center text-white">
+          <i class="fas fa-cogs" style="font-size: 1.2rem;"></i>
+          <div class="w-100 px-3 d-flex flex-column">
+            <h5 class="m-0">CAR RENTAL</h5>
+            <p class="m-0 d-flex align-items-top">ADMIN PANEL</p>
+          </div>
+          <button id="toggle-menu-1" class="btn text-white" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="true"
+            aria-controls="collapse-menu">
+            <i class="fas fa-arrow-alt-circle-left"></i>
+          </button>
+        </div>
 
-  Admin panel
+        <!-- MENU ITEMS HERE -->
+
+      </div>
+    </div>
+
+    <div class="w-100 m-0 p-0">
+      <div class="nav sticky-top p-2 d-flex justify-content-center align-items-center">
+        <div class="w-100">
+          <div class="d-flex row-hl">
+            <button id="toggle-menu-2" class="item-hl btn" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="true" aria-controls="collapse-menu">
+              <i class="fas fa-arrow-alt-circle-right"></i>
+            </button>
+            <div class="p-2 item-hl ml-auto">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="p-2 item-hl">
+              <i class="fas fa-bell"></i>
+            </div>
+            <div class="p-2 item-hl">
+              <i class="fas fa-sign-out-alt"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CONTENT HERE -->
+      <section id="content">
+
+      </section>
+    </div>
+  </div>
+
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+
+  <script>
+    // Hide menu on small screens
+    $(document).ready(function () {
+      if (($(window).width() <= 575.98)) {
+        $('#collapse-menu').removeClass('show');
+        $('#toggle-menu-2').show();
+      } else {
+        $('#toggle-menu-2').hide();
+      }
+    });
+
+    // Buttons hiding script
+    $("#toggle-menu-2").click(function () {
+      $('#toggle-menu-2').hide();
+    });
+    $("#toggle-menu-1").click(function () {
+      $('#toggle-menu-2').show();
+    });
+  </script>
 </body>
 
 </html>

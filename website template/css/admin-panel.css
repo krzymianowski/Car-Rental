@@ -1,0 +1,36 @@
+body {
+  overflow-x: hidden; }
+
+.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none; }
+
+#collapse-menu .menu {
+  width: 250px;
+  height: 100vh;
+  background-color: #526176; }
+  #collapse-menu .menu .menu-header {
+    height: 60px;
+    width: 100%; }
+    #collapse-menu .menu .menu-header h5 {
+      font-size: 0.7rem; }
+    #collapse-menu .menu .menu-header p {
+      font-size: 0.8rem; }
+  #collapse-menu .menu #toggle-menu-1 {
+    background: none; }
+
+.nav {
+  height: 60px;
+  background-color: white;
+  box-shadow: 1px 1px 5px gray;
+  color: #aaa; }
+  .nav i:hover {
+    color: #526176; }
+  .nav #toggle-menu-2 {
+    background: none;
+    color: #526176 !important; }
+
+@media (max-width: 575.98px) {
+  #collapse-menu .menu {
+    width: 100vw; } }
