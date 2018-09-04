@@ -1,0 +1,11 @@
+@import "style.scss";
+
+#car-details-header {
+  border-bottom: $border-gray 1px solid;
+
+  .progress {
+    background-color: $border-gray;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
