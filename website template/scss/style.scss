@@ -1,0 +1,17 @@
+$primary: rgb(22, 34, 56);
+$ptimary-ovarlay: rgba(22, 34, 56, 0.8);
+$ptimary-ovarlay-50: rgba(22, 34, 56, 0.5);
+
+body {
+  margin-top: 105px;
+
+  > .navbar {
+    box-shadow: 2px 2px 5px $ptimary-ovarlay-50;
+    background: white;
+
+    .nav-item {
+      font-size: 1.1rem;
+      padding-right: 1.3rem;
+    }
+  }
+}
