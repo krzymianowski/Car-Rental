@@ -38,3 +38,6 @@ body {
 
 #car-equipment .far {
   color: black; }
+
+#car-description {
+  border-top: #dee2e6 1px solid; }
