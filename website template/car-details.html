@@ -389,6 +389,14 @@
       interval: 10000,
       pause: 'hover'
     })
+
+    // Collapse car details and car equipment on small screens
+    $(document).ready(function () {
+      if (($(window).width() <= 767.98)) {
+        $('#car-details-colapse').removeClass('show');
+        $('#car-equipment-colapse').removeClass('show');
+      }
+    });
   </script>
 </body>
 
