@@ -9,3 +9,26 @@
     box-shadow: none;
   }
 }
+
+#car-detail-showcase {
+  border-bottom: $border-gray 1px solid;
+
+  .primary-overlay {
+    background: $ptimary-ovarlay;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 100%;
+    background-color: $primary;
+  }
+
+  .carousel-indicators .active {
+    background-color: $border-gray;
+  }
+}
