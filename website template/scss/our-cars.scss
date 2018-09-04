@@ -16,6 +16,19 @@
   }
 }
 
+#cars {
+  min-height: 70vh;
+
+  .fill {
+    overflow: hidden;
+    img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
 @media (max-width: 767.98px) {
   #search-settings {
     #search-tabs {

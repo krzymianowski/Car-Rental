@@ -21,6 +21,15 @@ body {
     #search-settings #search-tabs .nav {
       border-bottom: none !important; }
 
+#cars {
+  min-height: 70vh; }
+  #cars .fill {
+    overflow: hidden; }
+    #cars .fill img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover; }
+
 @media (max-width: 767.98px) {
   #search-settings #search-tabs {
     margin-top: 1rem;
