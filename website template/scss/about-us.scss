@@ -1,0 +1,18 @@
+@import "style.scss";
+
+#page-header {
+  color: white;
+  height: 200px;
+  background: url("https://source.unsplash.com/random/800c400?car") no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  .primary-overlay {
+    background: $ptimary-ovarlay !important;
+    width: 100%;
+    height: 100%;
+  }
+}
