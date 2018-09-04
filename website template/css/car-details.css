@@ -32,3 +32,6 @@ body {
     background-color: #162238; }
   #car-detail-showcase .carousel-indicators .active {
     background-color: #dee2e6; }
+
+#car-details {
+  border-bottom: #dee2e6 1px solid; }
