@@ -6,3 +6,6 @@ body {
     body > .navbar .nav-item {
       font-size: 1.1rem;
       padding-right: 1.3rem; }
+  body #main-footer {
+    background: #162238;
+    color: #fff; }
