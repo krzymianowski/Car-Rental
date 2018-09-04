@@ -35,3 +35,6 @@ body {
 
 #car-details {
   border-bottom: #dee2e6 1px solid; }
+
+#car-equipment .far {
+  color: black; }
