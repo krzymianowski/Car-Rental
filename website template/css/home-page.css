@@ -57,4 +57,9 @@ body {
     border: #dee2e6 1px solid; }
   #why-us-icons .row:nth-child(2n) div:nth-child(2n + 1) {
     background: #f8f9fa;
-    border: #dee2e6 1px solid; } }
+    border: #dee2e6 1px solid; }
+
+  #myCarousel .carousel-inner h1 {
+    font-size: 3rem; }
+  #myCarousel .lead {
+    font-size: 1rem; } }
