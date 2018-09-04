@@ -47,6 +47,8 @@ body {
 #cars #show-more-cars:hover {
   background: #162238 !important;
   color: white; }
+#cars a {
+  text-decoration: none; }
 
 #newsletter {
   box-shadow: 2px -2px 5px rgba(22, 34, 56, 0.5); }
