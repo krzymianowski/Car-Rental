@@ -38,6 +38,9 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
+#cars-heading {
+  border-top: #dee2e6 1px solid; }
+
 #cars #show-more-cars {
   background: white;
   border: #ddd 1px solid; }
