@@ -40,6 +40,23 @@
   }
 }
 
+#cars {
+  #show-more-cars {
+    background: white;
+    border: #ddd 1px solid;
+  }
+
+  .btn-white {
+    background: white;
+    border: #ddd 1px solid;
+  }
+
+  #show-more-cars:hover {
+    background: $primary !important;
+    color: white;
+  }
+}
+
 @media (max-width: 767.98px) {
   #why-us-icons {
     .row:nth-child(2n + 1) {

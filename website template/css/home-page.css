@@ -38,6 +38,16 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
+#cars #show-more-cars {
+  background: white;
+  border: #ddd 1px solid; }
+#cars .btn-white {
+  background: white;
+  border: #ddd 1px solid; }
+#cars #show-more-cars:hover {
+  background: #162238 !important;
+  color: white; }
+
 @media (max-width: 767.98px) {
   #why-us-icons .row:nth-child(2n + 1) div:nth-child(2n) {
     background: #f8f9fa; }
