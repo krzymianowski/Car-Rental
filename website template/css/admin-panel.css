@@ -54,10 +54,11 @@ body {
       background: rgba(44, 42, 42, 0.4) !important;
       width: 100%;
       height: 100%; }
-  #collapse-menu .menu #menu-items {
-    font-size: 0.9rem;
+  #collapse-menu .menu .scroll {
     overflow-y: scroll;
-    height: calc(100vh - 200px); }
+    height: calc(100vh - 60px); }
+  #collapse-menu .menu #menu-items {
+    font-size: 0.9rem; }
     #collapse-menu .menu #menu-items .nav-item .fa-caret-down {
       display: none; }
     #collapse-menu .menu #menu-items .nav-item:hover {
