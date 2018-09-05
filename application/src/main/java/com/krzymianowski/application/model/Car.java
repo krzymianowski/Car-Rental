@@ -30,4 +30,8 @@ public class Car {
 
     @Column(name = "rent_price")
     private double rentPrice;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @Column(name = "model_id")
+    private Model model;
 }
