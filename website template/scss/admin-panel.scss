@@ -1,4 +1,6 @@
-$menu-color: #28a745;
+$menu-color: #2573c1;
+$menu-color-2: #ecf4fc;
+$user-info-color: #2365a7;
 $primary-ovarlay: rgba(44, 42, 42, 0.4);
 $primary-ovarlay-30: rgba(44, 42, 42, 0.3);
 $primary-ovarlay-20: rgba(44, 42, 42, 0.2);
@@ -22,13 +24,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: $primary-ovarlay-20;
-  box-shadow: inset -3px 0 0 $menu-color;
+  background: $menu-color-2;
+  // box-shadow: inset -3px 0 0 $menu-color;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $primary-ovarlay;
-  box-shadow: inset -3px 0 0 $menu-color;
+  background: $user-info-color;
+  box-shadow: inset -3px 0 0 $menu-color-2;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -67,7 +69,7 @@ body {
     }
 
     #user-info {
-      color: white;
+      color: $menu-color-2;
       height: $user-info-height;
       font-size: 0.8rem;
 
@@ -83,7 +85,7 @@ body {
       }
 
       .primary-overlay {
-        background: $primary-ovarlay !important;
+        background: $user-info-color !important;
         width: 100%;
         height: 100%;
       }
@@ -104,12 +106,14 @@ body {
       }
 
       .nav-item:hover {
-        background: $primary-ovarlay !important;
+        background: $menu-color-2 !important;
+        color: $user-info-color;
       }
 
       .active .nav-item {
         // padding-left: 0.7rem;
-        background: $primary-ovarlay-20;
+        background: $menu-color-2;
+        color: $user-info-color;
       }
 
       a {
@@ -135,24 +139,26 @@ body {
   }
 }
 
-.nav {
-  height: $top-height;
-  background-color: white;
-  box-shadow: 1px 1px 5px gray;
-  color: #aaa;
+#info-bar {
+  .nav {
+    height: $top-height;
+    background-color: white;
+    box-shadow: 1px 1px 5px gray;
+    color: #aaa;
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  i:hover {
-    color: $menu-color;
-  }
+    i:hover {
+      color: $menu-color;
+    }
 
-  #toggle-menu-2 {
-    background: none;
-    color: $menu-color !important;
+    #toggle-menu-2 {
+      background: none;
+      color: $menu-color !important;
+    }
   }
 }
 

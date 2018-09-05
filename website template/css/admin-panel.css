@@ -9,12 +9,11 @@ body {
   width: 10px; }
 
 ::-webkit-scrollbar-track {
-  background: rgba(44, 42, 42, 0.2);
-  box-shadow: inset -3px 0 0 #28a745; }
+  background: #ecf4fc; }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(44, 42, 42, 0.4);
-  box-shadow: inset -3px 0 0 #28a745; }
+  background: #2365a7;
+  box-shadow: inset -3px 0 0 #ecf4fc; }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(44, 42, 42, 0.4); }
@@ -28,7 +27,7 @@ body {
   width: 280px;
   height: 100vh !important;
   overflow: hidden;
-  background-color: #28a745; }
+  background-color: #2573c1; }
   #collapse-menu .menu .menu-header {
     height: 60px;
     width: 100%; }
@@ -39,7 +38,7 @@ body {
   #collapse-menu .menu #toggle-menu-1 {
     background: none; }
   #collapse-menu .menu #user-info {
-    color: white;
+    color: #ecf4fc;
     height: 140px;
     font-size: 0.8rem; }
     #collapse-menu .menu #user-info .fill {
@@ -51,7 +50,7 @@ body {
         min-height: 100%;
         object-fit: cover; }
     #collapse-menu .menu #user-info .primary-overlay {
-      background: rgba(44, 42, 42, 0.4) !important;
+      background: #2365a7 !important;
       width: 100%;
       height: 100%; }
   #collapse-menu .menu .scroll {
@@ -62,9 +61,11 @@ body {
     #collapse-menu .menu #menu-items .nav-item .fa-caret-down {
       display: none; }
     #collapse-menu .menu #menu-items .nav-item:hover {
-      background: rgba(44, 42, 42, 0.4) !important; }
+      background: #ecf4fc !important;
+      color: #2365a7; }
     #collapse-menu .menu #menu-items .active .nav-item {
-      background: rgba(44, 42, 42, 0.2); }
+      background: #ecf4fc;
+      color: #2365a7; }
     #collapse-menu .menu #menu-items a {
       color: inherit;
       text-decoration: none; }
@@ -77,19 +78,19 @@ body {
       transition: height 0.5s;
       display: block; }
 
-.nav {
+#info-bar .nav {
   height: 60px;
   background-color: white;
   box-shadow: 1px 1px 5px gray;
   color: #aaa; }
-  .nav a {
+  #info-bar .nav a {
     color: inherit;
     text-decoration: none; }
-  .nav i:hover {
-    color: #28a745; }
-  .nav #toggle-menu-2 {
+  #info-bar .nav i:hover {
+    color: #2573c1; }
+  #info-bar .nav #toggle-menu-2 {
     background: none;
-    color: #28a745 !important; }
+    color: #2573c1 !important; }
 
 @media (max-width: 575.98px) {
   #collapse-menu .menu {
