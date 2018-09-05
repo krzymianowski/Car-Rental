@@ -27,4 +27,9 @@ public class Model {
             mappedBy = "model")
     private List<Car> cars;
 
+    @ManyToOne(
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
+
 }
