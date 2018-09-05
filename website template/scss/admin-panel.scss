@@ -1,6 +1,7 @@
 $menu-color: #28a745;
 $menu-color-2: rgb(40, 167, 69);
 $primary-ovarlay: rgba(44, 42, 42, 0.4);
+$primary-ovarlay-20: rgba(44, 42, 42, 0.2);
 $top-height: 60px;
 
 html,
@@ -77,8 +78,9 @@ body {
         background: $primary-ovarlay !important;
       }
 
-      .active i {
-        padding-left: 0.7rem;
+      .active .nav-item {
+        // padding-left: 0.7rem;
+        background: $primary-ovarlay-20;
       }
 
       a {
