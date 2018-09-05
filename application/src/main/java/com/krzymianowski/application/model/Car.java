@@ -5,13 +5,17 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity @Table(name = "car")
-@Getter @Setter
+@Entity
+@Table(name = "car")
+@Getter
+@Setter
 @NoArgsConstructor
-@AllArgsConstructor @Builder
+@AllArgsConstructor
+@Builder
 public class Car {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "car_id")
     private int id;
 
