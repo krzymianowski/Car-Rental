@@ -41,6 +41,8 @@ body {
       height: 100%; }
   #collapse-menu .menu #menu-items {
     font-size: 0.9rem; }
+    #collapse-menu .menu #menu-items .nav-item .fa-caret-down {
+      display: none; }
     #collapse-menu .menu #menu-items .nav-item:hover {
       background: rgba(44, 42, 42, 0.4) !important; }
     #collapse-menu .menu #menu-items .active i {
@@ -48,6 +50,14 @@ body {
     #collapse-menu .menu #menu-items a {
       color: inherit;
       text-decoration: none; }
+    #collapse-menu .menu #menu-items .collapsed .fa-caret-up {
+      display: none; }
+    #collapse-menu .menu #menu-items .collapsed .fa-caret-down {
+      display: block; }
+    #collapse-menu .menu #menu-items .collapsing {
+      -webkit-transition: height 0.5s;
+      transition: height 0.5s;
+      display: block; }
 
 .nav {
   height: 60px;
