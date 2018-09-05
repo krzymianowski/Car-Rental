@@ -3,6 +3,8 @@ $menu-color-2: rgb(40, 167, 69);
 $primary-ovarlay: rgba(44, 42, 42, 0.4);
 $primary-ovarlay-20: rgba(44, 42, 42, 0.2);
 $top-height: 60px;
+$user-info-height: 140px;
+$menu-width: 280px;
 
 html,
 body {
@@ -21,8 +23,9 @@ body {
 
 #collapse-menu {
   .menu {
-    width: 280px;
-    height: 100vh;
+    width: $menu-width;
+    height: 100vh !important;
+    overflow: hidden;
     background-color: $menu-color;
 
     .menu-header {
@@ -44,7 +47,7 @@ body {
 
     #user-info {
       color: white;
-      height: 140px;
+      height: $user-info-height;
       font-size: 0.8rem;
 
       .fill {
@@ -67,6 +70,8 @@ body {
 
     #menu-items {
       font-size: 0.9rem;
+      overflow-y: auto;
+      max-height: calc(100vh - #{$top-height + $user-info-height});
 
       .nav-item {
         .fa-caret-down {
