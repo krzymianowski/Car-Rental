@@ -38,4 +38,8 @@ public class Car {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "type_id")
     private Type type;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "fuel_type_id")
+    private FuelType fuelType;
 }
