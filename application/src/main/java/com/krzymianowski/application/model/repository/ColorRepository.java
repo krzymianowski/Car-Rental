@@ -1,6 +1,6 @@
 package com.krzymianowski.application.model.repository;
 
-import javafx.scene.paint.Color;
+import com.krzymianowski.application.model.Color;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
