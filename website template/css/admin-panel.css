@@ -56,8 +56,8 @@ body {
       height: 100%; }
   #collapse-menu .menu #menu-items {
     font-size: 0.9rem;
-    overflow-y: auto;
-    max-height: calc(100vh - 200px); }
+    overflow-y: scroll;
+    height: calc(100vh - 200px); }
     #collapse-menu .menu #menu-items .nav-item .fa-caret-down {
       display: none; }
     #collapse-menu .menu #menu-items .nav-item:hover {
