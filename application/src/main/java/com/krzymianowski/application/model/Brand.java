@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "car_brand")
+@Table(name = "car_brand", uniqueConstraints = {@UniqueConstraint(columnNames = {"brand_name"})})
 @Getter
 @Setter
 @NoArgsConstructor
