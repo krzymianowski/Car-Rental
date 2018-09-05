@@ -32,7 +32,7 @@ public class Car {
     private double rentPrice;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @Column(name = "model_id")
+    @JoinColumn(name = "model_id")
     private Model model;
 
     @ManyToOne(fetch = FetchType.EAGER)
