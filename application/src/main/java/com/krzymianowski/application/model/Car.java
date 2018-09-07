@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "car")
@@ -30,6 +31,10 @@ public class Car {
 
     @Column(name = "rent_price")
     private double rentPrice;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "car_id")
+    private List<Image> images;
 
     @Column(name = "description")
     private String description;
