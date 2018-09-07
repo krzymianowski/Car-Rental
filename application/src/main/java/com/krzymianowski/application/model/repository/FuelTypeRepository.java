@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FuelTypeRepository extends CrudRepository<FuelType, Integer> {
+
+    FuelType getFuelTypeByTypeName(String fuelTypeName);
 }
