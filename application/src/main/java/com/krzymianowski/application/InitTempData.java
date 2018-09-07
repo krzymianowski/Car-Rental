@@ -5,7 +5,10 @@ import com.krzymianowski.application.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 @Component
 public class InitTempData {
@@ -31,6 +34,9 @@ public class InitTempData {
     @Autowired
     private CarService carService;
 
+    @Autowired
+    private ImageService imageService;
+
     public void initDatabaseItems() {
         State state = getState("Disabled", "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
 
@@ -41,6 +47,8 @@ public class InitTempData {
         Type type = getType("Cabriolet", "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
 
         Model model = getModel("C5 B8", "Audi");
+
+        List<Image> images = getImages(Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
 
         Car car = Car.builder()
                 .model(model)
@@ -53,9 +61,22 @@ public class InitTempData {
                 .mileage(111111)
                 .fuelCondition(0.5f)
                 .rentPrice(140.4d)
+                .images(images)
                 .build();
 
         carService.save(car);
+    }
+
+    private List<Image> getImages(List<String> images) {
+        List<Image> tempImages = new ArrayList<>();
+        for (String url : images){
+            Image image = imageService.getImageByUrl(url);
+            if (image == null){
+                image = Image.builder().url(url).build();
+                tempImages.add(image);
+            }
+        }
+        return tempImages;
     }
 
     private State getState(String stateName, String description) {
