@@ -22,4 +22,9 @@ public class HomeController {
     public String showAboutUsPage(){
         return "about-us";
     }
+
+    @RequestMapping("/contact")
+    public String showContactPage(){
+        return "contact";
+    }
 }
