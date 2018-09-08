@@ -64,7 +64,7 @@
                                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
                                         aperiam vel ullam deleniti
                                         reiciendis ratione quod aliquid inventore vero perspiciatis.</p>
-                                    <a href="#" class="btn btn-danger btn-lg">Learn more</a>
+                                    <a href="../our-cars" class="btn btn-danger btn-lg">Learn more</a>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
                                         aperiam vel ullam deleniti
                                         reiciendis ratione quod aliquid inventore vero perspiciatis.</p>
-                                    <a href="#" class="btn btn-success btn-lg">Learn More</a>
+                                    <a href="../about-us" class="btn btn-success btn-lg">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                                     <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
                                         aperiam vel ullam deleniti
                                         reiciendis ratione quod aliquid inventore vero perspiciatis.</p>
-                                    <a href="#" class="btn btn-success btn-lg">Learn More</a>
+                                    <a href="../contact" class="btn btn-success btn-lg">Learn More</a>
                                 </div>
                             </div>
                         </div>
