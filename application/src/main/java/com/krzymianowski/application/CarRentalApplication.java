@@ -12,20 +12,17 @@ public class CarRentalApplication {
 
     private final InitTempData initTempData;
 
-	private final StorageService storageService;
-
-	@Autowired
-	public CarRentalApplication(StorageService storageService, InitTempData initTempData) {
-		this.storageService = storageService;
+    @Autowired
+    public CarRentalApplication(InitTempData initTempData) {
         this.initTempData = initTempData;
     }
 
-	@PostConstruct
-	private void initData(){
-       initTempData.initDatabaseItems();
+    public static void main(String[] args) {
+        SpringApplication.run(CarRentalApplication.class, args);
     }
 
-	public static void main(String[] args) {
-		SpringApplication.run(CarRentalApplication.class, args);
-	}
+    @PostConstruct
+    private void initData() {
+        initTempData.initDatabaseItems();
+    }
 }
