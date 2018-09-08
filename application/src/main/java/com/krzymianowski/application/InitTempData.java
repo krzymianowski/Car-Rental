@@ -38,17 +38,22 @@ public class InitTempData {
     private ImageService imageService;
 
     public void initDatabaseItems() {
-        State state = getState("Disabled", "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
+        CreateCar("Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
+        CreateCar("Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car-4.jpg", "temp-car-5.jpg"));
+    }
 
-        Color color = getColor("White");
+    private void CreateCar(String statusName, String colorName, String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames) {
+        State state = getState(statusName, "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
 
-        FuelType fuelType = getFuelType("Diesel");
+        Color color = getColor(colorName);
 
-        Type type = getType("Cabriolet", "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
+        FuelType fuelType = getFuelType(fuelTypeName);
 
-        Model model = getModel("C5 B8", "Audi");
+        Type type = getType(typeName, "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
 
-        List<Image> images = getImages(Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
+        Model model = getModel(modelName, brandName);
+
+        List<Image> images = getImages(imagesNames);
 
         Car car = Car.builder()
                 .model(model)
