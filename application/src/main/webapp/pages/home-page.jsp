@@ -182,15 +182,14 @@
         <section id="cars" class="pb-5 text-center bg-light">
             <div class="container">
                 <div class="row">
-                    <c:forEach items="${randomCars}" var="car">
-                        <a href="../car-details" class="col-lg-3 col-md-6 mb-4">
+                    <c:forEach items="${homePageCars}" var="car">
+                        <a href="../car-details/${car.id}" class="col-lg-3 col-md-6 mb-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <img src="../img/temp-car.jpg" alt="" class="img-fluid mb-2">
-                                    <h3>${car}</h3>
-                                    <h5 class="text-muted mb-3">Cabriolet</h5>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed commodi nostrum, ab
-                                        libero voluptas officia.</p>
+                                    <img src="../images/${car.id}/${car.imageUrl}" alt="" class="img-fluid mb-2">
+                                    <h3>${car.fullName}</h3>
+                                    <h5 class="text-muted mb-3">${car.typeName}</h5>
+                                    <p>${car.description}</p>
                                 </div>
                             </div>
                         </a>
