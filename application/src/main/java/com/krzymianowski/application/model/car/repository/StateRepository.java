@@ -1,6 +1,6 @@
-package com.krzymianowski.application.model.repository;
+package com.krzymianowski.application.model.car.repository;
 
-import com.krzymianowski.application.model.State;
+import com.krzymianowski.application.model.car.State;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

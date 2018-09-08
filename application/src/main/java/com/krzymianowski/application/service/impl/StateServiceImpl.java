@@ -1,7 +1,7 @@
 package com.krzymianowski.application.service.impl;
 
-import com.krzymianowski.application.model.State;
-import com.krzymianowski.application.model.repository.StateRepository;
+import com.krzymianowski.application.model.car.State;
+import com.krzymianowski.application.model.car.repository.StateRepository;
 import com.krzymianowski.application.service.StateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.krzymianowski.application.model;
+package com.krzymianowski.application.model.car;
 
 
 import lombok.*;

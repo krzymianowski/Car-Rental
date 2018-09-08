@@ -1,4 +1,4 @@
-package com.krzymianowski.application.model;
+package com.krzymianowski.application.model.car;
 
 import lombok.*;
 
@@ -6,24 +6,24 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "car_color", uniqueConstraints = {@UniqueConstraint(columnNames = {"color_name"})})
+@Table(name = "fuel_type", uniqueConstraints = {@UniqueConstraint(columnNames = {"type_name"})})
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Color {
+public class FuelType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "car_color_id")
+    @Column(name = "fuel_type_id")
     private int id;
 
     @OneToMany(
-            mappedBy = "color",
+            mappedBy = "fuelType",
             fetch = FetchType.LAZY)
     private List<Car> cars;
 
-    @Column(name = "color_name")
-    private String colorName;
+    @Column(name = "type_name")
+    private String typeName;
 }

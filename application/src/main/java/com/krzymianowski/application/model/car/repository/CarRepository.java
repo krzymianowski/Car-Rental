@@ -1,7 +1,7 @@
-package com.krzymianowski.application.model.repository;
+package com.krzymianowski.application.model.car.repository;
 
-import com.krzymianowski.application.model.Car;
-import com.krzymianowski.application.model.projection.HomePageCar;
+import com.krzymianowski.application.model.car.Car;
+import com.krzymianowski.application.model.car.projection.HomePageCar;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

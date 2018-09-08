@@ -1,7 +1,7 @@
 package com.krzymianowski.application.service;
 
-import com.krzymianowski.application.model.Car;
-import com.krzymianowski.application.model.projection.HomePageCar;
+import com.krzymianowski.application.model.car.Car;
+import com.krzymianowski.application.model.car.projection.HomePageCar;
 
 import java.util.List;
 
