@@ -34,12 +34,9 @@ public class InitTempData {
     @Autowired
     private CarService carService;
 
-    @Autowired
-    private ImageService imageService;
-
     public void initDatabaseItems() {
         CreateCar("Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
-        CreateCar("Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car-4.jpg", "temp-car-5.jpg"));
+        CreateCar("Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
     }
 
     private void CreateCar(String statusName, String colorName, String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames) {
@@ -74,12 +71,9 @@ public class InitTempData {
 
     private List<Image> getImages(List<String> images) {
         List<Image> tempImages = new ArrayList<>();
-        for (String url : images){
-            Image image = imageService.getImageByUrl(url);
-            if (image == null){
-                image = Image.builder().url(url).build();
-                tempImages.add(image);
-            }
+        for (String url : images) {
+            Image image = Image.builder().url(url).build();
+            tempImages.add(image);
         }
         return tempImages;
     }

@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "images", uniqueConstraints = {@UniqueConstraint(columnNames = {"url"})})
+@Table(name = "images")
 @Getter
 @Setter
 @NoArgsConstructor
