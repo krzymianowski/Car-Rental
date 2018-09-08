@@ -17,7 +17,7 @@ public class FuelType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "fuel_type_id")
-    private Long id;
+    private int id;
 
     @OneToMany(
             mappedBy = "fuelType",

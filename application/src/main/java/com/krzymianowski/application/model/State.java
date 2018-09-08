@@ -18,7 +18,7 @@ public class State {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "state_id")
-    private Long id;
+    private int id;
 
     @OneToMany(
             mappedBy = "state",

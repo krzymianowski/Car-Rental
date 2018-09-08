@@ -17,7 +17,7 @@ public class Type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "car_type_id")
-    private Long id;
+    private int id;
 
     @OneToMany(
             mappedBy = "type",
