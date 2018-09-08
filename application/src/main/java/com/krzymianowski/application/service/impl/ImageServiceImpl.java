@@ -13,9 +13,4 @@ public class ImageServiceImpl implements ImageService {
 
     @Autowired
     private ImageRepository imageRepository;
-
-    @Override
-    public Image getImageByUrl(String url) {
-        return imageRepository.getImageByUrl(url);
-    }
 }
