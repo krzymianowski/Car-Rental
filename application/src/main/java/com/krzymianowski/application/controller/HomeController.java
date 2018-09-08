@@ -17,4 +17,9 @@ public class HomeController {
         model.addAttribute("homePageCars", carService.getHomePageCars());
         return "home-page";
     }
+
+    @RequestMapping("/about-us")
+    public String showAboutUsPage(){
+        return "about-us";
+    }
 }
