@@ -48,9 +48,10 @@ public class FileSystemStorageService implements StorageService {
             try (InputStream inputStream = file.getInputStream()) {
                 if (ImageIO.read(inputStream) == null)
                     throw new StorageInvalidImageFormat("Uploaded file is not an image: " + fileName);
-
-                this.initStorage(carStorageLocation);
-                Files.copy(inputStream, carStorageLocation.resolve(fileName), StandardCopyOption.REPLACE_EXISTING);
+            }
+            try (InputStream inputStream = file.getInputStream()) {
+                this.initStorage(path);
+                Files.copy(inputStream, path.resolve(fileName), StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (IOException e) {
             throw new StorageException("Failed to store file: " + fileName, e);
