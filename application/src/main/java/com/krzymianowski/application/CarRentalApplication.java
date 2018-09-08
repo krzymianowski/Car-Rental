@@ -21,12 +21,6 @@ public class CarRentalApplication {
     }
 
 	@PostConstruct
-	private void initStorage(){
-//		storageService.deleteAll();
-		storageService.init();
-	}
-
-	@PostConstruct
 	private void initData(){
        initTempData.initDatabaseItems();
     }

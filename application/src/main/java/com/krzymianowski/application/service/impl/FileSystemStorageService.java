@@ -26,26 +26,31 @@ public class FileSystemStorageService implements StorageService {
     private final Path storageLocation = Paths.get("upload");
 
     @Override
-    public void init() {
+    public void initStorage(Path location) {
         try {
-            Files.createDirectories(storageLocation);
+            Files.createDirectories(location);
         } catch (IOException e) {
-            throw new StorageException("Could not initialize storage.", e);
+            throw new StorageException("Could not initialize storage: " + location.toString(), e);
         }
     }
 
     @Override
-    public void store(MultipartFile file) {
+    public void store(MultipartFile file, String carId) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        Path carStorageLocation = storageLocation.resolve(Paths.get(carId));
         try {
             if (file.isEmpty())
                 throw new StorageException("Failed to store empty file: " + fileName);
+
             if (fileName.contains("..")) //security check
                 throw new StorageException("Cannot store file with relative path outside current directory: " + fileName);
+
             try (InputStream inputStream = file.getInputStream()) {
                 if (ImageIO.read(inputStream) == null)
                     throw new StorageInvalidImageFormat("Uploaded file is not an image: " + fileName);
-                Files.copy(inputStream, storageLocation.resolve(fileName), StandardCopyOption.REPLACE_EXISTING);
+
+                this.initStorage(carStorageLocation);
+                Files.copy(inputStream, carStorageLocation.resolve(fileName), StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (IOException e) {
             throw new StorageException("Failed to store file: " + fileName, e);

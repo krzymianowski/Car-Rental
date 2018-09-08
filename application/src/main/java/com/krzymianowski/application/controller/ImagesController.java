@@ -29,10 +29,11 @@ public class ImagesController {
     @PostMapping("/upload")
     public String saveFiles(
             @RequestParam(name = "files") MultipartFile[] files,
+            @RequestParam(name = "carId") String carId,
             RedirectAttributes redirectAttributes) {
 
         for (MultipartFile file : files)
-            storageService.store(file);
+            storageService.store(file, carId);
 
         redirectAttributes.addFlashAttribute("message", "Done!");
         return "redirect:/images/upload";

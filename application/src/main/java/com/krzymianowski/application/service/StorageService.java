@@ -7,9 +7,9 @@ import java.nio.file.Path;
 
 public interface StorageService {
 
-    void init();
+    void initStorage(Path location);
 
-    void store(MultipartFile file);
+    void store(MultipartFile file, String carId);
 
     void deleteAll();
 
