@@ -12,7 +12,7 @@
         <h1>Temp File Upload:</h1> <span>${message}</span>
         <form:form action="/images/upload" method="post" enctype="multipart/form-data">
             <input type="file" name="files" multiple>
-            <input type="number" name="carId">
+            <input type="text" name="folder">
             <input type="submit" value="upload">
         </form:form>
     </body>
