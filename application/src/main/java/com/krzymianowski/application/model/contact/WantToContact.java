@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "want_to_contact")
@@ -39,6 +40,6 @@ public class WantToContact {
     private ContactState state;
 
     @Column(name = "add_date")
-    private LocalDate addDate;
+    private Date addDate;
 
 }
