@@ -1,4 +1,4 @@
-package com.krzymianowski.application.service;
+package com.krzymianowski.application.service.car;
 
 import com.krzymianowski.application.model.car.Brand;
 

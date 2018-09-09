@@ -1,6 +1,6 @@
 package com.krzymianowski.application.controller;
 
-import com.krzymianowski.application.service.StorageService;
+import com.krzymianowski.application.service.storage.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
@@ -26,7 +26,7 @@ public class ImagesController {
     public Resource getFolderImage(
             @PathVariable(name = "folder") String folder,
             @PathVariable(name = "imageId") String imageId) {
-        return storageService.loadAsResource(folder+"/"+imageId);
+        return storageService.loadAsResource(folder + "/" + imageId);
     }
 
     @GetMapping("/upload")

@@ -1,8 +1,8 @@
-package com.krzymianowski.application.service.impl;
+package com.krzymianowski.application.service.car.impl;
 
 import com.krzymianowski.application.model.car.Color;
 import com.krzymianowski.application.model.car.repository.ColorRepository;
-import com.krzymianowski.application.service.ColorService;
+import com.krzymianowski.application.service.car.ColorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

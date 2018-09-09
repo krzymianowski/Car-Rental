@@ -1,9 +1,7 @@
 package com.krzymianowski.application;
 
-import com.krzymianowski.application.model.car.Car;
-import com.krzymianowski.application.model.car.Model;
 import com.krzymianowski.application.model.car.*;
-import com.krzymianowski.application.service.*;
+import com.krzymianowski.application.service.car.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

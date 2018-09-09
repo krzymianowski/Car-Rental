@@ -1,7 +1,7 @@
-package com.krzymianowski.application.service.impl;
+package com.krzymianowski.application.service.car.impl;
 
 import com.krzymianowski.application.model.car.repository.ImageRepository;
-import com.krzymianowski.application.service.ImageService;
+import com.krzymianowski.application.service.car.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

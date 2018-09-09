@@ -1,9 +1,9 @@
-package com.krzymianowski.application.service.impl;
+package com.krzymianowski.application.service.storage.impl;
 
 import com.krzymianowski.application.exception.StorageException;
 import com.krzymianowski.application.exception.StorageFileNotFoundException;
 import com.krzymianowski.application.exception.StorageInvalidImageFormat;
-import com.krzymianowski.application.service.StorageService;
+import com.krzymianowski.application.service.storage.StorageService;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;

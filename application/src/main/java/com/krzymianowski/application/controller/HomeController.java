@@ -1,7 +1,7 @@
 package com.krzymianowski.application.controller;
 
 import com.krzymianowski.application.model.contact.view_model.ContactForm;
-import com.krzymianowski.application.service.CarService;
+import com.krzymianowski.application.service.car.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
