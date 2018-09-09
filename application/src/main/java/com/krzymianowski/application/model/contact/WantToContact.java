@@ -3,7 +3,6 @@ package com.krzymianowski.application.model.contact;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Date;
 
 @Entity

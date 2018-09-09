@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ContactStateRepository extends CrudRepository<ContactState, Integer>{
+public interface ContactStateRepository extends CrudRepository<ContactState, Integer> {
 
     ContactState getStateByStateName(String stateName);
 }
