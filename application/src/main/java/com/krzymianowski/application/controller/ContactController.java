@@ -1,6 +1,10 @@
 package com.krzymianowski.application.controller;
 
+import com.krzymianowski.application.model.contact.ContactState;
+import com.krzymianowski.application.model.contact.WantToContact;
 import com.krzymianowski.application.model.contact.view_model.ContactForm;
+import com.krzymianowski.application.service.contact.WantToContactService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -9,8 +13,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 @Controller
 public class ContactController {
+
+    @Autowired
+    private WantToContactService wantToContactService;
+
 
     @GetMapping("/contact")
     public String showContactPage(Model model) {
@@ -25,6 +36,8 @@ public class ContactController {
 
         if (result.hasErrors())
             return "contact";
+        else
+            wantToContactService.save(contactForm);
 
         return "redirect:/";
     }
