@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,37 +81,74 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <form:form action="/contact" method="post" modelAttribute="contactForm" class="col-md-8">
                         <div class="card p-4 bg-light">
                             <div class="card-body">
                                 <h3 class="text-center">Please fill out this form to contact us</h3>
                                 <hr>
+
+                                <!-- if errors -->
+                                <form:errors path="*">
+                                    <div class="row">
+                                        <div id="#ertest" class="col-12 m-2 text-danger">
+                                            Please fix errors to continue
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </form:errors>
+                                <!-- end if errors -->
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name">
+                                            <form:input path="firstName" type="text" class="form-control"
+                                                        cssErrorClass="form-control is-invalid" placeholder="First Name"
+                                                        pattern="[a-zA-Z]{3,30}" required="true"/>
+                                            <div class="invalid-feedback">
+                                                <form:errors path="firstName"/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name">
+                                            <form:input path="lastName" type="text" class="form-control"
+                                                        cssErrorClass="form-control is-invalid"
+                                                        placeholder="Last Name"/>
+                                            <div class="invalid-feedback">
+                                                <form:errors path="lastName"/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Email">
+                                            <form:input path="email" type="email" class="form-control"
+                                                        cssErrorClass="form-control is-invalid"
+                                                        placeholder="Email" required="true"/>
+                                            <div class="invalid-feedback">
+                                                <form:errors path="email"/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Phone Number">
+                                            <form:input path="phone" type="text" class="form-control"
+                                                        cssErrorClass="form-control is-invalid"
+                                                        placeholder="Phone Number"/>
+                                            <div class="invalid-feedback">
+                                                <form:errors path="phone"/>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" placeholder="Message"></textarea>
+                                            <form:textarea path="message" class="form-control"
+                                                           cssErrorClass="form-control is-invalid"
+                                                           placeholder="Message" required="true"></form:textarea>
+                                            <div class="invalid-feedback">
+                                                <form:errors path="message"/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -122,7 +160,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form:form>
                 </div>
             </div>
         </section>
