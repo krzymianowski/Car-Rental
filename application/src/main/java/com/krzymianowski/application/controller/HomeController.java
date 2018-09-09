@@ -1,9 +1,15 @@
 package com.krzymianowski.application.controller;
 
+import com.krzymianowski.application.model.contact.view_model.ContactForm;
 import com.krzymianowski.application.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -19,12 +25,25 @@ public class HomeController {
     }
 
     @RequestMapping("/about-us")
-    public String showAboutUsPage(){
+    public String showAboutUsPage() {
         return "about-us";
     }
 
-    @RequestMapping("/contact")
-    public String showContactPage(){
+    @GetMapping("/contact")
+    public String showContactPage(Model model) {
+        model.addAttribute("contactForm", new ContactForm());
         return "contact";
     }
+
+    @PostMapping("/contact")
+    public String addWantToContact(
+            @ModelAttribute("contactForm") @Validated ContactForm contactForm,
+            BindingResult result) {
+
+        if (result.hasErrors())
+            return "contact";
+
+        return "redirect:/";
+    }
+
 }
