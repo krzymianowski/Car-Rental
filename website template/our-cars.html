@@ -51,63 +51,67 @@
       <div class="col">
         <div class="container py-1">
           <h4>Search settings:</h4>
-          <p class="d-none text-muted d-md-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, repellat!</p>
+          <p class="d-none text-muted d-md-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum,
+            repellat!</p>
         </div>
       </div>
     </div>
 
-    <div class="container pt-3">
+    <form class="container pt-3">
       <div class="row">
         <div class="col-md-3">
-          <div class="dropdown">
-            <button class="btn btn-white btn-block dropdown-toggle" type="button" data-toggle="dropdown">
-              Type
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="2_2_basic_typography.html">Type 1</a>
-              <a class="dropdown-item" href="2_3_text_alignment_display.html">Type 2</a>
-              <a class="dropdown-item" href="2_4_floats_position.html">Type 3</a>
-            </div>
+
+          <div class="form-group">
+            <!-- <label>Type:</label> -->
+            <select class="form-control">
+              <option>All Types</option>
+              <option>Type 1</option>
+              <option>Type 2</option>
+              <option>Type 3</option>
+            </select>
           </div>
+
         </div>
 
         <div class="col-md-3">
-          <div class="dropdown">
-            <button class="btn btn-white btn-block dropdown-toggle" type="button" data-toggle="dropdown">
-              Brand
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="2_2_basic_typography.html">Type 1</a>
-              <a class="dropdown-item" href="2_3_text_alignment_display.html">Type 2</a>
-              <a class="dropdown-item" href="2_4_floats_position.html">Type 3</a>
-            </div>
+
+          <div class="form-group">
+            <!-- <label>Brand:</label> -->
+            <select class="form-control">
+              <option>All Brands</option>
+              <option>Brand 1</option>
+              <option>Brand 2</option>
+              <option>Brand 3</option>
+            </select>
           </div>
+
         </div>
 
         <div class="col-md-3">
-          <div class="dropdown">
-            <button class="btn btn-white btn-block dropdown-toggle" type="button" data-toggle="dropdown">
-              Model
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="2_2_basic_typography.html">Type 1</a>
-              <a class="dropdown-item" href="2_3_text_alignment_display.html">Type 2</a>
-              <a class="dropdown-item" href="2_4_floats_position.html">Type 3</a>
-            </div>
+
+          <div class="form-group">
+            <!-- <label>Model:</label> -->
+            <select class="form-control">
+              <option>Select Brand First!</option>
+              <option>Model 2</option>
+              <option>Model 3</option>
+            </select>
           </div>
+
         </div>
 
         <div class="col-md-3">
-          <div class="dropdown">
-            <button class="btn btn-white btn-block dropdown-toggle" type="button" data-toggle="dropdown">
-              Fuel Type
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="2_2_basic_typography.html">Type 1</a>
-              <a class="dropdown-item" href="2_3_text_alignment_display.html">Type 2</a>
-              <a class="dropdown-item" href="2_4_floats_position.html">Type 3</a>
-            </div>
+
+          <div class="form-group">
+            <!-- <label>Fuel Type:</label> -->
+            <select class="form-control">
+              <option>All Fuel Types</option>
+              <option>Fuel Type 1</option>
+              <option>Fuel Type 2</option>
+              <option>Fuel Type 3</option>
+            </select>
           </div>
+
         </div>
 
       </div>
@@ -136,28 +140,26 @@
         <div class="col-md-2">
           <div class="row">
             <div class="col">
-              <div class="btn btn-success btn-block btn-sm">
+              <button class="btn btn-success btn-block btn-sm" type="submit">
                 Search
-              </div>
+              </button>
             </div>
           </div>
         </div>
 
         <div class="col-md-3">
-          <div class="dropdown">
-            <button class="btn btn-white btn-block btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-              Sort By
-            </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="2_2_basic_typography.html">Type 1</a>
-              <a class="dropdown-item" href="2_3_text_alignment_display.html">Type 2</a>
-              <a class="dropdown-item" href="2_4_floats_position.html">Type 3</a>
-            </div>
+          <div class="form-group p-0 m-0">
+            <select class="form-control form-control-sm" id="gender">
+              <option>Sort by: Price</option>
+              <option>Type 2</option>
+              <option>Type 3</option>
+            </select>
           </div>
+
         </div>
 
       </div>
-    </div>
+    </form>
   </section>
 
 
