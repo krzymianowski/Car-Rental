@@ -12,6 +12,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -32,13 +33,14 @@ public class ContactController {
     @PostMapping("/contact")
     public String addWantToContact(
             @ModelAttribute("contactForm") @Validated ContactForm contactForm,
+            RedirectAttributes redirectAttributes,
             BindingResult result) {
 
         if (result.hasErrors())
             return "contact";
-        else
-            wantToContactService.save(contactForm);
 
-        return "redirect:/";
+        wantToContactService.save(contactForm);
+        redirectAttributes.addFlashAttribute("success", true);
+        return "redirect:/contact";
     }
 }
