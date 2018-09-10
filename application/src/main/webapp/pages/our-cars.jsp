@@ -163,14 +163,14 @@
                                 <div class="card-body p-0">
                                     <div class="row m-0">
                                         <div class="col-md-4 col-lg-3 p-0 fill">
-                                            <img src="/images/${car.id}/${car.images.get(0).url}" alt=""
+                                            <img src="/images/${car.id}/${car.imageUrl}" alt=""
                                                  class="img-fluid">
                                         </div>
                                         <div class="col-md-8 col-lg-9 d-flex align-items-center py-3">
                                             <div class="container text-left">
                                                 <div class="row pb-2 text-primary">
                                                     <div class="col-md-6 ">
-                                                        <h5>${car.model.brand.brandName} ${car.model.modelName}</h5>
+                                                        <h5>${car.fullName}</h5>
                                                     </div>
                                                     <div class="col-md-6 text-right ">
                                                         <h6>${car.rentPrice} pln/day</h6>
@@ -179,7 +179,7 @@
 
                                                 <div class="row text-muted">
                                                     <div class="col-md-6 col-lg-4 my-2">
-                                                        <b>Type:</b> Cabriolet
+                                                        <b>Type:</b> ${car.type}
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 my-2">
                                                         <b>Engine:</b> 2.3 cm3 ecodrive
@@ -188,13 +188,13 @@
                                                         <b>Power:</b> 330 km
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 my-2">
-                                                        <b>Fuel Type:</b> Diesel
+                                                        <b>Fuel Type:</b> ${car.fuelType}
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 my-2">
-                                                        <b>Color:</b> White
+                                                        <b>Color:</b> ${car.color}
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 my-2">
-                                                        <b>Status:</b> Available
+                                                        <b>Status:</b> ${car.state}
                                                     </div>
 
                                                 </div>
