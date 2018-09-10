@@ -111,17 +111,17 @@
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">All
-                                    <span class="badge badge-success ml-1 d-none d-md-inline-flex ">37</span>
+                                    <span class="badge badge-success ml-1 d-none d-md-inline-flex ">${all_results}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Available
-                                    <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">30</span>
+                                    <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">${available}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Not Available
-                                    <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">7</span>
+                                    <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">${nonAvailable}</span>
                                 </a>
                             </li>
                         </ul>
