@@ -182,10 +182,10 @@
                                                         <b>Type:</b> ${car.type}
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 my-2">
-                                                        <b>Engine:</b> 2.3 cm3 ecodrive
+                                                        <b>Engine:</b> ${car.engine}
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 my-2">
-                                                        <b>Power:</b> 330 km
+                                                        <b>Power:</b> ${car.horsePower} km
                                                     </div>
                                                     <div class="col-md-6 col-lg-4 my-2">
                                                         <b>Fuel Type:</b> ${car.fuelType}

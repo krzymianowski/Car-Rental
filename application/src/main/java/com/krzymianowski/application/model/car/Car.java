@@ -20,6 +20,12 @@ public class Car {
     @Column(name = "car_id")
     private int id;
 
+    @Column(name = "engine")
+    private String engine;
+
+    @Column(name = "horse_power")
+    private int horsePower;
+
     @Column(name = "production_date")
     private Date productionDate;
 

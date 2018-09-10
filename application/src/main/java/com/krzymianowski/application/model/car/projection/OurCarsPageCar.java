@@ -27,4 +27,10 @@ public interface OurCarsPageCar {
 
     @Value("#{target.type.typeName}")
     String getType();
+
+    @Value("#{target.engine}")
+    String getEngine();
+
+    @Value("#{target.horsePower}")
+    String getHorsePower();
 }

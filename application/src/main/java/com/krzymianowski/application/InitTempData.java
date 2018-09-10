@@ -35,12 +35,12 @@ public class InitTempData {
     private CarService carService;
 
     public void initDatabaseItems() {
-        CreateCar(210d,"Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
-        CreateCar(124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
-        CreateCar(238.8d,"Available", "Black", "PB-98", "SUV", "A4", "Audi", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
+        CreateCar(230, "2.3 TDI", 210d, "Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
+        CreateCar(120, "4.0 ecopower", 124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
+        CreateCar(180, "Potato 2.0", 238.8d, "Available", "Black", "PB-98", "SUV", "A4", "Audi", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
     }
 
-    private void CreateCar(double rentPrice, String statusName, String colorName, String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames) {
+    private void CreateCar(int hp, String engine, double rentPrice, String statusName, String colorName, String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames) {
         State state = getState(statusName, "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
 
         Color color = getColor(colorName);
@@ -65,6 +65,8 @@ public class InitTempData {
                 .fuelCondition(0.5f)
                 .rentPrice(rentPrice)
                 .images(images)
+                .horsePower(hp)
+                .engine(engine)
                 .build();
 
         carService.save(car);
