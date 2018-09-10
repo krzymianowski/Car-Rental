@@ -1,6 +1,7 @@
 package com.krzymianowski.application.controller;
 
 import com.krzymianowski.application.model.car.Car;
+import com.krzymianowski.application.model.car.projection.OurCarsPageCar;
 import com.krzymianowski.application.service.car.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -28,7 +29,7 @@ public class OurCarsController {
 
         if (page < 1) page = 1;
 
-        Page<Car> pageCars = carService.getOurCarsPageCars(
+        Page<OurCarsPageCar> pageCars = carService.getOurCarsPageCars(
                 carType,
                 carBrand,
                 carModel,
