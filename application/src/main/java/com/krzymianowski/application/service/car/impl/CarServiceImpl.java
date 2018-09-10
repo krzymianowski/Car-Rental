@@ -38,7 +38,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Page<Car> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, int page) {
-        PageRequest pageRequest = PageRequest.of(page, 10);
+        PageRequest pageRequest = PageRequest.of(page, 10, sortOrder(sortBy, sortDirection));
 
         boolean sType = (!carType.equals("") && !carType.equals("all"));
         boolean sBrand = (!carBrand.equals("") && !carBrand.equals("all"));
@@ -75,7 +75,10 @@ public class CarServiceImpl implements CarService {
     }
 
     private Sort sortOrder(String sortBy, String direction) {
+        direction = direction.toLowerCase();
+        sortBy = sortBy.toLowerCase();
         Sort sort;
+
         switch (sortBy) {
             case "price":
                 if (direction.equals("asc"))
