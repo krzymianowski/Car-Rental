@@ -157,240 +157,54 @@
             <div class="container">
                 <div class="row">
 
-                    <a href="/car-details.html" class="btn col-12 mb-2">
-                        <div class="card bg-light overflow-hide">
-                            <div class="card-body p-0">
-                                <div class="row m-0">
-                                    <div class="col-md-4 col-lg-3 p-0 fill">
-                                        <img src="img/temp-car.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-8 col-lg-9 d-flex align-items-center py-3">
-                                        <div class="container text-left">
-                                            <div class="row pb-2 text-primary">
-                                                <div class="col-md-6 ">
-                                                    <h5>Audi A6</h5>
-                                                </div>
-                                                <div class="col-md-6 text-right ">
-                                                    <h6>108.00 pln/day</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="row text-muted">
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Type:</b> Cabriolet
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Engine:</b> 2.3 cm3 ecodrive
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Power:</b> 330 km
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Fuel Type:</b> Diesel
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Color:</b> White
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Status:</b> Available
+                    <c:forEach items="${cars}" var="car">
+                        <a href="/car-details/${car.id}" class="btn col-12 mb-2">
+                            <div class="card bg-light overflow-hide">
+                                <div class="card-body p-0">
+                                    <div class="row m-0">
+                                        <div class="col-md-4 col-lg-3 p-0 fill">
+                                            <img src="/images/${car.id}/${car.images.get(0).url}" alt=""
+                                                 class="img-fluid">
+                                        </div>
+                                        <div class="col-md-8 col-lg-9 d-flex align-items-center py-3">
+                                            <div class="container text-left">
+                                                <div class="row pb-2 text-primary">
+                                                    <div class="col-md-6 ">
+                                                        <h5>${car.model.brand.brandName} ${car.model.modelName}</h5>
+                                                    </div>
+                                                    <div class="col-md-6 text-right ">
+                                                        <h6>${car.rentPrice} pln/day</h6>
+                                                    </div>
                                                 </div>
 
+                                                <div class="row text-muted">
+                                                    <div class="col-md-6 col-lg-4 my-2">
+                                                        <b>Type:</b> Cabriolet
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4 my-2">
+                                                        <b>Engine:</b> 2.3 cm3 ecodrive
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4 my-2">
+                                                        <b>Power:</b> 330 km
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4 my-2">
+                                                        <b>Fuel Type:</b> Diesel
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4 my-2">
+                                                        <b>Color:</b> White
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-4 my-2">
+                                                        <b>Status:</b> Available
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-
-
-                    <a href="/car-details.html" class="btn col-12 mb-2">
-                        <div class="card bg-light overflow-hide">
-                            <div class="card-body p-0">
-                                <div class="row m-0">
-                                    <div class="col-md-4 col-lg-3 p-0 fill">
-                                        <img src="img/temp-car.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-8 col-lg-9 d-flex align-items-center py-3">
-                                        <div class="container text-left">
-                                            <div class="row pb-2 text-primary">
-                                                <div class="col-md-6 ">
-                                                    <h5>Audi A6</h5>
-                                                </div>
-                                                <div class="col-md-6 text-right ">
-                                                    <h6>108.00 pln/day</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="row text-muted">
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Type:</b> Cabriolet
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Engine:</b> 2.3 cm3 ecodrive
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Power:</b> 330 km
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Fuel Type:</b> Diesel
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Color:</b> White
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Status:</b> Available
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-
-                    <a href="/car-details.html" class="btn col-12 mb-2">
-                        <div class="card bg-light overflow-hide">
-                            <div class="card-body p-0">
-                                <div class="row m-0">
-                                    <div class="col-md-4 col-lg-3 p-0 fill">
-                                        <img src="img/temp-car.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-8 col-lg-9 d-flex align-items-center py-3">
-                                        <div class="container text-left">
-                                            <div class="row pb-2 text-primary">
-                                                <div class="col-md-6 ">
-                                                    <h5>Audi A6</h5>
-                                                </div>
-                                                <div class="col-md-6 text-right ">
-                                                    <h6>108.00 pln/day</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="row text-muted">
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Type:</b> Cabriolet
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Engine:</b> 2.3 cm3 ecodrive
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Power:</b> 330 km
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Fuel Type:</b> Diesel
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Color:</b> White
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Status:</b> Available
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-
-                    <a href="/car-details.html" class="btn col-12 mb-2">
-                        <div class="card bg-light overflow-hide">
-                            <div class="card-body p-0">
-                                <div class="row m-0">
-                                    <div class="col-md-4 col-lg-3 p-0 fill">
-                                        <img src="img/temp-car.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-8 col-lg-9 d-flex align-items-center py-3">
-                                        <div class="container text-left">
-                                            <div class="row pb-2 text-primary">
-                                                <div class="col-md-6 ">
-                                                    <h5>Audi A6</h5>
-                                                </div>
-                                                <div class="col-md-6 text-right ">
-                                                    <h6>108.00 pln/day</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="row text-muted">
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Type:</b> Cabriolet
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Engine:</b> 2.3 cm3 ecodrive
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Power:</b> 330 km
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Fuel Type:</b> Diesel
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Color:</b> White
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Status:</b> Available
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-
-                    <a href="/car-details.html" class="btn col-12 mb-2">
-                        <div class="card bg-light overflow-hide">
-                            <div class="card-body p-0">
-                                <div class="row m-0">
-                                    <div class="col-md-4 col-lg-3 p-0 fill">
-                                        <img src="img/temp-car.jpg" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="col-md-8 col-lg-9 d-flex align-items-center py-3">
-                                        <div class="container text-left">
-                                            <div class="row pb-2 text-primary">
-                                                <div class="col-md-6 ">
-                                                    <h5>Audi A6</h5>
-                                                </div>
-                                                <div class="col-md-6 text-right ">
-                                                    <h6>108.00 pln/day</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="row text-muted">
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Type:</b> Cabriolet
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Engine:</b> 2.3 cm3 ecodrive
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Power:</b> 330 km
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Fuel Type:</b> Diesel
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Color:</b> White
-                                                </div>
-                                                <div class="col-md-6 col-lg-4 my-2">
-                                                    <b>Status:</b> Available
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
+                        </a>
+                    </c:forEach>
                 </div>
             </div>
         </section>
