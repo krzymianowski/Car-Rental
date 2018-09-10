@@ -2,6 +2,7 @@ package com.krzymianowski.application.service.car.impl;
 
 import com.krzymianowski.application.model.car.Car;
 import com.krzymianowski.application.model.car.projection.HomePageCar;
+import com.krzymianowski.application.model.car.projection.OurCarsPageCar;
 import com.krzymianowski.application.model.car.repository.CarRepository;
 import com.krzymianowski.application.service.car.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,9 +38,9 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Page<Car> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, int pageNr) {
+    public Page<OurCarsPageCar> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, int pageNr) {
         PageRequest page = PageRequest.of(pageNr, 10, sortOrder(sortBy, sortDirection));
-        Class<Car> tClass = Car.class;
+        Class<OurCarsPageCar> tClass = OurCarsPageCar.class;
 
         boolean sType = (!carType.equals("") && !carType.equals("all"));
         boolean sBrand = (!carBrand.equals("") && !carBrand.equals("all"));
