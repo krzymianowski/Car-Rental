@@ -37,8 +37,9 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Page<Car> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, int page) {
-        PageRequest pageRequest = PageRequest.of(page, 10, sortOrder(sortBy, sortDirection));
+    public Page<Car> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, int pageNr) {
+        PageRequest page = PageRequest.of(pageNr, 10, sortOrder(sortBy, sortDirection));
+        Class<Car> tClass = Car.class;
 
         boolean sType = (!carType.equals("") && !carType.equals("all"));
         boolean sBrand = (!carBrand.equals("") && !carBrand.equals("all"));
@@ -49,29 +50,29 @@ public class CarServiceImpl implements CarService {
             if (sType)
                 if (sBrand)
                     if (sModel)
-                        return carRepository.findByModel_brand_brandNameAndModel_ModelNameAndType_TypeNameAndFuelType_TypeName(carBrand, carModel, carType, carFuelType, pageRequest, Car.class);
-                    else return carRepository.findByModel_brand_brandNameAndType_TypeNameAndFuelType_TypeName(carBrand, carType, carFuelType, pageRequest, Car.class);
-                else return carRepository.findByType_TypeNameAndFuelType_TypeName(carType, carFuelType, pageRequest, Car.class);
+                        return carRepository.getBrandModelTypeFuel(carBrand, carModel, carType, carFuelType, page, tClass);
+                    else return carRepository.getBrandTypeFuel(carBrand, carType, carFuelType, page, tClass);
+                else return carRepository.getTypeFuel(carType, carFuelType, page, tClass);
             else if (sBrand)
                 if (sModel)
-                    return carRepository.findByModel_brand_brandNameAndModel_ModelNameAndFuelType_TypeName(carBrand, carModel, carFuelType, pageRequest, Car.class);
-                else return carRepository.findByModel_brand_brandNameAndFuelType_TypeName(carBrand, carFuelType, pageRequest, Car.class);
-            else return carRepository.findByFuelType_TypeName(carFuelType, pageRequest, Car.class);
+                    return carRepository.getBrandModelFuel(carBrand, carModel, carFuelType, page, tClass);
+                else return carRepository.getBrandFuel(carBrand, carFuelType, page, tClass);
+            else return carRepository.getFuel(carFuelType, page, tClass);
 
         if (sType)
             if (sBrand)
                 if (sModel)
-                    return carRepository.findByModel_brand_brandNameAndModel_ModelNameAndType_TypeName(carBrand, carModel, carType, pageRequest, Car.class);
-                else return carRepository.findByModel_brand_brandNameAndType_TypeName(carBrand, carType, pageRequest, Car.class);
-            else return carRepository.findByType_TypeName(carType, pageRequest, Car.class);
+                    return carRepository.getBrandModelType(carBrand, carModel, carType, page, tClass);
+                else return carRepository.getBrandType(carBrand, carType, page, tClass);
+            else return carRepository.getType(carType, page, tClass);
 
         if (sBrand)
             if (sModel)
-                return carRepository.findByModel_brand_brandNameAndModel_ModelName(carBrand, carModel, pageRequest, Car.class);
-            else return carRepository.findByModel_brand_brandName(carBrand, pageRequest, Car.class);
+                return carRepository.getBrandModel(carBrand, carModel, page, tClass);
+            else return carRepository.getBrand(carBrand, page, tClass);
 
         // Default
-        return carRepository.findAllBy(pageRequest, Car.class);
+        return carRepository.getAll(page, tClass);
     }
 
     private Sort sortOrder(String sortBy, String direction) {
