@@ -37,6 +37,7 @@ public class InitTempData {
     public void initDatabaseItems() {
         CreateCar("Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
         CreateCar("Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
+        CreateCar("Available", "Black", "PB-98", "SUV", "A4", "Audi", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
     }
 
     private void CreateCar(String statusName, String colorName, String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames) {
