@@ -3,6 +3,7 @@ package com.krzymianowski.application.controller;
 import com.krzymianowski.application.model.car.projection.OurCarsPageCar;
 import com.krzymianowski.application.service.car.BrandService;
 import com.krzymianowski.application.service.car.CarService;
+import com.krzymianowski.application.service.car.ModelService;
 import com.krzymianowski.application.service.car.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,6 +26,9 @@ public class OurCarsController {
 
     @Autowired
     private BrandService brandService;
+
+    @Autowired
+    private ModelService modelService;
 
     @RequestMapping("/our-cars")
     public String showOurCarsPage(
@@ -68,6 +72,7 @@ public class OurCarsController {
         model.addAttribute("nonAvailable", nonAvailable);
         model.addAttribute("carTypes", typeService.getOurCarsPageTypes());
         model.addAttribute("carBrands", brandService.getOurCarsPageBrands());
+        model.addAttribute("carModels", modelService.getOurCarsPageModels(carBrand));
         model.addAttribute("parameters", parameters);
 
         return "our-cars";
