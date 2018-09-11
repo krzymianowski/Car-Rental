@@ -12,6 +12,8 @@ import java.util.Collection;
 @Repository
 public interface CarRepository extends CrudRepository<Car, Integer> {
 
+    long countByState_StateName(@Param("stateName") String stateName);
+
     <T> Collection<T> findAllBy(Class<T> type);
 
     <T> Page<T> findAllBy(Pageable pageable, Class<T> type);
