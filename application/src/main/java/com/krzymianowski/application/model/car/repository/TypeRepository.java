@@ -13,9 +13,9 @@ public interface TypeRepository extends CrudRepository<Type, Integer> {
 
     Type getTypeByTypeName(String typeName);
 
-    <T> Collection<T> findAllBy(Class<T> tClass);
+    <T> Collection<T> findAllByOrderByTypeNameAsc(Class<T> tClass);
 
     default <T> Collection<T>  getAll(Class<T> tClass){
-        return findAllBy(tClass);
+        return findAllByOrderByTypeNameAsc(tClass);
     }
 }

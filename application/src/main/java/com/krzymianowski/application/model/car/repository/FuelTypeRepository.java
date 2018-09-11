@@ -12,9 +12,9 @@ public interface FuelTypeRepository extends CrudRepository<FuelType, Integer> {
 
     FuelType getFuelTypeByTypeName(String fuelTypeName);
 
-    <T> Collection<T> findAllBy(Class<T> tClass);
+    <T> Collection<T> findAllByOrderByTypeNameAsc(Class<T> tClass);
 
     default <T> Collection<T> getAll(Class<T> tClass) {
-        return findAllBy(tClass);
+        return findAllByOrderByTypeNameAsc(tClass);
     }
 }

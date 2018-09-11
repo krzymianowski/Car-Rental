@@ -11,9 +11,9 @@ public interface BrandRepository extends CrudRepository<Brand, Integer> {
 
     Brand getBrandByBrandName(String brand_name);
 
-    <T> Collection<T> findAllBy(Class<T> tClass);
+    <T> Collection<T> findAllByOrderByBrandNameAsc(Class<T> tClass);
 
     default <T> Collection<T>  getAll(Class<T> tClass){
-        return findAllBy(tClass);
+        return findAllByOrderByBrandNameAsc(tClass);
     }
 }
