@@ -56,51 +56,69 @@
                     <div class="container py-1">
                         <h4>Search settings:</h4>
                         <p class="d-none text-muted d-md-block">Lorem ipsum dolor sit, amet consectetur adipisicing
-                            elit. Dolorum, repellat!</p>
+                            elit. Dolorum,
+                            repellat!</p>
                     </div>
                 </div>
             </div>
 
-            <form:form action="/our-cars" method="post" class="container pt-3">
+            <form class="container pt-3">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option>All Types</option>
-                                <option>Type 1</option>
-                                <option>Type 2</option>
-                                <option>Type 3</option>
-                            </select>
+                        <div class="dropdown">
+                            <button class="btn btn-white btn-block dropdown-toggle " type="button"
+                                    data-toggle="dropdown">
+                                Type: ${parameters.get("type")}
+                            </button>
+                            <div class="dropdown-menu">
+                                <c:forEach items="${carTypes}" var="type">
+                                    <a class="dropdown-item" href="#" data-toggle="tooltip" data-placement="bottom"
+                                       title="${type.typeDescription}">${type.typeName}</a>
+                                </c:forEach>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="dropdown">
+                            <button class="btn btn-white btn-block dropdown-toggle" type="button"
+                                    data-toggle="dropdown">
+                                Brand
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Type 1</a>
+                                <a class="dropdown-item" href="#">Type 2</a>
+                                <a class="dropdown-item" href="#">Type 3</a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option>All Brands</option>
-                                <option>Brand 1</option>
-                                <option>Brand 2</option>
-                                <option>Brand 3</option>
-                            </select>
+                        <div class="dropdown">
+                            <button class="btn btn-white btn-block dropdown-toggle" type="button"
+                                    data-toggle="dropdown">
+                                Model
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Type 1</a>
+                                <a class="dropdown-item" href="#">Type 2</a>
+                                <a class="dropdown-item" href="#">Type 3</a>
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option>Select Brand First!</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <select class="form-control">
-                                <option>All Fuel Types</option>
-                                <option>Fuel Type 1</option>
-                                <option>Fuel Type 2</option>
-                                <option>Fuel Type 3</option>
-                            </select>
+                        <div class="dropdown">
+                            <button class="btn btn-white btn-block dropdown-toggle" type="button"
+                                    data-toggle="dropdown">
+                                Fuel Type
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Type 1</a>
+                                <a class="dropdown-item" href="#">Type 2</a>
+                                <a class="dropdown-item" href="#">Type 3</a>
+                            </div>
                         </div>
                     </div>
 
@@ -130,25 +148,29 @@
                     <div class="col-md-2">
                         <div class="row">
                             <div class="col">
-                                <button class="btn btn-success btn-block btn-sm" type="submit">
+                                <div class="btn btn-success btn-block btn-sm">
                                     Search
-                                </button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="form-group p-0 m-0">
-                            <select class="form-control form-control-sm" id="gender">
-                                <option>Sort by: Price</option>
-                                <option>Type 2</option>
-                                <option>Type 3</option>
-                            </select>
+                        <div class="dropdown">
+                            <button class="btn btn-white btn-block btn-sm dropdown-toggle" type="button"
+                                    data-toggle="dropdown">
+                                Sort By
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="2_2_basic_typography.html">Type 1</a>
+                                <a class="dropdown-item" href="2_3_text_alignment_display.html">Type 2</a>
+                                <a class="dropdown-item" href="2_4_floats_position.html">Type 3</a>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-            </form:form>
+            </form>
         </section>
 
 
@@ -241,6 +263,9 @@
         <script>
             // Get the current year for the copyright
             $('#year').text(new Date().getFullYear());
+
+            // Init tooltips
+            $('[data-toggle="tooltip"]').tooltip();
         </script>
     </body>
 
