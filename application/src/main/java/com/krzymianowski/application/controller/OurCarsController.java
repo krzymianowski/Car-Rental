@@ -1,6 +1,7 @@
 package com.krzymianowski.application.controller;
 
 import com.krzymianowski.application.model.car.projection.OurCarsPageCar;
+import com.krzymianowski.application.service.car.BrandService;
 import com.krzymianowski.application.service.car.CarService;
 import com.krzymianowski.application.service.car.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class OurCarsController {
 
     @Autowired
     private TypeService typeService;
+
+    @Autowired
+    private BrandService brandService;
 
     @RequestMapping("/our-cars")
     public String showOurCarsPage(
@@ -63,6 +67,7 @@ public class OurCarsController {
         model.addAttribute("available", available);
         model.addAttribute("nonAvailable", nonAvailable);
         model.addAttribute("carTypes", typeService.getOurCarsPageTypes());
+        model.addAttribute("carBrands", brandService.getOurCarsPageBrands());
         model.addAttribute("parameters", parameters);
 
         return "our-cars";
