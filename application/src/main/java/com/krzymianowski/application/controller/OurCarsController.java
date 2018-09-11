@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -27,6 +28,15 @@ public class OurCarsController {
             @RequestParam(name = "sort", defaultValue = "price") String sortBy,
             @RequestParam(name = "dir", defaultValue = "asc") String sortDirection,
             Model model) {
+
+        HashMap<String, String> parameters = new HashMap<>();
+        parameters.put("page", "" + page);
+        parameters.put("type", carType);
+        parameters.put("brand", carBrand);
+        parameters.put("model", carModel);
+        parameters.put("fuel", carFuelType);
+        parameters.put("sort", sortBy);
+        parameters.put("dir", sortDirection);
 
         if (page < 1) page = 1;
 
@@ -48,6 +58,7 @@ public class OurCarsController {
         model.addAttribute("all_results", total);
         model.addAttribute("available", available);
         model.addAttribute("nonAvailable", nonAvailable);
+        model.addAttribute("parameters", parameters);
 
         return "our-cars";
     }
