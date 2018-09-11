@@ -13,7 +13,7 @@ public interface BrandRepository extends CrudRepository<Brand, Integer> {
 
     <T> Collection<T> findAllByOrderByBrandNameAsc(Class<T> tClass);
 
-    default <T> Collection<T>  getAll(Class<T> tClass){
+    default <T> Collection<T> getAll(Class<T> tClass) {
         return findAllByOrderByBrandNameAsc(tClass);
     }
 }

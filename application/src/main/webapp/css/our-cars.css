@@ -1,49 +1,79 @@
 body {
-    margin-top: 105px; }
+    margin-top: 105px;
+}
+
 body > .navbar {
     box-shadow: 2px 2px 5px rgba(22, 34, 56, 0.5);
-    background: white; }
+    background: white;
+}
+
 body > .navbar .nav-item {
     font-size: 1.1rem;
-    padding-right: 1.3rem; }
+    padding-right: 1.3rem;
+}
+
 body #main-footer {
     background: #162238;
-    color: #fff; }
+    color: #fff;
+}
 
 .overflow-hidden {
-    overflow: hidden; }
+    overflow: hidden;
+}
 
 .btn-white {
     background: white;
-    border: #dee2e6 1px solid; }
+    border: #dee2e6 1px solid;
+}
 
 #search-settings {
-    border-bottom: #dee2e6 1px solid; }
+    border-bottom: #dee2e6 1px solid;
+}
+
 #search-settings #search-tabs {
-    margin-bottom: -1px; }
+    margin-bottom: -1px;
+}
+
 #search-settings #search-tabs .nav {
-    border-bottom: none !important; }
+    border-bottom: none !important;
+}
+
 #search-settings .dropdown .prefix {
-    display: none; }
+    display: none;
+}
 
 #cars {
-    min-height: 70vh; }
+    min-height: 70vh;
+}
+
 #cars .fill {
-    overflow: hidden; }
+    overflow: hidden;
+}
+
 #cars .fill img {
     min-width: 100%;
     min-height: 100%;
-    object-fit: cover; }
+    object-fit: cover;
+}
 
 @media (max-width: 767.98px) {
     #search-settings #search-tabs {
         margin-top: 1rem;
-        order: 3; }
+        order: 3;
+    }
+
     #search-settings .dropdown label {
-        display: none; }
+        display: none;
+    }
+
     #search-settings .dropdown .prefix {
-        display: inline; } }
+        display: inline;
+    }
+}
+
 @media (max-width: 380px) {
     #search-tabs .nav-item .nav-link {
         padding-left: 10px;
-        padding-right: 10px; } }
+        padding-right: 10px;
+    }
+}

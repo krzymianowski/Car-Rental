@@ -1,12 +1,10 @@
 package com.krzymianowski.application.model.car.repository;
 
 import com.krzymianowski.application.model.car.Type;
-import com.krzymianowski.application.model.car.projection.OurCarsPageType;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
-import java.util.List;
 
 @Repository
 public interface TypeRepository extends CrudRepository<Type, Integer> {
@@ -15,7 +13,7 @@ public interface TypeRepository extends CrudRepository<Type, Integer> {
 
     <T> Collection<T> findAllByOrderByTypeNameAsc(Class<T> tClass);
 
-    default <T> Collection<T>  getAll(Class<T> tClass){
+    default <T> Collection<T> getAll(Class<T> tClass) {
         return findAllByOrderByTypeNameAsc(tClass);
     }
 }
