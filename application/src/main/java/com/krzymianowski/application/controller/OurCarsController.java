@@ -45,12 +45,12 @@ public class OurCarsController {
         if (page < 1) page = 1;
 
         Page<OurCarsPageCar> pageCars = carService.getOurCarsPageCars(
-                carType,
-                carBrand,
-                carModel,
-                carFuelType,
-                sortBy,
-                sortDirection,
+                carType.toLowerCase(),
+                carBrand.toLowerCase(),
+                carModel.toLowerCase(),
+                carFuelType.toLowerCase(),
+                sortBy.toLowerCase(),
+                sortDirection.toLowerCase(),
                 page - 1);
 
         List<OurCarsPageCar> content = pageCars.getContent();
