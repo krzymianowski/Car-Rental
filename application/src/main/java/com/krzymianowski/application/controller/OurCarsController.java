@@ -1,7 +1,11 @@
 package com.krzymianowski.application.controller;
 
+
 import com.krzymianowski.application.model.car.projection.OurCarsPageCar;
 import com.krzymianowski.application.service.car.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -85,5 +89,14 @@ public class OurCarsController {
         model.addAttribute("parameters", parameters);
 
         return "our-cars";
+    }
+
+    @Setter
+    @Getter
+    @AllArgsConstructor
+    public class Parameter {
+        private String value;
+        private String defaultValue;
+        private boolean equalsDefaultValue;
     }
 }
