@@ -65,9 +65,15 @@ public class OurCarsController {
         // Get list of cars from page
         List<OurCarsPageCar> content = pageCars.getContent();
 
-        long total = pageCars.getTotalElements();
-        long available = content.stream().filter(car -> car.getState().equals("Available")).count(); // To jest źle ponieważ nie zwraca wszystkich dostępnych tylko te na stronie
+        // Get number of cars, available cars and not available cars
+        long total = carService.getNumberOfCars();
+        long available = carService.getNumberOfAvailableCars();
         long nonAvailable = total - available;
+
+        // Add number to model
+        model.addAttribute("all_results", total);
+        model.addAttribute("available", available);
+        model.addAttribute("nonAvailable", nonAvailable);
 
         // Add request parameters into model (check if param is equals its default value and add result into model)
         model.addAttribute("pageParam", new Parameter("" + page, defaultPage, ("" + page).toLowerCase().equals(defaultPage.toLowerCase())));
@@ -80,11 +86,6 @@ public class OurCarsController {
 
         // Add cars list into model
         model.addAttribute("cars", content);
-
-        // Do poprawy
-        model.addAttribute("all_results", total);
-        model.addAttribute("available", available);
-        model.addAttribute("nonAvailable", nonAvailable);
 
         // Add to model list of available items for searching
         model.addAttribute("carTypes", typeService.getOurCarsPageTypes());
