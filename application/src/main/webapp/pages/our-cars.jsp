@@ -153,12 +153,11 @@
                         <div class="dropdown">
                             <button class="btn btn-white btn-block btn-sm dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                Sort by: Low Price
+                                Sort by: ${parameters.get("dir")=="asc" ? "Low" : "High"} ${parameters.get("sort")}
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Type 1</a>
-                                <a class="dropdown-item" href="#">Type 2</a>
-                                <a class="dropdown-item" href="#">Type 3</a>
+                                <a class="dropdown-item" href="#">Low price</a>
+                                <a class="dropdown-item" href="#">High price</a>
                             </div>
                         </div>
                     </div>
