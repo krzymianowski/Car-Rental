@@ -69,16 +69,53 @@
                             <label>Type: </label>
                             <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                <span class="prefix">Type: </span>${parameters.get("type")}
+                                <span class="prefix">Type: </span>${typeParam.value}
                             </button>
                             <div class="dropdown-menu">
+                                <c:url var="typeUrlAll" value="/our-cars">
+                                    <c:if test="${!brandParam.equalsDefaultValue}">
+                                        <c:param name="brand" value="${brandParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!modelParam.equalsDefaultValue}">
+                                        <c:param name="model" value="${modelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!fuelParam.equalsDefaultValue}">
+                                        <c:param name="fuel" value="${fuelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.equalsDefaultValue}">
+                                        <c:param name="sort" value="${sortParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.equalsDefaultValue}">
+                                        <c:param name="dir" value="${dirParam.value}"/>
+                                    </c:if>
+                                </c:url>
+                                <a class="dropdown-item" href="${typeUrlAll}">Show All</a>
+
                                 <c:forEach items="${carTypes}" var="type">
-                                    <a class="dropdown-item" href="#" data-toggle="tooltip" data-placement="bottom"
+                                    <c:url var="typeUrl" value="/our-cars">
+                                        <c:param name="type" value="${type.typeName}"/>
+                                        <c:if test="${!brandParam.equalsDefaultValue}">
+                                            <c:param name="brand" value="${brandParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!modelParam.equalsDefaultValue}">
+                                            <c:param name="model" value="${modelParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!fuelParam.equalsDefaultValue}">
+                                            <c:param name="fuel" value="${fuelParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!sortParam.equalsDefaultValue}">
+                                            <c:param name="sort" value="${sortParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!dirParam.equalsDefaultValue}">
+                                            <c:param name="dir" value="${dirParam.value}"/>
+                                        </c:if>
+                                    </c:url>
+                                    <a class="dropdown-item" href="${typeUrl}" data-toggle="tooltip"
+                                       data-placement="bottom"
                                        title="${type.typeDescription}">${type.typeName}</a>
                                 </c:forEach>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="col-md-3">
@@ -86,11 +123,42 @@
                             <label>Brand: </label>
                             <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                <span class="prefix">Brand: </span>${parameters.get("brand")}
+                                <span class="prefix">Brand: </span>${brandParam.value}
                             </button>
                             <div class="dropdown-menu">
+                                <c:url var="brandUrlAll" value="/our-cars">
+                                    <c:if test="${!typeParam.equalsDefaultValue}">
+                                        <c:param name="type" value="${typeParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!fuelParam.equalsDefaultValue}">
+                                        <c:param name="fuel" value="${fuelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.equalsDefaultValue}">
+                                        <c:param name="sort" value="${sortParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.equalsDefaultValue}">
+                                        <c:param name="dir" value="${dirParam.value}"/>
+                                    </c:if>
+                                </c:url>
+                                <a class="dropdown-item" href="${brandUrlAll}">Show All</a>
+
                                 <c:forEach items="${carBrands}" var="brand">
-                                    <a class="dropdown-item" href="#">${brand.brandName}</a>
+                                    <c:url var="brandUrl" value="/our-cars">
+                                        <c:if test="${!typeParam.equalsDefaultValue}">
+                                            <c:param name="type" value="${typeParam.value}"/>
+                                        </c:if>
+                                        <c:param name="brand" value="${brand.brandName}"/>
+                                        <c:if test="${!fuelParam.equalsDefaultValue}">
+                                            <c:param name="fuel" value="${fuelParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!sortParam.equalsDefaultValue}">
+                                            <c:param name="sort" value="${sortParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!dirParam.equalsDefaultValue}">
+                                            <c:param name="dir" value="${dirParam.value}"/>
+                                        </c:if>
+                                    </c:url>
+                                    <a class="dropdown-item" href="${brandUrl}">${brand.brandName}</a>
                                 </c:forEach>
                             </div>
                         </div>
@@ -101,11 +169,48 @@
                             <label>Model: </label>
                             <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                <span class="prefix">Model: </span>${parameters.get("model")}
+                                <span class="prefix">Model: </span>${modelParam.value}
                             </button>
                             <div class="dropdown-menu">
+                                <c:url var="modelUrlAll" value="/our-cars">
+                                    <c:if test="${!typeParam.equalsDefaultValue}">
+                                        <c:param name="type" value="${typeParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!brandParam.equalsDefaultValue}">
+                                        <c:param name="brand" value="${brandParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!fuelParam.equalsDefaultValue}">
+                                        <c:param name="fuel" value="${fuelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.equalsDefaultValue}">
+                                        <c:param name="sort" value="${sortParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.equalsDefaultValue}">
+                                        <c:param name="dir" value="${dirParam.value}"/>
+                                    </c:if>
+                                </c:url>
+                                <a class="dropdown-item" href="${modelUrlAll}">Show All</a>
+
                                 <c:forEach items="${carModels}" var="model">
-                                    <a class="dropdown-item" href="#">${model.modelName}</a>
+                                    <c:url var="modelUrl" value="/our-cars">
+                                        <c:if test="${!typeParam.equalsDefaultValue}">
+                                            <c:param name="type" value="${typeParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!brandParam.equalsDefaultValue}">
+                                            <c:param name="brand" value="${brandParam.value}"/>
+                                        </c:if>
+                                        <c:param name="model" value="${model.modelName}"/>
+                                        <c:if test="${!fuelParam.equalsDefaultValue}">
+                                            <c:param name="fuel" value="${fuelParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!sortParam.equalsDefaultValue}">
+                                            <c:param name="sort" value="${sortParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!dirParam.equalsDefaultValue}">
+                                            <c:param name="dir" value="${dirParam.value}"/>
+                                        </c:if>
+                                    </c:url>
+                                    <a class="dropdown-item" href="${modelUrl}">${model.modelName}</a>
                                 </c:forEach>
                             </div>
                         </div>
@@ -116,16 +221,52 @@
                             <label>Fuel Type: </label>
                             <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                <span class="prefix">Fuel Type: </span>${parameters.get("fuel")}
+                                <span class="prefix">Fuel Type: </span>${fuelParam.value}
                             </button>
                             <div class="dropdown-menu">
+                                <c:url var="fuelUrlAll" value="/our-cars">
+                                    <c:if test="${!typeParam.equalsDefaultValue}">
+                                        <c:param name="type" value="${typeParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!brandParam.equalsDefaultValue}">
+                                        <c:param name="brand" value="${brandParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!modelParam.equalsDefaultValue}">
+                                        <c:param name="model" value="${modelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.equalsDefaultValue}">
+                                        <c:param name="sort" value="${sortParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.equalsDefaultValue}">
+                                        <c:param name="dir" value="${dirParam.value}"/>
+                                    </c:if>
+                                </c:url>
+                                <a class="dropdown-item" href="${fuelUrlAll}">Show All</a>
+
                                 <c:forEach items="${carFuel}" var="fuel">
-                                    <a class="dropdown-item" href="#">${fuel.fuelTypeName}</a>
+                                    <c:url var="fuelUrl" value="/our-cars">
+                                        <c:if test="${!typeParam.equalsDefaultValue}">
+                                            <c:param name="type" value="${typeParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!brandParam.equalsDefaultValue}">
+                                            <c:param name="brand" value="${brandParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!modelParam.equalsDefaultValue}">
+                                            <c:param name="model" value="${modelParam.value}"/>
+                                        </c:if>
+                                        <c:param name="fuel" value="${fuel.fuelTypeName}"/>
+                                        <c:if test="${!sortParam.equalsDefaultValue}">
+                                            <c:param name="sort" value="${sortParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!dirParam.equalsDefaultValue}">
+                                            <c:param name="dir" value="${dirParam.value}"/>
+                                        </c:if>
+                                    </c:url>
+                                    <a class="dropdown-item" href="${fuelUrl}">${fuel.fuelTypeName}</a>
                                 </c:forEach>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="row pt-5 ">
@@ -153,11 +294,51 @@
                         <div class="dropdown">
                             <button class="btn btn-white btn-block btn-sm dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                Sort by: ${parameters.get("dir")=="asc" ? "Low" : "High"} ${parameters.get("sort")}
+                                Sort by: ${dirParam.value=="asc" ? "Low" : "High"} ${sortParam.value}
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Low price</a>
-                                <a class="dropdown-item" href="#">High price</a>
+                                <c:url var="sortByPriceAscUrl" value="/our-cars">
+                                    <c:if test="${!typeParam.equalsDefaultValue}">
+                                        <c:param name="type" value="${typeParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!brandParam.equalsDefaultValue}">
+                                        <c:param name="brand" value="${brandParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!modelParam.equalsDefaultValue}">
+                                        <c:param name="model" value="${modelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!fuelParam.equalsDefaultValue}">
+                                        <c:param name="fuel" value="${fuelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.defaultValue.equals('price')}">
+                                        <c:param name="sort" value="price"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.defaultValue.equals('asc')}">
+                                        <c:param name="dir" value="asc"/>
+                                    </c:if>
+                                </c:url>
+                                <c:url var="sortByPriceDescUrl" value="/our-cars">
+                                    <c:if test="${!typeParam.equalsDefaultValue}">
+                                        <c:param name="type" value="${typeParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!brandParam.equalsDefaultValue}">
+                                        <c:param name="brand" value="${brandParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!modelParam.equalsDefaultValue}">
+                                        <c:param name="model" value="${modelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!fuelParam.equalsDefaultValue}">
+                                        <c:param name="fuel" value="${fuelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.defaultValue.equals('price')}">
+                                        <c:param name="sort" value="price"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.defaultValue.equals('desc')}">
+                                        <c:param name="dir" value="desc"/>
+                                    </c:if>
+                                </c:url>
+                                <a class="dropdown-item" href="${sortByPriceAscUrl}">Low price</a>
+                                <a class="dropdown-item" href="${sortByPriceDescUrl}">High price</a>
                             </div>
                         </div>
                     </div>
@@ -234,7 +415,6 @@
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item"><a class="page-link" href="#">Next</a></li>
             </ul>
-            </div>
         </section>
 
         <!-- FOOTER -->
