@@ -25,10 +25,10 @@ public class OurCarsController {
     @RequestMapping("/our-cars")
     public String showOurCarsPage(
             @RequestParam(name = "page", defaultValue = "1") int page,
-            @RequestParam(name = "type", defaultValue = "all") String carType,
-            @RequestParam(name = "brand", defaultValue = "all") String carBrand,
-            @RequestParam(name = "model", defaultValue = "all") String carModel,
-            @RequestParam(name = "fuel", defaultValue = "all") String carFuelType,
+            @RequestParam(name = "type", defaultValue = "All") String carType,
+            @RequestParam(name = "brand", defaultValue = "All") String carBrand,
+            @RequestParam(name = "model", defaultValue = "All") String carModel,
+            @RequestParam(name = "fuel", defaultValue = "All") String carFuelType,
             @RequestParam(name = "sort", defaultValue = "price") String sortBy,
             @RequestParam(name = "dir", defaultValue = "asc") String sortDirection,
             Model model) {
