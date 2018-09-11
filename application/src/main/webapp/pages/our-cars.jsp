@@ -86,12 +86,12 @@
                             <label>Brand: </label>
                             <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                <span class="prefix">Brand: </span>All
+                                <span class="prefix">Brand: </span>${parameters.get("brand")}
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Type 1</a>
-                                <a class="dropdown-item" href="#">Type 2</a>
-                                <a class="dropdown-item" href="#">Type 3</a>
+                                <c:forEach items="${carBrands}" var="brand">
+                                    <a class="dropdown-item" href="#">${brand.brandName}</a>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
