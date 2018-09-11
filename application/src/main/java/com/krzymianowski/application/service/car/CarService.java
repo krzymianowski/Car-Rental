@@ -13,4 +13,8 @@ public interface CarService {
     List<HomePageCar> getHomePageCars();
 
     Page<OurCarsPageCar> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, int page);
+
+    long getNumberOfCars();
+
+    long getNumberOfAvailableCars();
 }
