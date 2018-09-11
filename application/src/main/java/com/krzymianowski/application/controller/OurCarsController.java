@@ -13,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -44,49 +43,54 @@ public class OurCarsController {
 
     @RequestMapping("/our-cars")
     public String showOurCarsPage(
-            @RequestParam(name = "page", defaultValue = "1") int page,
-            @RequestParam(name = "type", defaultValue = "All") String carType,
-            @RequestParam(name = "brand", defaultValue = "All") String carBrand,
-            @RequestParam(name = "model", defaultValue = "All") String carModel,
-            @RequestParam(name = "fuel", defaultValue = "All") String carFuelType,
-            @RequestParam(name = "sort", defaultValue = "price") String sortBy,
-            @RequestParam(name = "dir", defaultValue = "asc") String sortDirection,
+            @RequestParam(name = "page", defaultValue = defaultPage) int page,
+            @RequestParam(name = "type", defaultValue = defaultType) String carType,
+            @RequestParam(name = "brand", defaultValue = defaultBrand) String carBrand,
+            @RequestParam(name = "model", defaultValue = defaultModel) String carModel,
+            @RequestParam(name = "fuel", defaultValue = defaultFuel) String carFuelType,
+            @RequestParam(name = "sort", defaultValue = defaultSort) String sortBy,
+            @RequestParam(name = "dir", defaultValue = defaultDir) String sortDirection,
             Model model) {
 
-        HashMap<String, String> parameters = new HashMap<>();
-        parameters.put("page", "" + page);
-        parameters.put("type", carType);
-        parameters.put("brand", carBrand);
-        parameters.put("model", carModel);
-        parameters.put("fuel", carFuelType);
-        parameters.put("sort", sortBy);
-        parameters.put("dir", sortDirection);
-
+        // Check for negative page
         if (page < 1) page = 1;
 
+        // Get page of cars
         Page<OurCarsPageCar> pageCars = carService.getOurCarsPageCars(
-                carType.toLowerCase(),
-                carBrand.toLowerCase(),
-                carModel.toLowerCase(),
-                carFuelType.toLowerCase(),
-                sortBy.toLowerCase(),
-                sortDirection.toLowerCase(),
+                carType.toLowerCase(), carBrand.toLowerCase(),
+                carModel.toLowerCase(), carFuelType.toLowerCase(),
+                sortBy.toLowerCase(), sortDirection.toLowerCase(),
                 page - 1);
 
+        // Get list of cars from page
         List<OurCarsPageCar> content = pageCars.getContent();
+
         long total = pageCars.getTotalElements();
-        long available = content.stream().filter(car -> car.getState().equals("Available")).count();
+        long available = content.stream().filter(car -> car.getState().equals("Available")).count(); // To jest źle ponieważ nie zwraca wszystkich dostępnych tylko te na stronie
         long nonAvailable = total - available;
 
+        // Add request parameters into model (check if param is equals its default value and add result into model)
+        model.addAttribute("pageParam", new Parameter("" + page, defaultPage, ("" + page).toLowerCase().equals(defaultPage.toLowerCase())));
+        model.addAttribute("typeParam", new Parameter(carType, defaultType, carType.toLowerCase().equals(defaultType.toLowerCase())));
+        model.addAttribute("brandParam", new Parameter(carBrand, defaultBrand, carBrand.toLowerCase().equals(defaultBrand.toLowerCase())));
+        model.addAttribute("modelParam", new Parameter(carModel, defaultModel, carModel.toLowerCase().equals(defaultModel.toLowerCase())));
+        model.addAttribute("fuelParam", new Parameter(carFuelType, defaultFuel, (carFuelType.toLowerCase().equals(defaultFuel.toLowerCase()))));
+        model.addAttribute("sortParam", new Parameter(sortBy, defaultSort, (sortBy.toLowerCase().equals(defaultSort.toLowerCase()))));
+        model.addAttribute("dirParam", new Parameter(sortDirection, defaultDir, (sortDirection.toLowerCase().equals(defaultDir.toLowerCase()))));
+
+        // Add cars list into model
         model.addAttribute("cars", content);
+
+        // Do poprawy
         model.addAttribute("all_results", total);
         model.addAttribute("available", available);
         model.addAttribute("nonAvailable", nonAvailable);
+
+        // Add to model list of available items for searching
         model.addAttribute("carTypes", typeService.getOurCarsPageTypes());
         model.addAttribute("carBrands", brandService.getOurCarsPageBrands());
         model.addAttribute("carModels", modelService.getOurCarsPageModels(carBrand));
         model.addAttribute("carFuel", fuelTypeService.getOurCarsPageFuelTypes());
-        model.addAttribute("parameters", parameters);
 
         return "our-cars";
     }
