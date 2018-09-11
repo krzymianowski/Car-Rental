@@ -116,12 +116,12 @@
                             <label>Fuel Type: </label>
                             <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                <span class="prefix">Fuel Type: </span>All
+                                <span class="prefix">Fuel Type: </span>${parameters.get("fuel")}
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Type 1</a>
-                                <a class="dropdown-item" href="#">Type 2</a>
-                                <a class="dropdown-item" href="#">Type 3</a>
+                                <c:forEach items="${carFuel}" var="fuel">
+                                    <a class="dropdown-item" href="#">${fuel.fuelTypeName}</a>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
