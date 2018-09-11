@@ -76,6 +76,16 @@ public class CarServiceImpl implements CarService {
         return carRepository.getAll(page, tClass);
     }
 
+    @Override
+    public long getNumberOfCars() {
+        return carRepository.count();
+    }
+
+    @Override
+    public long getNumberOfAvailableCars() {
+        return carRepository.countByState_StateName("Available");
+    }
+
     private Sort sortOrder(String sortBy, String direction) {
         direction = direction.toLowerCase();
         sortBy = sortBy.toLowerCase();
