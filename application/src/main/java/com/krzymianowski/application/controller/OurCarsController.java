@@ -15,6 +15,14 @@ import java.util.List;
 @Controller
 public class OurCarsController {
 
+    private final String defaultPage = "1";
+    private final String defaultType = "All";
+    private final String defaultBrand = "All";
+    private final String defaultModel = "All";
+    private final String defaultFuel = "All";
+    private final String defaultSort = "price";
+    private final String defaultDir = "desc";
+
     @Autowired
     private CarService carService;
 
