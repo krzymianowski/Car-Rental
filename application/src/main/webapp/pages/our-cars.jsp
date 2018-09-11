@@ -62,13 +62,14 @@
                 </div>
             </div>
 
-            <form class="container pt-3">
+            <div class="container pt-3">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="dropdown">
-                            <button class="btn btn-white btn-block dropdown-toggle " type="button"
+                            <label>Type: </label>
+                            <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                Type: ${parameters.get("type")}
+                                <span class="prefix">Type: </span>${parameters.get("type")}
                             </button>
                             <div class="dropdown-menu">
                                 <c:forEach items="${carTypes}" var="type">
@@ -82,9 +83,10 @@
 
                     <div class="col-md-3">
                         <div class="dropdown">
-                            <button class="btn btn-white btn-block dropdown-toggle" type="button"
+                            <label>Brand: </label>
+                            <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                Brand
+                                <span class="prefix">Brand: </span>All
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Type 1</a>
@@ -96,9 +98,10 @@
 
                     <div class="col-md-3">
                         <div class="dropdown">
-                            <button class="btn btn-white btn-block dropdown-toggle" type="button"
+                            <label>Model: </label>
+                            <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                Model
+                                <span class="prefix">Model: </span>Select Brand
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Type 1</a>
@@ -110,9 +113,10 @@
 
                     <div class="col-md-3">
                         <div class="dropdown">
-                            <button class="btn btn-white btn-block dropdown-toggle" type="button"
+                            <label>Fuel Type: </label>
+                            <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                Fuel Type
+                                <span class="prefix">Fuel Type: </span>All
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Type 1</a>
@@ -125,52 +129,42 @@
                 </div>
 
                 <div class="row pt-5 ">
-                    <div id="search-tabs" class="col-md-7">
+                    <div id="search-tabs" class="col-md-8">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
                                 <a class="nav-link active" href="#">All
-                                    <span class="badge badge-success ml-1 d-none d-md-inline-flex ">${all_results}</span>
+                                    <span class="badge badge-success ml-1 d-none d-md-inline-flex ">37</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Available
-                                    <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">${available}</span>
+                                    <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">30</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Not Available
-                                    <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">${nonAvailable}</span>
+                                    <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">7</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="col-md-2">
-                        <div class="row">
-                            <div class="col">
-                                <div class="btn btn-success btn-block btn-sm">
-                                    Search
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="dropdown">
-                            <button class="btn btn-white btn-block btn-sm dropdown-toggle" type="button"
+                            <button class="btn btn-white btn-block btn-sm dropdown-toggle overflow-hidden" type="button"
                                     data-toggle="dropdown">
-                                Sort By
+                                Sort by: Low Price
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="2_2_basic_typography.html">Type 1</a>
-                                <a class="dropdown-item" href="2_3_text_alignment_display.html">Type 2</a>
-                                <a class="dropdown-item" href="2_4_floats_position.html">Type 3</a>
+                                <a class="dropdown-item" href="#">Type 1</a>
+                                <a class="dropdown-item" href="#">Type 2</a>
+                                <a class="dropdown-item" href="#">Type 3</a>
                             </div>
                         </div>
                     </div>
 
                 </div>
-            </form>
+            </div>
         </section>
 
 
