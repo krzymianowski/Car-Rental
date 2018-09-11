@@ -57,67 +57,72 @@
       </div>
     </div>
 
-    <form class="container pt-3">
+    <div class="container pt-3">
       <div class="row">
         <div class="col-md-3">
-
-          <div class="form-group">
-            <!-- <label>Type:</label> -->
-            <select class="form-control">
-              <option>All Types</option>
-              <option>Type 1</option>
-              <option>Type 2</option>
-              <option>Type 3</option>
-            </select>
+          <div class="dropdown">
+            <label>Type: </label>
+            <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button" data-toggle="dropdown">
+              <span class="prefix">Type: </span>All
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum,
+              repellat!">Item1</a>
+              <a class="dropdown-item" href="#" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum,
+              repellat!">Item2</a>
+              <a class="dropdown-item" href="#" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum,
+              repellat!">Item3</a>
+            </div>
           </div>
 
         </div>
 
         <div class="col-md-3">
-
-          <div class="form-group">
-            <!-- <label>Brand:</label> -->
-            <select class="form-control">
-              <option>All Brands</option>
-              <option>Brand 1</option>
-              <option>Brand 2</option>
-              <option>Brand 3</option>
-            </select>
+          <div class="dropdown">
+            <label>Brand: </label>
+            <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button" data-toggle="dropdown">
+              <span class="prefix">Brand: </span>All
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Type 1</a>
+              <a class="dropdown-item" href="#">Type 2</a>
+              <a class="dropdown-item" href="#">Type 3</a>
+            </div>
           </div>
-
         </div>
 
         <div class="col-md-3">
-
-          <div class="form-group">
-            <!-- <label>Model:</label> -->
-            <select class="form-control">
-              <option>Select Brand First!</option>
-              <option>Model 2</option>
-              <option>Model 3</option>
-            </select>
+          <div class="dropdown">
+            <label>Model: </label>
+            <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button" data-toggle="dropdown">
+              <span class="prefix">Model: </span>Select Brand
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Type 1</a>
+              <a class="dropdown-item" href="#">Type 2</a>
+              <a class="dropdown-item" href="#">Type 3</a>
+            </div>
           </div>
-
         </div>
 
         <div class="col-md-3">
-
-          <div class="form-group">
-            <!-- <label>Fuel Type:</label> -->
-            <select class="form-control">
-              <option>All Fuel Types</option>
-              <option>Fuel Type 1</option>
-              <option>Fuel Type 2</option>
-              <option>Fuel Type 3</option>
-            </select>
+          <div class="dropdown">
+            <label>Fuel Type: </label>
+            <button class="btn btn-white btn-block dropdown-toggle overflow-hidden" type="button" data-toggle="dropdown">
+              <span class="prefix">Fuel Type: </span>All
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Type 1</a>
+              <a class="dropdown-item" href="#">Type 2</a>
+              <a class="dropdown-item" href="#">Type 3</a>
+            </div>
           </div>
-
         </div>
 
       </div>
 
       <div class="row pt-5 ">
-        <div id="search-tabs" class="col-md-7">
+        <div id="search-tabs" class="col-md-8">
           <ul class="nav nav-tabs">
             <li class="nav-item">
               <a class="nav-link active" href="#">All
@@ -137,29 +142,21 @@
           </ul>
         </div>
 
-        <div class="col-md-2">
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-success btn-block btn-sm" type="submit">
-                Search
-              </button>
+        <div class="col-md-4">
+          <div class="dropdown">
+            <button class="btn btn-white btn-block btn-sm dropdown-toggle overflow-hidden" type="button" data-toggle="dropdown">
+              Sort by: Low Price
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Type 1</a>
+              <a class="dropdown-item" href="#">Type 2</a>
+              <a class="dropdown-item" href="#">Type 3</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-3">
-          <div class="form-group p-0 m-0">
-            <select class="form-control form-control-sm" id="gender">
-              <option>Sort by: Price</option>
-              <option>Type 2</option>
-              <option>Type 3</option>
-            </select>
-          </div>
-
-        </div>
-
       </div>
-    </form>
+    </div>
   </section>
 
 
@@ -438,6 +435,10 @@
   <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
+
+    // Init tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
   </script>
 </body>
 

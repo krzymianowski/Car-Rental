@@ -10,6 +10,9 @@ body {
     background: #162238;
     color: #fff; }
 
+.overflow-hidden {
+  overflow: hidden; }
+
 .btn-white {
   background: white;
   border: #dee2e6 1px solid; }
@@ -20,6 +23,8 @@ body {
     margin-bottom: -1px; }
     #search-settings #search-tabs .nav {
       border-bottom: none !important; }
+  #search-settings .dropdown .prefix {
+    display: none; }
 
 #cars {
   min-height: 70vh; }
@@ -33,7 +38,11 @@ body {
 @media (max-width: 767.98px) {
   #search-settings #search-tabs {
     margin-top: 1rem;
-    order: 3; } }
+    order: 3; }
+  #search-settings .dropdown label {
+    display: none; }
+  #search-settings .dropdown .prefix {
+    display: inline; } }
 @media (max-width: 380px) {
   #search-tabs .nav-item .nav-link {
     padding-left: 10px;

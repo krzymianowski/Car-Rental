@@ -1,5 +1,9 @@
 @import "style.scss";
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .btn-white {
   background: white;
   border: $border-gray 1px solid;
@@ -12,6 +16,12 @@
     margin-bottom: -1px;
     .nav {
       border-bottom: none !important;
+    }
+  }
+
+  .dropdown {
+    .prefix {
+      display: none;
     }
   }
 }
@@ -34,6 +44,16 @@
     #search-tabs {
       margin-top: 1rem;
       order: 3;
+    }
+
+    .dropdown {
+      label {
+        display: none;
+      }
+
+      .prefix {
+        display: inline;
+      }
     }
   }
 }
