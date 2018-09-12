@@ -12,7 +12,7 @@ public interface CarService {
 
     List<HomePageCar> getHomePageCars();
 
-    Page<OurCarsPageCar> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, int page);
+    Page<OurCarsPageCar> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, String carState, int page);
 
     long getNumberOfCars();
 

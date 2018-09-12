@@ -26,6 +26,7 @@ public class OurCarsController {
     private static final String DEFAULT_FUEL = "All";
     private static final String DEFAULT_SORT = "price";
     private static final String DEFAULT_DIR = "desc";
+    private static final String DEFAULT_STATE = "All";
 
     // dependencies
     private final CarService carService;
@@ -52,6 +53,7 @@ public class OurCarsController {
             @RequestParam(name = "fuel", defaultValue = DEFAULT_FUEL) String carFuelType,
             @RequestParam(name = "sort", defaultValue = DEFAULT_SORT) String sortBy,
             @RequestParam(name = "dir", defaultValue = DEFAULT_DIR) String sortDirection,
+            @RequestParam(name = "state", defaultValue = DEFAULT_STATE) String carState,
             Model model) {
 
         // Check for negative page
@@ -62,7 +64,7 @@ public class OurCarsController {
                 carType.toLowerCase(), carBrand.toLowerCase(),
                 carModel.toLowerCase(), carFuelType.toLowerCase(),
                 sortBy.toLowerCase(), sortDirection.toLowerCase(),
-                page - 1);
+                carState.toLowerCase(), page - 1);
 
         // Get list of cars from page
         List<OurCarsPageCar> content = pageCars.getContent();
@@ -85,6 +87,7 @@ public class OurCarsController {
         model.addAttribute("fuelParam", new Parameter(carFuelType, DEFAULT_FUEL, (carFuelType.toLowerCase().equals(DEFAULT_FUEL.toLowerCase()))));
         model.addAttribute("sortParam", new Parameter(sortBy, DEFAULT_SORT, (sortBy.toLowerCase().equals(DEFAULT_SORT.toLowerCase()))));
         model.addAttribute("dirParam", new Parameter(sortDirection, DEFAULT_DIR, (sortDirection.toLowerCase().equals(DEFAULT_DIR.toLowerCase()))));
+        model.addAttribute("stateParam", new Parameter(carState, DEFAULT_STATE, (carState.toLowerCase().equals(DEFAULT_STATE.toLowerCase()))));
 
         // Add cars list into model
         model.addAttribute("cars", content);

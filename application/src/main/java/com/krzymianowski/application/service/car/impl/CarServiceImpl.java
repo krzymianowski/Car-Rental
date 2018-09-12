@@ -38,7 +38,8 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Page<OurCarsPageCar> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType, String sortBy, String sortDirection, int pageNr) {
+    public Page<OurCarsPageCar> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType,
+                                                   String sortBy, String sortDirection, String carState, int pageNr) {
         PageRequest page = PageRequest.of(pageNr, 10, sortOrder(sortBy, sortDirection));
         Class<OurCarsPageCar> tClass = OurCarsPageCar.class;
 
