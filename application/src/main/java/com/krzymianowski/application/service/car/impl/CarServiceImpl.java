@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 @Service
@@ -41,7 +42,6 @@ public class CarServiceImpl implements CarService {
     public Page<OurCarsPageCar> getOurCarsPageCars(String carType, String carBrand, String carModel, String carFuelType,
                                                    String sortBy, String sortDirection, String carState, int pageNr) {
         PageRequest page = PageRequest.of(pageNr, 10, sortOrder(sortBy, sortDirection));
-        Class<OurCarsPageCar> tClass = OurCarsPageCar.class;
 
         boolean sType = (!carType.equals("") && !carType.equals("all"));
         boolean sBrand = (!carBrand.equals("") && !carBrand.equals("all"));
@@ -49,60 +49,13 @@ public class CarServiceImpl implements CarService {
         boolean sFuel = (!carFuelType.equals("") && !carFuelType.equals("all"));
         boolean sState = (!carState.equals("") && !carState.equals("all"));
 
-        if (sState)
-            if (sFuel)
-                if (sType)
-                    if (sBrand)
-                        if (sModel)
-                            return carRepository.getBrandModelTypeFuelState(carBrand, carModel, carType, carFuelType, carState, page, tClass);
-                        else
-                            return carRepository.getBrandTypeFuelState(carBrand, carType, carFuelType, carState, page, tClass);
-                    else return carRepository.getTypeFuelState(carType, carFuelType, carState, page, tClass);
-                else if (sBrand)
-                    if (sModel)
-                        return carRepository.getBrandModelFuelState(carBrand, carModel, carFuelType, carState, page, tClass);
-                    else return carRepository.getBrandFuelState(carBrand, carFuelType, carState, page, tClass);
-                else return carRepository.getFuelState(carFuelType, carState, page, tClass);
-            else if (sType)
-                if (sBrand)
-                    if (sModel)
-                        return carRepository.getBrandModelTypeState(carBrand, carModel, carType, carState, page, tClass);
-                    else return carRepository.getBrandTypeState(carBrand, carType, carState, page, tClass);
-                else return carRepository.getTypeState(carType, carState, page, tClass);
-            else if (sBrand)
-                if (sModel)
-                    return carRepository.getBrandModelState(carBrand, carModel, carState, page, tClass);
-                else return carRepository.getBrandState(carBrand, carState, page, tClass);
-            else return carRepository.getState(carState, page, tClass);
-
-
-        if (sFuel)
-            if (sType)
-                if (sBrand)
-                    if (sModel)
-                        return carRepository.getBrandModelTypeFuel(carBrand, carModel, carType, carFuelType, page, tClass);
-                    else return carRepository.getBrandTypeFuel(carBrand, carType, carFuelType, page, tClass);
-                else return carRepository.getTypeFuel(carType, carFuelType, page, tClass);
-            else if (sBrand)
-                if (sModel)
-                    return carRepository.getBrandModelFuel(carBrand, carModel, carFuelType, page, tClass);
-                else return carRepository.getBrandFuel(carBrand, carFuelType, page, tClass);
-            else return carRepository.getFuel(carFuelType, page, tClass);
-
-        if (sType)
-            if (sBrand)
-                if (sModel)
-                    return carRepository.getBrandModelType(carBrand, carModel, carType, page, tClass);
-                else return carRepository.getBrandType(carBrand, carType, page, tClass);
-            else return carRepository.getType(carType, page, tClass);
-
-        if (sBrand)
-            if (sModel)
-                return carRepository.getBrandModel(carBrand, carModel, page, tClass);
-            else return carRepository.getBrand(carBrand, page, tClass);
-
-        // Default
-        return carRepository.getAll(page, tClass);
+        return carRepository.searchForCars(
+                sBrand ? Optional.of(carBrand) : Optional.empty(),
+                sModel ? Optional.of(carModel) : Optional.empty(),
+                sType ? Optional.of(carType) : Optional.empty(),
+                sFuel ? Optional.of(carFuelType) : Optional.empty(),
+                sState ? Optional.of(carState) : Optional.empty(),
+                page, OurCarsPageCar.class);
     }
 
     @Override
