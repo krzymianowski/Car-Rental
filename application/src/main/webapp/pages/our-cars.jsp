@@ -88,6 +88,9 @@
                                     <c:if test="${!dirParam.equalsDefaultValue}">
                                         <c:param name="dir" value="${dirParam.value}"/>
                                     </c:if>
+                                    <c:if test="${!stateParam.equalsDefaultValue}">
+                                        <c:param name="state" value="${stateParam.value}"/>
+                                    </c:if>
                                 </c:url>
                                 <a class="dropdown-item" href="${typeUrlAll}">Show All</a>
 
@@ -108,6 +111,9 @@
                                         </c:if>
                                         <c:if test="${!dirParam.equalsDefaultValue}">
                                             <c:param name="dir" value="${dirParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!stateParam.equalsDefaultValue}">
+                                            <c:param name="state" value="${stateParam.value}"/>
                                         </c:if>
                                     </c:url>
                                     <a class="dropdown-item" href="${typeUrl}" data-toggle="tooltip"
@@ -139,6 +145,9 @@
                                     <c:if test="${!dirParam.equalsDefaultValue}">
                                         <c:param name="dir" value="${dirParam.value}"/>
                                     </c:if>
+                                    <c:if test="${!stateParam.equalsDefaultValue}">
+                                        <c:param name="state" value="${stateParam.value}"/>
+                                    </c:if>
                                 </c:url>
                                 <a class="dropdown-item" href="${brandUrlAll}">Show All</a>
 
@@ -156,6 +165,9 @@
                                         </c:if>
                                         <c:if test="${!dirParam.equalsDefaultValue}">
                                             <c:param name="dir" value="${dirParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!stateParam.equalsDefaultValue}">
+                                            <c:param name="state" value="${stateParam.value}"/>
                                         </c:if>
                                     </c:url>
                                     <a class="dropdown-item" href="${brandUrl}">${brand.brandName}</a>
@@ -188,6 +200,9 @@
                                     <c:if test="${!dirParam.equalsDefaultValue}">
                                         <c:param name="dir" value="${dirParam.value}"/>
                                     </c:if>
+                                    <c:if test="${!stateParam.equalsDefaultValue}">
+                                        <c:param name="state" value="${stateParam.value}"/>
+                                    </c:if>
                                 </c:url>
                                 <a class="dropdown-item" href="${modelUrlAll}">Show All</a>
 
@@ -208,6 +223,9 @@
                                         </c:if>
                                         <c:if test="${!dirParam.equalsDefaultValue}">
                                             <c:param name="dir" value="${dirParam.value}"/>
+                                        </c:if>
+                                        <c:if test="${!stateParam.equalsDefaultValue}">
+                                            <c:param name="state" value="${stateParam.value}"/>
                                         </c:if>
                                     </c:url>
                                     <a class="dropdown-item" href="${modelUrl}">${model.modelName}</a>
@@ -240,6 +258,9 @@
                                     <c:if test="${!dirParam.equalsDefaultValue}">
                                         <c:param name="dir" value="${dirParam.value}"/>
                                     </c:if>
+                                    <c:if test="${!stateParam.equalsDefaultValue}">
+                                        <c:param name="state" value="${stateParam.value}"/>
+                                    </c:if>
                                 </c:url>
                                 <a class="dropdown-item" href="${fuelUrlAll}">Show All</a>
 
@@ -261,6 +282,9 @@
                                         <c:if test="${!dirParam.equalsDefaultValue}">
                                             <c:param name="dir" value="${dirParam.value}"/>
                                         </c:if>
+                                        <c:if test="${!stateParam.equalsDefaultValue}">
+                                            <c:param name="state" value="${stateParam.value}"/>
+                                        </c:if>
                                     </c:url>
                                     <a class="dropdown-item" href="${fuelUrl}">${fuel.fuelTypeName}</a>
                                 </c:forEach>
@@ -273,17 +297,89 @@
                     <div id="search-tabs" class="col-md-8">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">All
+                                <c:url var="allUrl" value="/our-cars">
+                                    <c:if test="${!typeParam.equalsDefaultValue}">
+                                        <c:param name="type" value="${typeParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!brandParam.equalsDefaultValue}">
+                                        <c:param name="brand" value="${brandParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!modelParam.equalsDefaultValue}">
+                                        <c:param name="model" value="${modelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!fuelParam.equalsDefaultValue}">
+                                        <c:param name="fuel" value="${fuelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.equalsDefaultValue}">
+                                        <c:param name="sort" value="${sortParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.equalsDefaultValue}">
+                                        <c:param name="dir" value="${dirParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!stateParam.defaultValue.equals('All')}">
+                                        <c:param name="state" value="All"/>
+                                    </c:if>
+                                </c:url>
+                                <a class="nav-link ${stateParam.value.toLowerCase().equals('all') ? 'active' : ''}"
+                                   href="${allUrl}">All
                                     <span class="badge badge-success ml-1 d-none d-md-inline-flex ">${all_results}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Available
+                                <c:url var="availableUrl" value="/our-cars">
+                                    <c:if test="${!typeParam.equalsDefaultValue}">
+                                        <c:param name="type" value="${typeParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!brandParam.equalsDefaultValue}">
+                                        <c:param name="brand" value="${brandParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!modelParam.equalsDefaultValue}">
+                                        <c:param name="model" value="${modelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!fuelParam.equalsDefaultValue}">
+                                        <c:param name="fuel" value="${fuelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.equalsDefaultValue}">
+                                        <c:param name="sort" value="${sortParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.equalsDefaultValue}">
+                                        <c:param name="dir" value="${dirParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!stateParam.defaultValue.equals('Available')}">
+                                        <c:param name="state" value="Available"/>
+                                    </c:if>
+                                </c:url>
+                                <a class="nav-link ${stateParam.value.toLowerCase().equals('available') ? 'active' : ''}"
+                                   href="${availableUrl}">Available
                                     <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">${available}</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Not Available
+                                <c:url var="notAvailableUrl" value="/our-cars">
+                                    <c:if test="${!typeParam.equalsDefaultValue}">
+                                        <c:param name="type" value="${typeParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!brandParam.equalsDefaultValue}">
+                                        <c:param name="brand" value="${brandParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!modelParam.equalsDefaultValue}">
+                                        <c:param name="model" value="${modelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!fuelParam.equalsDefaultValue}">
+                                        <c:param name="fuel" value="${fuelParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!sortParam.equalsDefaultValue}">
+                                        <c:param name="sort" value="${sortParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!dirParam.equalsDefaultValue}">
+                                        <c:param name="dir" value="${dirParam.value}"/>
+                                    </c:if>
+                                    <c:if test="${!stateParam.defaultValue.equals('Disabled')}">
+                                        <c:param name="state" value="Disabled"/>
+                                    </c:if>
+                                </c:url>
+                                <a class="nav-link ${stateParam.value.toLowerCase().equals('disabled') ? 'active' : ''}"
+                                   href="${notAvailableUrl}">Not Available
                                     <span class="badge badge-dark ml-1 d-none d-md-inline-flex ">${nonAvailable}</span>
                                 </a>
                             </li>
@@ -316,6 +412,9 @@
                                     <c:if test="${!dirParam.defaultValue.equals('asc')}">
                                         <c:param name="dir" value="asc"/>
                                     </c:if>
+                                    <c:if test="${!stateParam.equalsDefaultValue}">
+                                        <c:param name="state" value="${stateParam.value}"/>
+                                    </c:if>
                                 </c:url>
                                 <c:url var="sortByPriceDescUrl" value="/our-cars">
                                     <c:if test="${!typeParam.equalsDefaultValue}">
@@ -335,6 +434,9 @@
                                     </c:if>
                                     <c:if test="${!dirParam.defaultValue.equals('desc')}">
                                         <c:param name="dir" value="desc"/>
+                                    </c:if>
+                                    <c:if test="${!stateParam.equalsDefaultValue}">
+                                        <c:param name="state" value="${stateParam.value}"/>
                                     </c:if>
                                 </c:url>
                                 <a class="dropdown-item" href="${sortByPriceAscUrl}">Low price</a>
