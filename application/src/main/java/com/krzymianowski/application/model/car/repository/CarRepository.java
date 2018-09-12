@@ -122,4 +122,126 @@ public interface CarRepository extends CrudRepository<Car, Integer> {
     default <T> Page<T> getBrandModelType(String brand, String model, String type, Pageable pageable, Class<T> tClass) {
         return findByModel_brand_brandNameAndModel_ModelNameAndType_TypeName(brand, model, type, pageable, tClass);
     }
+
+    <T> Page<T> findByModel_brand_brandNameAndModel_ModelNameAndType_TypeNameAndFuelType_TypeNameAndState_StateName(
+            @Param("brandName") String brandName,
+            @Param("modelName") String modelName,
+            @Param("Type_typeName") String typeName,
+            @Param("FuelType_typeName") String fuelTypeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getBrandModelTypeFuelState(String brand, String model, String type, String fuel, String state, Pageable pageable, Class<T> tClass){
+        return findByModel_brand_brandNameAndModel_ModelNameAndType_TypeNameAndFuelType_TypeNameAndState_StateName(brand, model, type, fuel, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByModel_brand_brandNameAndType_TypeNameAndFuelType_TypeNameAndState_StateName(
+            @Param("brandName") String brandName,
+            @Param("Type_typeName") String typeName,
+            @Param("FuelType_typeName") String fuelTypeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getBrandTypeFuelState(String brand, String type, String fuel, String state, Pageable pageable, Class<T> tClass){
+        return findByModel_brand_brandNameAndType_TypeNameAndFuelType_TypeNameAndState_StateName(brand, type, fuel, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByType_TypeNameAndFuelType_TypeNameAndState_StateName(
+            @Param("Type_typeName") String typeName,
+            @Param("FuelType_typeName") String fuelTypeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getTypeFuelState(String type, String fuel, String state, Pageable pageable, Class<T> tClass){
+        return findByType_TypeNameAndFuelType_TypeNameAndState_StateName(type, fuel, state, pageable, tClass);
+    }
+
+
+    <T> Page<T> findByModel_brand_brandNameAndModel_ModelNameAndFuelType_TypeNameAndState_StateName(
+            @Param("brandName") String brandName,
+            @Param("modelName") String modelName,
+            @Param("FuelType_typeName") String fuelTypeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getBrandModelFuelState(String brand, String model, String fuel, String state, Pageable pageable, Class<T> tClass){
+        return findByModel_brand_brandNameAndModel_ModelNameAndFuelType_TypeNameAndState_StateName(brand, model, fuel, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByModel_brand_brandNameAndFuelType_TypeNameAndState_StateName(
+            @Param("brandName") String brandName,
+            @Param("FuelType_typeName") String fuelTypeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getBrandFuelState(String brand, String fuel, String state, Pageable pageable, Class<T> tClass){
+        return findByModel_brand_brandNameAndFuelType_TypeNameAndState_StateName(brand, fuel, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByFuelType_TypeNameAndState_StateName(
+            @Param("FuelType_typeName") String fuelTypeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getFuelState(String fuel, String state, Pageable pageable, Class<T> tClass){
+        return findByFuelType_TypeNameAndState_StateName(fuel, state, pageable, tClass);
+    }
+
+
+    <T> Page<T> findByModel_brand_brandNameAndModel_ModelNameAndType_TypeNameAndState_StateName(
+            @Param("brandName") String brandName,
+            @Param("modelName") String modelName,
+            @Param("Type_typeName") String typeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getBrandModelTypeState(String brand, String model, String type, String state, Pageable pageable, Class<T> tClass){
+        return findByModel_brand_brandNameAndModel_ModelNameAndType_TypeNameAndState_StateName(brand, model, type, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByModel_brand_brandNameAndType_TypeNameAndState_StateName(
+            @Param("brandName") String brandName,
+            @Param("Type_typeName") String typeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getBrandTypeState(String brand, String type, String state, Pageable pageable, Class<T> tClass){
+        return findByModel_brand_brandNameAndType_TypeNameAndState_StateName(brand, type, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByType_TypeNameAndState_StateName(
+            @Param("Type_typeName") String typeName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getTypeState(String type, String state, Pageable pageable, Class<T> tClass){
+        return findByType_TypeNameAndState_StateName(type, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByModel_brand_brandNameAndModel_ModelNameAndState_StateName(
+            @Param("brandName") String brandName,
+            @Param("modelName") String modelName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getBrandModelState(String brand, String model, String state, Pageable pageable, Class<T> tClass){
+        return findByModel_brand_brandNameAndModel_ModelNameAndState_StateName(brand, model, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByModel_brand_brandNameAndState_StateName(
+            @Param("brandName") String brandName,
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getBrandState(String brand, String state, Pageable pageable, Class<T> tClass){
+        return findByModel_brand_brandNameAndState_StateName(brand, state, pageable, tClass);
+    }
+
+    <T> Page<T> findByState_StateName(
+            @Param("stateName") String stateName,
+            Pageable pageable, Class<T> type);
+
+    default <T> Page<T> getState(String state, Pageable pageable, Class<T> tClass){
+        return findByState_StateName(state, pageable, tClass);
+    }
 }
