@@ -47,6 +47,34 @@ public class CarServiceImpl implements CarService {
         boolean sBrand = (!carBrand.equals("") && !carBrand.equals("all"));
         boolean sModel = (!carModel.equals("") && !carModel.equals("all"));
         boolean sFuel = (!carFuelType.equals("") && !carFuelType.equals("all"));
+        boolean sState = (!carState.equals("") && !carState.equals("all"));
+
+        if (sState)
+            if (sFuel)
+                if (sType)
+                    if (sBrand)
+                        if (sModel)
+                            return carRepository.getBrandModelTypeFuelState(carBrand, carModel, carType, carFuelType, carState, page, tClass);
+                        else
+                            return carRepository.getBrandTypeFuelState(carBrand, carType, carFuelType, carState, page, tClass);
+                    else return carRepository.getTypeFuelState(carType, carFuelType, carState, page, tClass);
+                else if (sBrand)
+                    if (sModel)
+                        return carRepository.getBrandModelFuelState(carBrand, carModel, carFuelType, carState, page, tClass);
+                    else return carRepository.getBrandFuelState(carBrand, carFuelType, carState, page, tClass);
+                else return carRepository.getFuelState(carFuelType, carState, page, tClass);
+            else if (sType)
+                if (sBrand)
+                    if (sModel)
+                        return carRepository.getBrandModelTypeState(carBrand, carModel, carType, carState, page, tClass);
+                    else return carRepository.getBrandTypeState(carBrand, carType, carState, page, tClass);
+                else return carRepository.getTypeState(carType, carState, page, tClass);
+            else if (sBrand)
+                if (sModel)
+                    return carRepository.getBrandModelState(carBrand, carModel, carState, page, tClass);
+                else return carRepository.getBrandState(carBrand, carState, page, tClass);
+            else return carRepository.getState(carState, page, tClass);
+
 
         if (sFuel)
             if (sType)
