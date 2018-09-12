@@ -18,38 +18,40 @@ import java.util.List;
 @Controller
 public class OurCarsController {
 
-    private final String defaultPage = "1";
-    private final String defaultType = "All";
-    private final String defaultBrand = "All";
-    private final String defaultModel = "All";
-    private final String defaultFuel = "All";
-    private final String defaultSort = "price";
-    private final String defaultDir = "desc";
+    // default request parameters value
+    private static final String DEFAULT_PAGE = "1";
+    private static final String DEFAULT_TYPE = "All";
+    private static final String DEFAULT_BRAND = "All";
+    private static final String DEFAULT_MODEL = "All";
+    private static final String DEFAULT_FUEL = "All";
+    private static final String DEFAULT_SORT = "price";
+    private static final String DEFAULT_DIR = "desc";
+
+    // dependencies
+    private final CarService carService;
+    private final TypeService typeService;
+    private final BrandService brandService;
+    private final ModelService modelService;
+    private final FuelTypeService fuelTypeService;
 
     @Autowired
-    private CarService carService;
-
-    @Autowired
-    private TypeService typeService;
-
-    @Autowired
-    private BrandService brandService;
-
-    @Autowired
-    private ModelService modelService;
-
-    @Autowired
-    private FuelTypeService fuelTypeService;
+    public OurCarsController(CarService carService, TypeService typeService, BrandService brandService, ModelService modelService, FuelTypeService fuelTypeService) {
+        this.carService = carService;
+        this.typeService = typeService;
+        this.brandService = brandService;
+        this.modelService = modelService;
+        this.fuelTypeService = fuelTypeService;
+    }
 
     @RequestMapping("/our-cars")
     public String showOurCarsPage(
-            @RequestParam(name = "page", defaultValue = defaultPage) int page,
-            @RequestParam(name = "type", defaultValue = defaultType) String carType,
-            @RequestParam(name = "brand", defaultValue = defaultBrand) String carBrand,
-            @RequestParam(name = "model", defaultValue = defaultModel) String carModel,
-            @RequestParam(name = "fuel", defaultValue = defaultFuel) String carFuelType,
-            @RequestParam(name = "sort", defaultValue = defaultSort) String sortBy,
-            @RequestParam(name = "dir", defaultValue = defaultDir) String sortDirection,
+            @RequestParam(name = "page", defaultValue = DEFAULT_PAGE) int page,
+            @RequestParam(name = "type", defaultValue = DEFAULT_TYPE) String carType,
+            @RequestParam(name = "brand", defaultValue = DEFAULT_BRAND) String carBrand,
+            @RequestParam(name = "model", defaultValue = DEFAULT_MODEL) String carModel,
+            @RequestParam(name = "fuel", defaultValue = DEFAULT_FUEL) String carFuelType,
+            @RequestParam(name = "sort", defaultValue = DEFAULT_SORT) String sortBy,
+            @RequestParam(name = "dir", defaultValue = DEFAULT_DIR) String sortDirection,
             Model model) {
 
         // Check for negative page
@@ -76,13 +78,13 @@ public class OurCarsController {
         model.addAttribute("nonAvailable", nonAvailable);
 
         // Add request parameters into model (check if param is equals its default value and add result into model)
-        model.addAttribute("pageParam", new Parameter("" + page, defaultPage, ("" + page).toLowerCase().equals(defaultPage.toLowerCase())));
-        model.addAttribute("typeParam", new Parameter(carType, defaultType, carType.toLowerCase().equals(defaultType.toLowerCase())));
-        model.addAttribute("brandParam", new Parameter(carBrand, defaultBrand, carBrand.toLowerCase().equals(defaultBrand.toLowerCase())));
-        model.addAttribute("modelParam", new Parameter(carModel, defaultModel, carModel.toLowerCase().equals(defaultModel.toLowerCase())));
-        model.addAttribute("fuelParam", new Parameter(carFuelType, defaultFuel, (carFuelType.toLowerCase().equals(defaultFuel.toLowerCase()))));
-        model.addAttribute("sortParam", new Parameter(sortBy, defaultSort, (sortBy.toLowerCase().equals(defaultSort.toLowerCase()))));
-        model.addAttribute("dirParam", new Parameter(sortDirection, defaultDir, (sortDirection.toLowerCase().equals(defaultDir.toLowerCase()))));
+        model.addAttribute("pageParam", new Parameter("" + page, DEFAULT_PAGE, ("" + page).toLowerCase().equals(DEFAULT_PAGE.toLowerCase())));
+        model.addAttribute("typeParam", new Parameter(carType, DEFAULT_TYPE, carType.toLowerCase().equals(DEFAULT_TYPE.toLowerCase())));
+        model.addAttribute("brandParam", new Parameter(carBrand, DEFAULT_BRAND, carBrand.toLowerCase().equals(DEFAULT_BRAND.toLowerCase())));
+        model.addAttribute("modelParam", new Parameter(carModel, DEFAULT_MODEL, carModel.toLowerCase().equals(DEFAULT_MODEL.toLowerCase())));
+        model.addAttribute("fuelParam", new Parameter(carFuelType, DEFAULT_FUEL, (carFuelType.toLowerCase().equals(DEFAULT_FUEL.toLowerCase()))));
+        model.addAttribute("sortParam", new Parameter(sortBy, DEFAULT_SORT, (sortBy.toLowerCase().equals(DEFAULT_SORT.toLowerCase()))));
+        model.addAttribute("dirParam", new Parameter(sortDirection, DEFAULT_DIR, (sortDirection.toLowerCase().equals(DEFAULT_DIR.toLowerCase()))));
 
         // Add cars list into model
         model.addAttribute("cars", content);
