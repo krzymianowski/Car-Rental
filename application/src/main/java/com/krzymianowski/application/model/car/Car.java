@@ -45,6 +45,10 @@ public class Car {
     private String fullDescription;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "driving_gear_id")
+    private DrivingGear drivingGear;
+
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "transmission_id")
     private Transmission transmission;
 
