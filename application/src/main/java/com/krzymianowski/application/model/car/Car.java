@@ -48,6 +48,10 @@ public class Car {
     @Column(name = "full_description")
     private String fullDescription;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "rating_id")
+    private Rating rating;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "model_id")
     private Model model;
