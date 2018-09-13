@@ -34,13 +34,16 @@ public class InitTempData {
     @Autowired
     private CarService carService;
 
+    @Autowired
+    private TransmissionService transmissionService;
+
     public void initDatabaseItems() {
-        CreateCar(230, "2.3 TDI", 210d, "Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
-        CreateCar(120, "4.0 ecopower", 124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
-        CreateCar(180, "Potato 2.0", 238.8d, "Available", "Black", "PB-98", "SUV", "A4", "Audi", new ArrayList<>());
+        CreateCar("Manual", 230, "2.3 TDI", 210d, "Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
+        CreateCar("Automat", 120, "4.0 ecopower", 124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
+        CreateCar("Manual", 180, "Potato 2.0", 238.8d, "Available", "Black", "PB-98", "SUV", "A4", "Audi", new ArrayList<>());
     }
 
-    private void CreateCar(int hp, String engine, double rentPrice, String statusName, String colorName, String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames) {
+    private void CreateCar(String transName, int hp, String engine, double rentPrice, String statusName, String colorName, String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames) {
         State state = getState(statusName, "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
 
         Color color = getColor(colorName);
@@ -52,6 +55,8 @@ public class InitTempData {
         Model model = getModel(modelName, brandName);
 
         List<Image> images = getImages(imagesNames);
+
+        Transmission transmission = getTransmission(transName);
 
         Car car = Car.builder()
                 .model(model)
@@ -67,10 +72,35 @@ public class InitTempData {
                 .images(images)
                 .horsePower(hp)
                 .engine(engine)
+                .rating(Rating.builder().economy(4).comfort(3).power(5).build())
+                .fullDescription("BMW Series 4, XDrive <br> Gran Coupe Hatchback <br> naped na 4 kola <br> Model MSport <br> 245KM <br> mozliwosc" +
+                        "jazdy w 3 trybach: normal, sport (jazda dynamiczna) i economy (tryb oszczedzania paliwa) <br> kolor: biel alpejska" +
+                        "+ czarna folia carbo na dachu i lusterkach<br> kola 19\" obrecze ze stopu lekkiego<br> opony RunFlat<br> manualna" +
+                        "skrzynia biegow<br> wnetrze: skora Sensatec kolor czarny + listwy wykonczeniowe carbon aluminium z elemenami niebieskimi" +
+                        "<br> podgrzewana sportowa kierownica<br> podgrzewane sportowe fotele przednie<br> pakiet dodatkowych schowkow i" +
+                        "uchwytow na napoje<br> doskonaly dzwiek dzieki zestawowi HI FI Harman Kardon Surround Sound<br> Head UP" +
+                        "<br> Nawigacja" +
+                        "<br> Bluetooth, mozliwosc zintegrowania telefonu z systemem glosnomowiacym<br> BMW Connected Drive Advanced<br>" +
+                        "<br> Przyciemniana szyba tylna oraz tylne szyby boczne<br> Czujnik parkowania przodu i tylu<br> Kamera cofania<br>Tempomat" +
+                        "<br> Czujnik deszczu<br><br> Samochod zakupiony w salonie w Polsce i serwisowany w BMW - ostatni przeglad - sierpien'18" +
+                        "<br> Jeden wlasciel, bezwypadkowy<br> Garazowany" +
+                        "<br> Auto bardzo dynamiczne i znakomicie trzymajace sie drogi<br> Malo uzywany, przebieg 31 000 km<br>")
+                .transmission(transmission)
                 .build();
 
         carService.save(car);
     }
+
+    private Transmission getTransmission(String transmissionName) {
+        Transmission transmission = transmissionService.getTransmissionByTransmissionName(transmissionName);
+
+        if (transmission == null) {
+            transmission = Transmission.builder().transmissionName(transmissionName).build();
+            transmissionService.save(transmission);
+        }
+        return transmission;
+    }
+
 
     private List<Image> getImages(List<String> images) {
         List<Image> tempImages = new ArrayList<>();
