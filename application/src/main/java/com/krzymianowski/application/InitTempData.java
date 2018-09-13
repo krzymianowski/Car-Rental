@@ -40,13 +40,24 @@ public class InitTempData {
     @Autowired
     private DrivingGearService drivingGearService;
 
+    @Autowired
+    private EquipmentService equipmentService;
+
     public void initDatabaseItems() {
-        CreateCar("Manual", 230, "2.3 TDI", 210d, "Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
-        CreateCar("Automat", 120, "4.0 ecopower", 124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
-        CreateCar("Manual", 180, "Potato 2.0", 238.8d, "Available", "Black", "PB-98", "SUV", "A4", "Audi", new ArrayList<>());
+        CreateCar("Manual", 230, "2.3 TDI", 210d, "Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi",
+                Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"),
+                Arrays.asList("ABS", "ASR", "ESP"));
+        CreateCar("Automat", 120, "4.0 ecopower", 124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes",
+                Arrays.asList("temp-car.jpg", "temp-car-5.jpg"),
+                Arrays.asList("ABS", "ASR", "ESP"));
+        CreateCar("Manual", 180, "Potato 2.0", 238.8d, "Available", "Black", "PB-98", "SUV", "A4", "Audi",
+                new ArrayList<>(), Arrays.asList("ABS", "ASR", "Kotek", "Czupakabra"));
     }
 
-    private void CreateCar(String transName, int hp, String engine, double rentPrice, String statusName, String colorName, String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames) {
+    private void CreateCar(
+            String transName, int hp, String engine, double rentPrice, String statusName, String colorName,
+            String fuelTypeName, String typeName, String modelName, String brandName, List<String> imagesNames,
+            List<String> equipmentNames) {
         State state = getState(statusName, "Lorem ipsum dolor, sit amet consectetur adipisicing elit.");
 
         Color color = getColor(colorName);
@@ -58,6 +69,8 @@ public class InitTempData {
         Model model = getModel(modelName, brandName);
 
         List<Image> images = getImages(imagesNames);
+
+        List<Equipment> equipment = getEquipment(equipmentNames);
 
         Transmission transmission = getTransmission(transName);
 
@@ -75,6 +88,7 @@ public class InitTempData {
                 .fuelCondition(0.5f)
                 .rentPrice(rentPrice)
                 .images(images)
+                .equipment(equipment)
                 .horsePower(hp)
                 .engine(engine)
                 .rating(Rating.builder().economy(4).comfort(3).power(5).build())
@@ -96,6 +110,22 @@ public class InitTempData {
 
         carService.save(car);
     }
+
+
+    private List<Equipment> getEquipment(List<String> items) {
+        List<Equipment> tempItems = new ArrayList<>();
+        for (String itemName : items) {
+            Equipment equipment = equipmentService.getEquipmentByItemName(itemName);
+
+            if (equipment == null) {
+                equipment = Equipment.builder().itemName(itemName).build();
+                equipmentService.save(equipment);
+            }
+            tempItems.add(equipment);
+        }
+        return tempItems;
+    }
+
 
     private DrivingGear getDrivingGear(String drivingGearName) {
         DrivingGear drivingGear = drivingGearService.getDrivingGearByDrivingGearName(drivingGearName);
