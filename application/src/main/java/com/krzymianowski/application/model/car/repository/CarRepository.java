@@ -1,6 +1,7 @@
 package com.krzymianowski.application.model.car.repository;
 
 import com.krzymianowski.application.model.car.Car;
+import com.krzymianowski.application.model.car.projection.CarDetailsPageCar;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
@@ -32,4 +33,6 @@ public interface CarRepository extends CrudRepository<Car, Integer> {
             @Param("stateName") Optional<String> stateName,
             Pageable pageable, Class<T> tClass
     );
+
+    CarDetailsPageCar findAllById(int carId);
 }
