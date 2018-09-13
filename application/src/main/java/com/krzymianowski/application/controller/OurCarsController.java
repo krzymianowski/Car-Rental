@@ -78,6 +78,7 @@ public class OurCarsController {
         model.addAttribute("all_results", total);
         model.addAttribute("available", available);
         model.addAttribute("nonAvailable", nonAvailable);
+        model.addAttribute("allPages", pageCars.getTotalPages());
 
         // Add request parameters into model (check if param is equals its default value and add result into model)
         model.addAttribute("pageParam", new Parameter("" + page, DEFAULT_PAGE, ("" + page).toLowerCase().equals(DEFAULT_PAGE.toLowerCase())));
