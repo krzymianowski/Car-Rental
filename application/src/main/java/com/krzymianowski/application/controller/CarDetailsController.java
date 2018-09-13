@@ -15,7 +15,7 @@ public class CarDetailsController {
 
     @RequestMapping("/car-details/{carId}")
     public String showCarDetailsPage(@PathVariable("carId") int carId, Model model) {
-        model.addAttribute(carService.getCarDetails(carId));
+        model.addAttribute("car", carService.getCarDetails(carId));
         return "car-details";
     }
 }
