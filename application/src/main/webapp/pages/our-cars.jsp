@@ -507,16 +507,140 @@
             </div>
         </section>
 
-        <!-- PAGINATOR -->
-        <section id="paginator" class="text-center py-3">
-            <div class="container bg-success"></div>
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
+        <!-- PAGINATION -->
+        <section id="pagination" class="text-center py-3">
+            <nav aria-label="pagination" class="${allPages==0 ? 'd-none' : ''}">
+                <ul class="pagination mb-0 justify-content-center">
+
+                    <c:url var="previousPageUrl" value="/our-cars">
+                        <c:if test="${!typeParam.equalsDefaultValue}">
+                            <c:param name="type" value="${typeParam.value}"/>
+                        </c:if>
+                        <c:if test="${!brandParam.equalsDefaultValue}">
+                            <c:param name="brand" value="${brandParam.value}"/>
+                        </c:if>
+                        <c:if test="${!modelParam.equalsDefaultValue}">
+                            <c:param name="model" value="${modelParam.value}"/>
+                        </c:if>
+                        <c:if test="${!fuelParam.equalsDefaultValue}">
+                            <c:param name="fuel" value="${fuelParam.value}"/>
+                        </c:if>
+                        <c:if test="${!sortParam.equalsDefaultValue}">
+                            <c:param name="sort" value="${sortParam.value}"/>
+                        </c:if>
+                        <c:if test="${!dirParam.equalsDefaultValue}">
+                            <c:param name="dir" value="${dirParam.value}"/>
+                        </c:if>
+                        <c:if test="${!stateParam.equalsDefaultValue}">
+                            <c:param name="state" value="${stateParam.value}"/>
+                        </c:if>
+                        <c:param name="page" value="${pageParam.value-1}"/>
+                    </c:url>
+                    <!--Arrow left-->
+                    <li class="page-item d-sm-none ${pageParam.value.equals('1') ? 'disabled' : ''}">
+                        <a class="page-link" aria-label="Previous" href="${previousPageUrl}">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+
+                    <!--Numbers-->
+                    <li class="page-item d-none d-sm-block ${pageParam.value.equals('1') ? 'disabled' : ''}"><a
+                            class="page-link" href="${previousPageUrl}">Previous</a></li>
+
+                    <c:forEach var="i" begin="1" end="${allPages}">
+                        <c:url var="pageUrl" value="/our-cars">
+                            <c:if test="${!typeParam.equalsDefaultValue}">
+                                <c:param name="type" value="${typeParam.value}"/>
+                            </c:if>
+                            <c:if test="${!brandParam.equalsDefaultValue}">
+                                <c:param name="brand" value="${brandParam.value}"/>
+                            </c:if>
+                            <c:if test="${!modelParam.equalsDefaultValue}">
+                                <c:param name="model" value="${modelParam.value}"/>
+                            </c:if>
+                            <c:if test="${!fuelParam.equalsDefaultValue}">
+                                <c:param name="fuel" value="${fuelParam.value}"/>
+                            </c:if>
+                            <c:if test="${!sortParam.equalsDefaultValue}">
+                                <c:param name="sort" value="${sortParam.value}"/>
+                            </c:if>
+                            <c:if test="${!dirParam.equalsDefaultValue}">
+                                <c:param name="dir" value="${dirParam.value}"/>
+                            </c:if>
+                            <c:if test="${!stateParam.equalsDefaultValue}">
+                                <c:param name="state" value="${stateParam.value}"/>
+                            </c:if>
+                            <c:param name="page" value="${i}"/>
+                        </c:url>
+                        <li class="page-item ${pageParam.value.equals(i.toString()) ? 'active' : ''}">
+                            <a class="page-link" href="${pageUrl}">${i}</a></li>
+                    </c:forEach>
+                    <li class="page-item disabled"><a class="page-link">...</a></li>
+                    <c:url var="lastPageUrl" value="/our-cars">
+                        <c:if test="${!typeParam.equalsDefaultValue}">
+                            <c:param name="type" value="${typeParam.value}"/>
+                        </c:if>
+                        <c:if test="${!brandParam.equalsDefaultValue}">
+                            <c:param name="brand" value="${brandParam.value}"/>
+                        </c:if>
+                        <c:if test="${!modelParam.equalsDefaultValue}">
+                            <c:param name="model" value="${modelParam.value}"/>
+                        </c:if>
+                        <c:if test="${!fuelParam.equalsDefaultValue}">
+                            <c:param name="fuel" value="${fuelParam.value}"/>
+                        </c:if>
+                        <c:if test="${!sortParam.equalsDefaultValue}">
+                            <c:param name="sort" value="${sortParam.value}"/>
+                        </c:if>
+                        <c:if test="${!dirParam.equalsDefaultValue}">
+                            <c:param name="dir" value="${dirParam.value}"/>
+                        </c:if>
+                        <c:if test="${!stateParam.equalsDefaultValue}">
+                            <c:param name="state" value="${stateParam.value}"/>
+                        </c:if>
+                        <c:param name="page" value="${allPages}"/>
+                    </c:url>
+                    <li class="page-item ${pageParam.value.equals(allPages.toString()) ? 'disabled' : ''}"><a
+                            class="page-link" href="${lastPageUrl}">${allPages}</a></li>
+
+                    <c:url var="nextPageUrl" value="/our-cars">
+                        <c:if test="${!typeParam.equalsDefaultValue}">
+                            <c:param name="type" value="${typeParam.value}"/>
+                        </c:if>
+                        <c:if test="${!brandParam.equalsDefaultValue}">
+                            <c:param name="brand" value="${brandParam.value}"/>
+                        </c:if>
+                        <c:if test="${!modelParam.equalsDefaultValue}">
+                            <c:param name="model" value="${modelParam.value}"/>
+                        </c:if>
+                        <c:if test="${!fuelParam.equalsDefaultValue}">
+                            <c:param name="fuel" value="${fuelParam.value}"/>
+                        </c:if>
+                        <c:if test="${!sortParam.equalsDefaultValue}">
+                            <c:param name="sort" value="${sortParam.value}"/>
+                        </c:if>
+                        <c:if test="${!dirParam.equalsDefaultValue}">
+                            <c:param name="dir" value="${dirParam.value}"/>
+                        </c:if>
+                        <c:if test="${!stateParam.equalsDefaultValue}">
+                            <c:param name="state" value="${stateParam.value}"/>
+                        </c:if>
+                        <c:param name="page" value="${pageParam.value+1}"/>
+                    </c:url>
+                    <li class="page-item d-none d-sm-block ${pageParam.value.equals(allPages.toString()) ? 'disabled' : ''}">
+                        <a class="page-link" href="${nextPageUrl}">Next</a></li>
+
+                    <!--Arrow right-->
+                    <li class="page-item d-sm-none ${pageParam.value.equals(allPages.toString()) ? 'disabled' : ''}">
+                        <a class="page-link" aria-label="Next" href="${nextPageUrl}">
+                            <span aria-hidden="true">&raquo;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
         </section>
 
         <!-- FOOTER -->
