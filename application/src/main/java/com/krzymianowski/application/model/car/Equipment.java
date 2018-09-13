@@ -3,9 +3,10 @@ package com.krzymianowski.application.model.car;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "car_equipment", uniqueConstraints = {@UniqueConstraint(columnNames = {"item_name"})})
+@Table(name = "equipment", uniqueConstraints = {@UniqueConstraint(columnNames = {"item_name"})})
 @Getter
 @Setter
 @NoArgsConstructor
@@ -24,4 +25,12 @@ public class Equipment {
     @Column(name = "item_description")
     private String itemDescription;
 
+
+    @ManyToMany
+    @JoinTable(
+            name = "car_equipment",
+            joinColumns = @JoinColumn(name = "equipment_id"),
+            inverseJoinColumns = @JoinColumn(name = "car_id")
+    )
+    private List<Car> cars;
 }

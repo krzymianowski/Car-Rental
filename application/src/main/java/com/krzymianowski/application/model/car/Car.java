@@ -66,8 +66,12 @@ public class Car {
     @JoinColumn(name = "rating_id")
     private Rating rating;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "car_id")
+    @ManyToMany
+    @JoinTable(
+            name = "car_equipment",
+            joinColumns = @JoinColumn(name = "car_id"),
+            inverseJoinColumns = @JoinColumn(name = "equipment_id")
+    )
     private List<Equipment> equipment;
 
     @ManyToOne(fetch = FetchType.EAGER)
