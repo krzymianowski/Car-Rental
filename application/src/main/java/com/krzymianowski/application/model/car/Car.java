@@ -45,6 +45,9 @@ public class Car {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "full_description")
+    private String fullDescription;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "model_id")
     private Model model;
