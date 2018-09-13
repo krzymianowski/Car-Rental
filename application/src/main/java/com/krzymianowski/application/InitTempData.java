@@ -37,6 +37,9 @@ public class InitTempData {
     @Autowired
     private TransmissionService transmissionService;
 
+    @Autowired
+    private DrivingGearService drivingGearService;
+
     public void initDatabaseItems() {
         CreateCar("Manual", 230, "2.3 TDI", 210d, "Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi", Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"));
         CreateCar("Automat", 120, "4.0 ecopower", 124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes", Arrays.asList("temp-car.jpg", "temp-car-5.jpg"));
@@ -57,6 +60,8 @@ public class InitTempData {
         List<Image> images = getImages(imagesNames);
 
         Transmission transmission = getTransmission(transName);
+
+        DrivingGear drivingGear = getDrivingGear("4x4");
 
         Car car = Car.builder()
                 .model(model)
@@ -86,10 +91,22 @@ public class InitTempData {
                         "<br> Jeden wlasciel, bezwypadkowy<br> Garazowany" +
                         "<br> Auto bardzo dynamiczne i znakomicie trzymajace sie drogi<br> Malo uzywany, przebieg 31 000 km<br>")
                 .transmission(transmission)
+                .drivingGear(drivingGear)
                 .build();
 
         carService.save(car);
     }
+
+    private DrivingGear getDrivingGear(String drivingGearName) {
+        DrivingGear drivingGear = drivingGearService.getDrivingGearByDrivingGearName(drivingGearName);
+
+        if (drivingGear == null) {
+            drivingGear = DrivingGear.builder().drivingGearName(drivingGearName).build();
+            drivingGearService.save(drivingGear);
+        }
+        return drivingGear;
+    }
+
 
     private Transmission getTransmission(String transmissionName) {
         Transmission transmission = transmissionService.getTransmissionByTransmissionName(transmissionName);
