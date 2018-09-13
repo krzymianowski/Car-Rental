@@ -42,10 +42,10 @@ public class Car {
     @JoinColumn(name = "car_id")
     private List<Image> images;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition="TEXT")
     private String description;
 
-    @Column(name = "full_description")
+    @Column(name = "full_description", columnDefinition="TEXT")
     private String fullDescription;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
