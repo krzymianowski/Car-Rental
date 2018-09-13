@@ -10,7 +10,7 @@ public interface OurCarsPageCar {
     @Value("#{target.model.brand.brandName} #{target.model.modelName}")
     String getFullName();
 
-    @Value("#{target.images.size() > 0 ? (target.id+'/'+target.images.get(0).url) : 'no-image.jpg'}")
+    @Value("#{target.images.size() > 0 ? ('/images/'+target.id+'/'+target.images.get(0).url) : '/images/no-image.jpg'}")
     String getImageUrl();
 
     @Value("#{target.color.colorName}")
