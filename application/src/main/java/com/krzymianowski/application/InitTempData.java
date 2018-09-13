@@ -5,10 +5,7 @@ import com.krzymianowski.application.service.car.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Component
 public class InitTempData {
@@ -81,6 +78,8 @@ public class InitTempData {
 
         DrivingGear drivingGear = getDrivingGear("4x4");
 
+        Random random = new Random();
+
         Car car = Car.builder()
                 .model(model)
                 .type(type)
@@ -97,7 +96,7 @@ public class InitTempData {
                 .equipment(equipment)
                 .horsePower(hp)
                 .engine(engine)
-                .rating(Rating.builder().economy(4).comfort(3).power(5).build())
+                .rating(Rating.builder().economy(random.nextInt(5)).comfort(random.nextInt(5)).power(random.nextInt(5)).build())
                 .fullDescription("BMW Series 4, XDrive <br> Gran Coupe Hatchback <br> naped na 4 kola <br> Model MSport <br> 245KM <br> mozliwosc" +
                         "jazdy w 3 trybach: normal, sport (jazda dynamiczna) i economy (tryb oszczedzania paliwa) <br> kolor: biel alpejska" +
                         "+ czarna folia carbo na dachu i lusterkach<br> kola 19\" obrecze ze stopu lekkiego<br> opony RunFlat<br> manualna" +
