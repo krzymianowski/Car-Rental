@@ -48,6 +48,10 @@ public class Car {
     @Column(name = "full_description", columnDefinition="TEXT")
     private String fullDescription;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "transmission_id")
+    private Transmission transmission;
+
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "rating_id")
     private Rating rating;
