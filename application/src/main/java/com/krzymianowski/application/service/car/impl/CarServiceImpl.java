@@ -1,6 +1,7 @@
 package com.krzymianowski.application.service.car.impl;
 
 import com.krzymianowski.application.model.car.Car;
+import com.krzymianowski.application.model.car.projection.CarDetailsPageCar;
 import com.krzymianowski.application.model.car.projection.HomePageCar;
 import com.krzymianowski.application.model.car.projection.OurCarsPageCar;
 import com.krzymianowski.application.model.car.repository.CarRepository;
@@ -66,6 +67,11 @@ public class CarServiceImpl implements CarService {
     @Override
     public long getNumberOfAvailableCars() {
         return carRepository.countByState_StateName("Available");
+    }
+
+    @Override
+    public CarDetailsPageCar getCarDetails(int carId) {
+        return carRepository.findAllById(carId);
     }
 
     private Sort sortOrder(String sortBy, String direction) {
