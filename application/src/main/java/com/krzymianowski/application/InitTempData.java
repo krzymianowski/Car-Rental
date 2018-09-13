@@ -46,10 +46,15 @@ public class InitTempData {
     public void initDatabaseItems() {
         CreateCar("Manual", 230, "2.3 TDI", 210d, "Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi",
                 Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"),
-                Arrays.asList("ABS", "ASR", "ESP"));
+                Arrays.asList("ABS", "ASR (traction control)", "ESP"));
         CreateCar("Automat", 120, "4.0 ecopower", 124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes",
                 Arrays.asList("temp-car.jpg", "temp-car-5.jpg"),
-                Arrays.asList("ABS", "ASR", "ESP"));
+                Arrays.asList("ABS", "ASR", "ESP", "Electric windshields", "Driver's airbag", "Power steering",
+                "Front parking sensors", "Reversing camera", "On-board computer", "Speed limiter", "System Start-Stop",
+                        "Fog lights", "Cruise control", "CD", "Electrically adjustable mirrors", "Alarm", "Bluetooth",
+                        "Parking sensors rear", "AUX socket", "Automatic air conditioning", "GPS navigation",
+                        "Heated front seats", "Daytime running lights", "Xenon lights", "Multifunctional steering wheel",
+                        "Factory radio", "Immobilizer", "Rain sensor", "Isofix", "Dual zone air conditioning", "Tinted windows"));
         CreateCar("Manual", 180, "Potato 2.0", 238.8d, "Available", "Black", "PB-98", "SUV", "A4", "Audi",
                 new ArrayList<>(), Arrays.asList("ABS", "ASR", "Kotek", "Czupakabra"));
     }
@@ -81,6 +86,7 @@ public class InitTempData {
                 .type(type)
                 .fuelType(fuelType)
                 .color(color)
+                .numberOfDoors(5)
                 .state(state)
                 .productionDate(new Date())
                 .description("Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est eaque magni sit dolores. Nisi, dolor nam modi perspiciatis consequatur soluta.")
