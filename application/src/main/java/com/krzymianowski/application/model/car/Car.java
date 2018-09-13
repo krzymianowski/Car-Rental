@@ -38,10 +38,10 @@ public class Car {
     @Column(name = "rent_price")
     private double rentPrice;
 
-    @Column(name = "description", columnDefinition="TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(name = "full_description", columnDefinition="TEXT")
+    @Column(name = "full_description", columnDefinition = "TEXT")
     private String fullDescription;
 
     @Column(name = "number_of_doors")

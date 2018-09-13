@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CarDetailsController {
 
     @RequestMapping("/car-details/{carId}")
-    public String showCarDetailsPage(@PathVariable("carId") int carId){
+    public String showCarDetailsPage(@PathVariable("carId") int carId) {
         return "car-details";
     }
 }
