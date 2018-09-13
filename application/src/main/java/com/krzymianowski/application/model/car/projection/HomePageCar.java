@@ -16,7 +16,7 @@ public interface HomePageCar {
     @Value("#{target.type.typeName}")
     String getTypeName();
 
-    @Value("#{target.images.size() > 0 ? target.images.get(0).url : 'no-image.jpg'}")
+    @Value("#{target.images.size() > 0 ? (target.id+'/'+target.images.get(0).url) : 'no-image.jpg'}")
     String getImageUrl();
 
 }

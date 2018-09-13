@@ -461,7 +461,7 @@
                                 <div class="card-body p-0">
                                     <div class="row m-0">
                                         <div class="col-md-4 col-lg-3 p-0 fill">
-                                            <img src="/images/${car.id}/${car.imageUrl}" alt=""
+                                            <img src="/images/${car.imageUrl}" alt=""
                                                  class="img-fluid">
                                         </div>
                                         <div class="col-md-8 col-lg-9 d-flex align-items-center py-3">

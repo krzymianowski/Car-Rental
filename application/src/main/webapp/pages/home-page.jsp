@@ -186,7 +186,7 @@
                         <a href="../car-details/${car.id}" class="col-lg-3 col-md-6 mb-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <img src="../images/${car.id}/${car.imageUrl}" alt="" class="img-fluid mb-2">
+                                    <img src="../images/${car.imageUrl}" alt="" class="img-fluid mb-2">
                                     <h3>${car.fullName}</h3>
                                     <h5 class="text-muted mb-3">${car.typeName}</h5>
                                     <p>${car.description}</p>
