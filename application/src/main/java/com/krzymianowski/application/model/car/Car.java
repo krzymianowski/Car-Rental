@@ -38,10 +38,6 @@ public class Car {
     @Column(name = "rent_price")
     private double rentPrice;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "car_id")
-    private List<Image> images;
-
     @Column(name = "description", columnDefinition="TEXT")
     private String description;
 
@@ -51,6 +47,10 @@ public class Car {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "transmission_id")
     private Transmission transmission;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "car_id")
+    private List<Image> images;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "rating_id")
