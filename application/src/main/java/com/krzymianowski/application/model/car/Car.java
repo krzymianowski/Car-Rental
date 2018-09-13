@@ -47,6 +47,9 @@ public class Car {
     @Column(name = "number_of_doors")
     private int numberOfDoors;
 
+    @Column(name = "number_of_seats")
+    private int numberOfSeats;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "driving_gear_id")
     private DrivingGear drivingGear;
