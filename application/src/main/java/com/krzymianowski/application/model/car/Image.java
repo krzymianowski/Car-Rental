@@ -20,4 +20,8 @@ public class Image {
 
     @Column(name = "url")
     private String url;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "car_id")
+    private Car car;
 }
