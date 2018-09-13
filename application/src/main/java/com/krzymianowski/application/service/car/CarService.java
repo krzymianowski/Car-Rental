@@ -1,6 +1,7 @@
 package com.krzymianowski.application.service.car;
 
 import com.krzymianowski.application.model.car.Car;
+import com.krzymianowski.application.model.car.projection.CarDetailsPageCar;
 import com.krzymianowski.application.model.car.projection.HomePageCar;
 import com.krzymianowski.application.model.car.projection.OurCarsPageCar;
 import org.springframework.data.domain.Page;
@@ -17,4 +18,6 @@ public interface CarService {
     long getNumberOfCars();
 
     long getNumberOfAvailableCars();
+
+    CarDetailsPageCar getCarDetails(int carId);
 }
