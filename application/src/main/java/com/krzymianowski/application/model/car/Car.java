@@ -44,6 +44,9 @@ public class Car {
     @Column(name = "full_description", columnDefinition="TEXT")
     private String fullDescription;
 
+    @Column(name = "number_of_doors")
+    private int numberOfDoors;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "driving_gear_id")
     private DrivingGear drivingGear;
