@@ -18,7 +18,7 @@ public interface CarDetailsPageCar {
     String getModel();
 
     @Value("#{target.images}")
-    List<Image> getImages();
+    List<CarDetailsPageImage> getImages();
 
     @Value("#{target.color.colorName}")
     String getColor();
