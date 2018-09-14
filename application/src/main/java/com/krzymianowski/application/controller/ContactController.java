@@ -28,8 +28,7 @@ public class ContactController {
     @PostMapping("/contact")
     public String addWantToContact(
             @ModelAttribute("contactForm") @Validated ContactForm contactForm,
-            RedirectAttributes redirectAttributes,
-            BindingResult result) {
+            BindingResult result, RedirectAttributes redirectAttributes) {
 
         if (result.hasErrors())
             return "contact";
