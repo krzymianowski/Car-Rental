@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,6 +47,29 @@
                 </div>
             </div>
         </nav>
+
+        <c:if test="${success}">
+            <!-- MODAL -->
+            <div class="modal show" id="successModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Thanks you for subscribing!</h5>
+                            <button class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus unde veniam harum
+                            magnam molestias
+                            dignissimos omnis
+                            architecto, quod, obcaecati dolorum debitis dolore.
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </c:if>
 
         <!-- SHOWCASE SLIDER -->
         <section id="showcase">
@@ -212,11 +236,29 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio asperiores consectetur, quae
                             ducimus voluptates
                             vero repellendus architecto maiores recusandae mollitia?</p>
-                        <form class="form-inline justify-content-center">
-                            <input type="text" class="form-control mb-2 mr-2" placeholder="Enter Name">
-                            <input type="text" class="form-control mb-2 mr-2" placeholder="Enter Email">
-                            <button class="btn btn-primary mb-2">Submit</button>
-                        </form>
+                        <form:form class="form-inline justify-content-center" action="/newsletter" method="post"
+                                   modelAttribute="newsletterForm">
+
+                            <div class="mb-2 mr-2">
+                                <form:input path="subscriberName" type="text" class="form-control"
+                                            cssErrorClass="form-control is-invalid" placeholder="Enter Name"
+                                            pattern="[a-zA-Z]{3,30}" required="true"/>
+                                <div class="invalid-tooltip text-left">
+                                    <form:errors path="subscriberName"/>
+                                </div>
+
+                            </div>
+                            <div class="mb-2 mr-2">
+                                <form:input path="subscriberEmail" type="email" class="form-control"
+                                            cssErrorClass="form-control is-invalid"
+                                            placeholder="Enter Email" required="true"/>
+                                <div class="invalid-tooltip text-left">
+                                    <form:errors path="subscriberEmail"/>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary mb-2" type="submit">Submit</button>
+                        </form:form>
                     </div>
                 </div>
             </div>
@@ -247,6 +289,9 @@
                 interval: 10000,
                 pause: 'hover'
             })
+
+            // Toggle modal if exists
+            $('#successModal').modal();
         </script>
     </body>
 
