@@ -292,9 +292,22 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio asperiores consectetur, quae ducimus
             voluptates
             vero repellendus architecto maiores recusandae mollitia?</p>
-          <form class="form-inline justify-content-center">
-            <input type="text" class="form-control mb-2 mr-2" placeholder="Enter Name">
-            <input type="text" class="form-control mb-2 mr-2" placeholder="Enter Email">
+          <form class="form-inline justify-content-center ">
+
+            <div class="mb-2 mr-2">
+              <input type="text" class="form-control is-invalid" placeholder="Enter Name" required pattern="[a-zA-Z]{3,30}">
+              <div class="invalid-feedback text-left">
+                Please enter a valid first name.
+              </div>
+            </div>
+
+            <div class="mb-2 mr-2">
+              <input type="email" class="form-control is-invalid" placeholder="Enter Email" required>
+              <div class="invalid-feedback text-left">
+                Please enter a valid email.
+              </div>
+            </div>
+
             <button class="btn btn-primary mb-2">Submit</button>
           </form>
         </div>
