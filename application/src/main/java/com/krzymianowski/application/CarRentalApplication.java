@@ -22,6 +22,6 @@ public class CarRentalApplication {
 
     @PostConstruct
     private void initData() {
-        initTempData.initDatabaseItems();
+//        initTempData.initDatabaseItems();
     }
 }
