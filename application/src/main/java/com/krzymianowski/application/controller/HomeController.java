@@ -36,7 +36,7 @@ public class HomeController {
     }
 
     @GetMapping("/newsletter")
-    public String redirectToHomePage(){
+    public String redirectToHomePage() {
         return "redirect:/";
     }
 
@@ -49,8 +49,8 @@ public class HomeController {
 
         try {
             subscriberService.save(newsletterForm);
-        }catch (NewsletterSubscriberAlreadyExists e){
-            result.rejectValue("subscriberEmail", "error.newsletterForm" , e.getMessage());
+        } catch (NewsletterSubscriberAlreadyExists e) {
+            result.rejectValue("subscriberEmail", "error.newsletterForm", e.getMessage());
             return "home-page";
         }
 

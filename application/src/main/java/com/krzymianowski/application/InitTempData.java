@@ -47,7 +47,7 @@ public class InitTempData {
         CreateCar("Automat", 120, "4.0 ecopower", 124.5d, "Available", "Black", "PB-98", "SUV", "GLA-45", "Mercedes",
                 Arrays.asList("temp-car.jpg", "temp-car-5.jpg"),
                 Arrays.asList("ABS", "ASR", "ESP", "Electric windshields", "Driver's airbag", "Power steering",
-                "Front parking sensors", "Reversing camera", "On-board computer", "Speed limiter", "System Start-Stop",
+                        "Front parking sensors", "Reversing camera", "On-board computer", "Speed limiter", "System Start-Stop",
                         "Fog lights", "Cruise control", "CD", "Electrically adjustable mirrors", "Alarm", "Bluetooth",
                         "Parking sensors rear", "AUX socket", "Automatic air conditioning", "GPS navigation",
                         "Heated front seats", "Daytime running lights", "Xenon lights", "Multifunctional steering wheel",

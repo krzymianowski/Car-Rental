@@ -24,6 +24,6 @@ public class SubscriberServiceImpl implements SubscriberService {
                     .isEnabled(true)
                     .build();
             subscriberRepository.save(subscriber);
-        }else throw new NewsletterSubscriberAlreadyExists("Subscriber with this e-mail already exists.");
+        } else throw new NewsletterSubscriberAlreadyExists("Subscriber with this e-mail already exists.");
     }
 }
