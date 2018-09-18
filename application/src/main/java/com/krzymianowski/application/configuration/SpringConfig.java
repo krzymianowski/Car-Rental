@@ -17,7 +17,7 @@ public class SpringConfig implements WebMvcConfigurer {
     @Bean
     public ViewResolver viewResolver() {
         InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/pages/");
+        viewResolver.setPrefix("/WEB-INF/");
         viewResolver.setSuffix(".jsp");
 
         return viewResolver;
