@@ -30,12 +30,13 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public List<HomePageCar> getHomePageCars() {
-        List<HomePageCar> allCar = (List<HomePageCar>) carRepository.findAllBy(HomePageCar.class);
+        List<HomePageCar> allCars = (List<HomePageCar>) carRepository.findAllBy(HomePageCar.class);
         List<HomePageCar> homePageCars = new ArrayList<>();
         Random random = new Random();
 
-        for (int i = 0; i < 8; i++)
-            homePageCars.add(allCar.get(random.nextInt(allCar.size())));
+        if (allCars.size() > 0)
+            for (int i = 0; i < 8; i++)
+                homePageCars.add(allCars.get(random.nextInt(allCars.size())));
         return homePageCars;
     }
 
