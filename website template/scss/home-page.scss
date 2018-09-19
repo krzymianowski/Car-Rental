@@ -89,3 +89,11 @@
     }
   }
 }
+
+@media (max-width: 767.98px) and (orientation: landscape) {
+  #myCarousel {
+    .carousel-item {
+      height: 350px;
+    }
+  }
+}

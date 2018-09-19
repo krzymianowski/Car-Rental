@@ -31,6 +31,10 @@
   .carousel-indicators .active {
     background-color: $border-gray;
   }
+
+  .carousel-item .container {
+    height: 50vh;
+  }
 }
 
 #car-details {
@@ -45,4 +49,12 @@
 
 #car-description {
   border-top: $border-gray 1px solid;
+}
+
+@media (max-width: 767.98px) and (orientation: landscape) {
+  #car-detail-showcase {
+    .carousel-item .container {
+      height: 350px;
+    }
+  }
 }
