@@ -110,7 +110,7 @@
                                              -o-background-size: cover;
                                              background-size: cover;">
                                     <div class="primary-overlay">
-                                        <div class="container p-0" style="height: 50vh;">
+                                        <div class="container p-0">
                                             <div class="d-flex justify-content-center align-items-center h-100">
                                                 <a href="${image.url}" data-toggle="lightbox"
                                                    data-gallery="img-gallery"
