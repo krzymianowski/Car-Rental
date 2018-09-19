@@ -280,6 +280,8 @@
         <script src="../js/jquery-3.3.1.min.js"></script>
         <script src="../js/popper.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
+        <!-- https://github.com/maaaaark/bcSwipe -->
+        <script src="../js/jquery.bcSwipe.min.js"></script>
 
         <script>
             // Get the current year for the copyright
@@ -289,10 +291,13 @@
             $('.carousel').carousel({
                 interval: 10000,
                 pause: 'hover'
-            })
+            });
 
             // Toggle modal if exists
             $('#successModal').modal();
+
+            // Carousel mobile swipe
+            $('.carousel').bcSwipe({ threshold: 50 });
         </script>
     </body>
 
