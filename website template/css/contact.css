@@ -2,7 +2,8 @@ body {
   margin-top: 105px; }
   body > .navbar {
     box-shadow: 2px 2px 5px rgba(22, 34, 56, 0.5);
-    background: white; }
+    background: white;
+    min-height: 105px; }
     body > .navbar .nav-item {
       font-size: 1.1rem;
       padding-right: 1.3rem; }
@@ -10,6 +11,16 @@ body {
     background: #162238;
     color: #fff; }
 
+@media (max-width: 767.98px) {
+  body {
+    margin-top: 80px; }
+    body > .navbar {
+      min-height: 80px; } }
+@media (max-width: 767.98px) and (orientation: landscape) {
+  body {
+    margin-top: 50px; }
+    body > .navbar {
+      min-height: 50px; } }
 #page-header {
   color: white;
   height: 200px;

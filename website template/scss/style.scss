@@ -4,12 +4,15 @@ $ptimary-ovarlay-50: rgba(22, 34, 56, 0.5);
 $light: #f8f9fa;
 $border-gray: #dee2e6;
 
+$navbar-height: 105px;
+
 body {
-  margin-top: 105px;
+  margin-top: $navbar-height;
 
   > .navbar {
     box-shadow: 2px 2px 5px $ptimary-ovarlay-50;
     background: white;
+    min-height: $navbar-height;
 
     .nav-item {
       font-size: 1.1rem;
@@ -20,5 +23,24 @@ body {
   #main-footer {
     background: $primary;
     color: #fff;
+  }
+}
+
+@media (max-width: 767.98px) {
+  $navbar-height: 80px;
+  body {
+    margin-top: $navbar-height;
+    > .navbar {
+      min-height: $navbar-height;
+    }
+  }
+}
+@media (max-width: 767.98px) and (orientation: landscape) {
+  $navbar-height: 50px;
+  body {
+    margin-top: $navbar-height;
+    > .navbar {
+      min-height: $navbar-height;
+    }
   }
 }
