@@ -12,6 +12,12 @@ $menu-width: 280px;
 html,
 body {
   margin: 0;
+  overflow: hidden;
+}
+
+#content {
+  overflow-y: scroll;
+  height: calc(100vh - #{$top-height});
 }
 
 body {
