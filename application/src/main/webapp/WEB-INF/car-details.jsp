@@ -20,7 +20,7 @@
 
     <body>
         <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-md navbar-light fixed-top py-4" id="main-nav">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top py-1" id="main-nav">
             <div class="container">
                 <a href="../" class="navbar-brand">
                     <img src="../img/temp-logo.png" width="50" height="50" alt="">

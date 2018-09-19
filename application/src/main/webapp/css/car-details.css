@@ -1,63 +1,54 @@
 body {
-    margin-top: 105px;
-}
-
-body > .navbar {
+  margin-top: 105px; }
+  body > .navbar {
     box-shadow: 2px 2px 5px rgba(22, 34, 56, 0.5);
     background: white;
-}
-
-body > .navbar .nav-item {
-    font-size: 1.1rem;
-    padding-right: 1.3rem;
-}
-
-body #main-footer {
+    min-height: 105px; }
+    body > .navbar .nav-item {
+      font-size: 1.1rem;
+      padding-right: 1.3rem; }
+  body #main-footer {
     background: #162238;
-    color: #fff;
-}
+    color: #fff; }
 
+@media (max-width: 767.98px) {
+  body {
+    margin-top: 80px; }
+    body > .navbar {
+      min-height: 80px; } }
+@media (max-width: 767.98px) and (orientation: landscape) {
+  body {
+    margin-top: 50px; }
+    body > .navbar {
+      min-height: 50px; } }
 #car-details-header {
-    border-bottom: #dee2e6 1px solid;
-}
-
-#car-details-header .progress {
+  border-bottom: #dee2e6 1px solid; }
+  #car-details-header .progress {
     background-color: #dee2e6;
     -webkit-box-shadow: none;
-    box-shadow: none;
-}
+    box-shadow: none; }
 
 #car-detail-showcase {
-    border-bottom: #dee2e6 1px solid;
-}
-
-#car-detail-showcase .primary-overlay {
+  border-bottom: #dee2e6 1px solid; }
+  #car-detail-showcase .primary-overlay {
     background: rgba(22, 34, 56, 0.8);
     width: 100%;
-    height: 100%;
-}
-
-#car-detail-showcase .carousel-indicators li {
+    height: 100%; }
+  #car-detail-showcase .carousel-indicators li {
     width: 10px;
     height: 10px;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
     border-radius: 100%;
-    background-color: #162238;
-}
-
-#car-detail-showcase .carousel-indicators .active {
-    background-color: #dee2e6;
-}
+    background-color: #162238; }
+  #car-detail-showcase .carousel-indicators .active {
+    background-color: #dee2e6; }
 
 #car-details {
-    border-bottom: #dee2e6 1px solid;
-}
+  border-bottom: #dee2e6 1px solid; }
 
 #car-equipment .far {
-    color: black;
-}
+  color: black; }
 
 #car-description {
-    border-top: #dee2e6 1px solid;
-}
+  border-top: #dee2e6 1px solid; }
