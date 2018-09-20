@@ -22,6 +22,12 @@ body {
     body > .navbar {
       position: relative;
       min-height: 50px; } }
+@media (max-width: 991.98px) and (max-height: 430px) and (orientation: landscape) {
+  body {
+    margin-top: 0; }
+    body > .navbar {
+      position: relative;
+      min-height: 50px; } }
 #car-details-header {
   border-bottom: #dee2e6 1px solid; }
   #car-details-header .progress {
@@ -59,3 +65,6 @@ body {
 @media (max-width: 767.98px) and (orientation: landscape) {
   #car-detail-showcase .carousel-item .container {
     height: 350px; } }
+@media (max-width: 991.98px) and (max-height: 430px) and (orientation: landscape) {
+  #car-detail-showcase .carousel-item .container {
+    height: 100vh; } }
