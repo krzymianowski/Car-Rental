@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import javax.annotation.PostConstruct;
 
 @SpringBootApplication
-public class CarRentalApplication extends SpringBootServletInitializer{
+public class CarRentalApplication extends SpringBootServletInitializer {
 
 //    private final InitTempData initTempData;
 //

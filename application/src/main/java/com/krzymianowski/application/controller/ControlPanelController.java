@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ControlPanelController {
 
     @GetMapping
-    public String showControlPanel(){
+    public String showControlPanel() {
         return "control-panel";
     }
 }
