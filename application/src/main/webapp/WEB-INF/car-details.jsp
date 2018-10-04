@@ -264,7 +264,7 @@
             });
 
             // Carousel mobile swipe
-            $('.carousel').bcSwipe({ threshold: 50 });
+            $('.carousel').bcSwipe({threshold: 50});
         </script>
     </body>
 
