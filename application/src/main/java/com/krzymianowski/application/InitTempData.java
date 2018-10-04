@@ -1,6 +1,10 @@
 package com.krzymianowski.application;
 
+import com.krzymianowski.application.model.authentication.Role;
+import com.krzymianowski.application.model.authentication.User;
 import com.krzymianowski.application.model.car.*;
+import com.krzymianowski.application.service.authentication.RoleService;
+import com.krzymianowski.application.service.authentication.UserService;
 import com.krzymianowski.application.service.car.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -40,6 +44,12 @@ public class InitTempData {
     @Autowired
     private EquipmentService equipmentService;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private RoleService roleService;
+
     public void initDatabaseItems() {
         CreateCar("Manual", 230, "2.3 TDI", 210d, "Disabled", "White", "Diesel", "Cabriolet", "C5 B8", "Audi",
                 Arrays.asList("temp-car.jpg", "temp-car-2.jpg", "temp-car-3.jpg"),
@@ -54,6 +64,17 @@ public class InitTempData {
                         "Factory radio", "Immobilizer", "Rain sensor", "Isofix", "Dual zone air conditioning", "Tinted windows"));
         CreateCar("Manual", 180, "Potato 2.0", 238.8d, "Available", "Black", "PB-98", "SUV", "A4", "Audi",
                 new ArrayList<>(), Arrays.asList("ABS", "ASR", "Kotek", "Czupakabra"));
+
+
+        Role role_admin = Role.builder().roleName("ROLE_ADMIN").build();
+        roleService.addRole(role_admin);
+
+        userService.addUser(User.builder()
+                .username("admin@admin.com")
+                .password("passw0rd")
+                .roles(Collections.singletonList(role_admin))
+                .build()
+        );
     }
 
     private void CreateCar(
