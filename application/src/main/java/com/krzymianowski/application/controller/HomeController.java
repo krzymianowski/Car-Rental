@@ -1,6 +1,6 @@
 package com.krzymianowski.application.controller;
 
-import com.krzymianowski.application.exception.NewsletterSubscriberAlreadyExists;
+import com.krzymianowski.application.exception.NewsletterSubscriberAlreadyExistsException;
 import com.krzymianowski.application.model.newsletter.view_model.NewsletterForm;
 import com.krzymianowski.application.service.car.CarService;
 import com.krzymianowski.application.service.newletter.SubscriberService;
@@ -49,7 +49,7 @@ public class HomeController {
 
         try {
             subscriberService.save(newsletterForm);
-        } catch (NewsletterSubscriberAlreadyExists e) {
+        } catch (NewsletterSubscriberAlreadyExistsException e) {
             result.rejectValue("subscriberEmail", "error.newsletterForm", e.getMessage());
             return "home-page";
         }

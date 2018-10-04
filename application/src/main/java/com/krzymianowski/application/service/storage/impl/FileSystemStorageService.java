@@ -2,7 +2,7 @@ package com.krzymianowski.application.service.storage.impl;
 
 import com.krzymianowski.application.exception.StorageException;
 import com.krzymianowski.application.exception.StorageFileNotFoundException;
-import com.krzymianowski.application.exception.StorageInvalidImageFormat;
+import com.krzymianowski.application.exception.StorageInvalidImageFormatException;
 import com.krzymianowski.application.service.storage.StorageService;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -47,7 +47,7 @@ public class FileSystemStorageService implements StorageService {
 
             try (InputStream inputStream = file.getInputStream()) {
                 if (ImageIO.read(inputStream) == null)
-                    throw new StorageInvalidImageFormat("Uploaded file is not an image: " + fileName);
+                    throw new StorageInvalidImageFormatException("Uploaded file is not an image: " + fileName);
             }
             try (InputStream inputStream = file.getInputStream()) {
                 this.initStorage(path);

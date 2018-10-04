@@ -1,6 +1,6 @@
 package com.krzymianowski.application.service.newletter.impl;
 
-import com.krzymianowski.application.exception.NewsletterSubscriberAlreadyExists;
+import com.krzymianowski.application.exception.NewsletterSubscriberAlreadyExistsException;
 import com.krzymianowski.application.model.newsletter.Subscriber;
 import com.krzymianowski.application.model.newsletter.repository.SubscriberRepository;
 import com.krzymianowski.application.model.newsletter.view_model.NewsletterForm;
@@ -15,7 +15,7 @@ public class SubscriberServiceImpl implements SubscriberService {
     private SubscriberRepository subscriberRepository;
 
     @Override
-    public void save(NewsletterForm newsletterForm) throws NewsletterSubscriberAlreadyExists {
+    public void save(NewsletterForm newsletterForm) throws NewsletterSubscriberAlreadyExistsException {
         int sub = subscriberRepository.countByEmail(newsletterForm.getSubscriberEmail());
         if (sub == 0) {
             Subscriber subscriber = Subscriber.builder()
@@ -24,6 +24,6 @@ public class SubscriberServiceImpl implements SubscriberService {
                     .isEnabled(true)
                     .build();
             subscriberRepository.save(subscriber);
-        } else throw new NewsletterSubscriberAlreadyExists("Subscriber with this e-mail already exists.");
+        } else throw new NewsletterSubscriberAlreadyExistsException("Subscriber with this e-mail already exists.");
     }
 }
