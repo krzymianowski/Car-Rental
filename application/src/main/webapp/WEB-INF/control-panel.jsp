@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +30,8 @@
                             <h5 class="m-0">CAR RENTAL</h5>
                             <p class="m-0 d-flex align-items-top">ADMIN PANEL</p>
                         </div>
-                        <button id="toggle-menu-1" class="btn text-white" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="true"
+                        <button id="toggle-menu-1" class="btn text-white" data-toggle="collapse"
+                                data-target="#collapse-menu" aria-expanded="true"
                                 aria-controls="collapse-menu">
                             <i class="fas fa-arrow-alt-circle-left"></i>
                         </button>
@@ -44,17 +46,18 @@
                                     <div class="d-flex h-100">
                                         <div class="d-flex py-4 px-1">
                                             <div class="fill ml-auto">
-                                                <img src="../img/temp-person.jpg" alt="" class="img-fluid rounded-circle">
+                                                <img src="../img/temp-person.jpg" alt=""
+                                                     class="img-fluid rounded-circle">
                                             </div>
                                         </div>
                                         <div class="w-100 pl-1 mt-4 d-flex flex-column">
                                             <b class="username pt-2">Tomasz Krzymianowski</b>
-                                            <p>Administrator</p>
-                                            <div class="d-flex mt-auto">
-                                                <a href="#" class="btn ml-auto text-white">
+                                            <p><security:authentication property="principal.authorities"/></p>
+                                            <form:form action="/logout" method="POST" class="d-flex mt-auto">
+                                                <button type="submit" class="btn ml-auto text-white bg-none">
                                                     <i class="fas fa-sign-out-alt"></i>
-                                                </a>
-                                            </div>
+                                                </button>
+                                            </form:form>
                                         </div>
                                     </div>
                                 </div>
@@ -77,9 +80,12 @@
                                         </li>
                                     </a>
 
-                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed" data-toggle="collapse" data-target="#messages-colapse-body"
+                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed"
+                                        data-toggle="collapse" data-target="#messages-colapse-body"
                                         aria-expanded="true" aria-controls="messages-colapse-body">
-                                        <i class="fas fa-envelope pr-3"></i>Messages and alerts<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+                                        <i class="fas fa-envelope pr-3"></i>Messages and alerts<i
+                                            class="fas fa-caret-down ml-auto"></i><i
+                                            class="fas fa-caret-up ml-auto"></i>
                                     </li>
                                     <li id="messages-colapse-body" class=" py-0 collapse">
                                         <ul class="navbar-nav d-flex flex-column w-100">
@@ -95,9 +101,12 @@
                                         </ul>
                                     </li>
 
-                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed" data-toggle="collapse" data-target="#users-colapse-body"
+                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed"
+                                        data-toggle="collapse" data-target="#users-colapse-body"
                                         aria-expanded="true" aria-controls="users-colapse-body">
-                                        <i class="fas fa-users pr-3"></i>Users<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+                                        <i class="fas fa-users pr-3"></i>Users<i
+                                            class="fas fa-caret-down ml-auto"></i><i
+                                            class="fas fa-caret-up ml-auto"></i>
                                     </li>
                                     <li id="users-colapse-body" class=" py-0 collapse">
                                         <ul class="navbar-nav d-flex flex-column w-100 ">
@@ -110,9 +119,11 @@
                                         </ul>
                                     </li>
 
-                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed" data-toggle="collapse" data-target="#cars-colapse-body"
+                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed"
+                                        data-toggle="collapse" data-target="#cars-colapse-body"
                                         aria-expanded="true" aria-controls="cars-colapse-body">
-                                        <i class="fas fa-car pr-3"></i>Cars<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+                                        <i class="fas fa-car pr-3"></i>Cars<i class="fas fa-caret-down ml-auto"></i><i
+                                            class="fas fa-caret-up ml-auto"></i>
                                     </li>
                                     <li id="cars-colapse-body" class=" py-0 collapse">
                                         <ul class="navbar-nav d-flex flex-column w-100">
@@ -125,9 +136,12 @@
                                         </ul>
                                     </li>
 
-                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed" data-toggle="collapse" data-target="#website-content-colapse-body"
+                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed"
+                                        data-toggle="collapse" data-target="#website-content-colapse-body"
                                         aria-expanded="true" aria-controls="website-content-colapse-body">
-                                        <i class="fas fa-file-invoice pr-3"></i>Website content<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+                                        <i class="fas fa-file-invoice pr-3"></i>Website content<i
+                                            class="fas fa-caret-down ml-auto"></i><i
+                                            class="fas fa-caret-up ml-auto"></i>
                                     </li>
                                     <li id="website-content-colapse-body" class=" py-0 collapse">
                                         <ul class="navbar-nav d-flex flex-column w-100">
@@ -143,9 +157,12 @@
                                         </ul>
                                     </li>
 
-                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed" data-toggle="collapse" data-target="#newsletter-colapse-body"
+                                    <li class="nav-item py-2 px-4 d-flex align-items-center collapsed"
+                                        data-toggle="collapse" data-target="#newsletter-colapse-body"
                                         aria-expanded="true" aria-controls="newsletter-colapse-body">
-                                        <i class="fas fa-mail-bulk pr-3"></i>Newsletter<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+                                        <i class="fas fa-mail-bulk pr-3"></i>Newsletter<i
+                                            class="fas fa-caret-down ml-auto"></i><i
+                                            class="fas fa-caret-up ml-auto"></i>
                                     </li>
                                     <li id="newsletter-colapse-body" class=" py-0 collapse">
                                         <ul class="navbar-nav d-flex flex-column w-100">
@@ -182,7 +199,8 @@
                 <div class="nav sticky-top p-2 d-flex justify-content-center align-items-center">
                     <div class="w-100">
                         <div class="d-flex row-hl">
-                            <button id="toggle-menu-2" class="item-hl btn" data-toggle="collapse" data-target="#collapse-menu" aria-expanded="true" aria-controls="collapse-menu">
+                            <button id="toggle-menu-2" class="item-hl btn" data-toggle="collapse"
+                                    data-target="#collapse-menu" aria-expanded="true" aria-controls="collapse-menu">
                                 <i class="fas fa-arrow-alt-circle-right"></i>
                             </button>
                             <div class="p-2 item-hl ml-auto">
@@ -210,13 +228,20 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">Welcome in control panel!</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique sequi voluptatem sint
-                                    veritatis corporis enim, autem quae reprehenderit pariatur illo non nisi est quod quasi unde sunt magnam
-                                    quo. Dignissimos recusandae excepturi dicta provident nostrum minus, necessitatibus omnis molestiae ducimus
-                                    doloremque reiciendis optio? Corrupti, quo molestias porro consequuntur, veritatis neque magnam deleniti
-                                    rerum in, quis quibusdam fugiat nemo! Quam minima in consectetur. Dicta sit quasi laudantium nemo, quae veniam,
-                                    eaque neque eos provident, dolores culpa exercitationem aperiam in similique nesciunt! Minima, atque dolor
-                                    id nulla iure recusandae, numquam, aperiam placeat in labore ducimus quidem reiciendis ea deserunt. Ipsam,
+                                <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique
+                                    sequi voluptatem sint
+                                    veritatis corporis enim, autem quae reprehenderit pariatur illo non nisi est quod
+                                    quasi unde sunt magnam
+                                    quo. Dignissimos recusandae excepturi dicta provident nostrum minus, necessitatibus
+                                    omnis molestiae ducimus
+                                    doloremque reiciendis optio? Corrupti, quo molestias porro consequuntur, veritatis
+                                    neque magnam deleniti
+                                    rerum in, quis quibusdam fugiat nemo! Quam minima in consectetur. Dicta sit quasi
+                                    laudantium nemo, quae veniam,
+                                    eaque neque eos provident, dolores culpa exercitationem aperiam in similique
+                                    nesciunt! Minima, atque dolor
+                                    id nulla iure recusandae, numquam, aperiam placeat in labore ducimus quidem
+                                    reiciendis ea deserunt. Ipsam,
                                     facilis tempore?</p>
                             </div>
                             <div class="card-footer text-muted text-right">
