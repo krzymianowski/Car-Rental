@@ -3,8 +3,9 @@
 Aplikacja wykonywana w ramach pracy inżynierskiej.  
 Temat: Aplikacja wspierająca pracę wypożyczalni samochodów.
 
+Stan na: 05.10.2018
 
-#### Wykorzystane technologie:
+### Wykorzystane technologie:
 
 - Java
 - Tomcat
@@ -24,7 +25,39 @@ Temat: Aplikacja wspierająca pracę wypożyczalni samochodów.
   - bcSwipe.js
 - Środowisko programistyczne: IntelliJ IDEA
 
-#### Struktura projektu:
+### Aplikacja:
+
+#### Home Page:
+
+![Home Page](https://i.imgur.com/ZpwvhkK.png)
+<br/><br/><br/>
+
+#### Check Our Cars Page:
+
+![Check Our Cars](https://i.imgur.com/aTuBhBo.png)
+<br/><br/><br/>
+
+#### About Us Page:
+
+![About Us](https://i.imgur.com/EZ3HG6C.png)
+<br/><br/><br/>
+
+#### Contact Page:
+
+![Contact](https://i.imgur.com/1eVrsfP.png)
+<br/><br/><br/>
+
+#### Login Page:
+
+![Login](https://i.imgur.com/1a5dtzV.png)
+<br/><br/><br/>
+
+#### Control Panel Page:
+
+![Control Panel](https://i.imgur.com/YcxVz2T.png)
+<br/><br/><br/>
+
+### Struktura projektu:
 
 - pom.xml
 - src/main/
@@ -175,7 +208,7 @@ Temat: Aplikacja wspierająca pracę wypożyczalni samochodów.
       - jquery-3.3.1.min.js
       - jquery.bcSwipe.min.js
       - popper.min.js
-    - WEB-INF
+    - WEB-INF/
       - about-us.jsp
       - car-details.jsp
       - contact.jsp
@@ -188,7 +221,7 @@ Temat: Aplikacja wspierająca pracę wypożyczalni samochodów.
   - {car_id}/
     - {car_images}
   - users/
-    - {user_id}
+    - {user_id}/
       - {user_images}
-    - temp-person.jpg]
+    - temp-person.jpg
   - no-image.jpg
