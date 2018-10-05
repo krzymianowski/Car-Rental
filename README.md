@@ -27,32 +27,46 @@ Stan na: 05.10.2018
 
 ### Aplikacja:
 
+Wszystkie strony są responsywne i wyświetlają się poprawnie na urządzeniach mobilnych.
+
 #### Home Page:
+
+Strona główna aplikacji. Poza podstawową treścią strony (Która w przyszłości będzie mogła być edytowana z poziomu panelu sterowania), na stronie wyświetlane jest 8 losowych samochodów z bazy danych, oraz dostępny jest formularz dołączenia do newsletteru. Nowi subskrybenci zapisywani są do bazy danych a w przyszłości będzie możliwość wysyłania do nich wiadomości z poziomu panelu sterowania.
 
 ![Home Page](https://i.imgur.com/ZpwvhkK.png)
 <br/><br/><br/>
 
 #### Check Our Cars Page:
 
+Na stronie wyświetlane są wszystkie samochody znajdujące się w bazie danych. Użytkownik ma możliwość wyszukiwania samochodów po określonym typie, marce, modelu, rodzaju paliwa oraz sortowania wyników.
+
 ![Check Our Cars](https://i.imgur.com/aTuBhBo.png)
 <br/><br/><br/>
 
 #### About Us Page:
+
+Prosta strona zawierająca informacje o firmie. W przyszłości treść strony będzie możliwa do edycji z poziomu panelu sterowania.
 
 ![About Us](https://i.imgur.com/EZ3HG6C.png)
 <br/><br/><br/>
 
 #### Contact Page:
 
+Strona zawiera informacje kontaktowe oraz formularz kontaktowy, za pomocą którego użytkownik może poprosić o kontakt. Wiadomości zapisywane są w bazie danych a w przyszłości będą widoczne w panelu sterowania.
+
 ![Contact](https://i.imgur.com/1eVrsfP.png)
 <br/><br/><br/>
 
 #### Login Page:
 
+Prosta strona logowania wyświetlana przy próbie dostępu do panelu sterowania przez nieautoryzowanego użytkownika (lub poprzez link /login). W formularzu wyświetlane są informacje o błędach logowania oraz informacja o wylogowaniu użytkownika.
+
 ![Login](https://i.imgur.com/1a5dtzV.png)
 <br/><br/><br/>
 
 #### Control Panel Page:
+
+Strona panelu sterowania, w której użytkownicy w oparciu o przydzielone im role będą mieli dostęp do funkcjonalności strony tj. zarządzanie samochodami, wypożyczanie samochodów, wysyłanie wiadomości, edycja treści strony, dodawanie użytkowników itp. Strona nie jest jeszcze gotowa.
 
 ![Control Panel](https://i.imgur.com/YcxVz2T.png)
 <br/><br/><br/>
