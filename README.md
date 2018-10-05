@@ -71,6 +71,26 @@ Strona panelu sterowania, w której użytkownicy w oparciu o przydzielone im rol
 ![Control Panel](https://i.imgur.com/YcxVz2T.png)
 <br/><br/><br/>
 
+### Do zrobienia:
+
+- Control Panel:
+  - Dodawanie samochodów
+  - Edycja samochodów
+  - Usuwanie samochodów
+  - Dodawanie użytkowników
+  - Edycja użytkowników
+  - Usuwanie użytkowników
+  - Szczegółowe wyszukiwanie samochodu
+  - Dodawanie klienta
+  - Wyszukiwanie klientów
+  - Wypożyczanie samochodu
+  - Powiadomienia o samochodach
+  - Kontakty
+  - Obsługa newsletteru
+  - Edycja zawartości strony
+  - Inne
+- Integracja z AWS
+
 ### Struktura projektu:
 
 - pom.xml
