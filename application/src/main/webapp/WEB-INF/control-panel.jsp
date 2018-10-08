@@ -130,9 +130,11 @@
                                             <li class="nav-item py-2 pr-2 pl-5">
                                                 <i class="fas fa-car pr-3"></i>Manage cars
                                             </li>
-                                            <li class="nav-item py-2 pr-2 pl-5">
-                                                <i class="fas fa-car pr-3"></i>Add new car
-                                            </li>
+                                            <a href="/control-panel/add-car">
+                                                <li class="nav-item py-2 pr-2 pl-5">
+                                                    <i class="fas fa-car pr-3"></i>Add new car
+                                                </li>
+                                            </a>
                                         </ul>
                                     </li>
 
