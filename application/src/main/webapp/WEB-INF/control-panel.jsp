@@ -68,7 +68,7 @@
                         <section id="menu-items" dir="ltr">
                             <nav class="navbar text-white p-0 mt-2">
                                 <ul class="navbar-nav d-flex flex-column w-100 p-0">
-                                    <a href="#" class="active">
+                                    <a href="/control-panel" class="active">
                                         <li class="nav-item py-2 px-4">
                                             <i class="fas fa-home pr-3"></i>Home
                                         </li>
