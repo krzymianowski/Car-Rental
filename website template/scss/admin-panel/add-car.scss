@@ -1,0 +1,42 @@
+@import "../admin-panel.scss";
+
+#content {
+  background: $menu-color-2;
+
+  #add-car-nav {
+    color: $primary-ovarlay;
+    min-height: calc(100vh - #{$top-height});
+    max-width: 800px;
+
+    .form-group {
+      max-width: 400px;
+    }
+
+    li {
+      color: $menu-color;
+      border-bottom: none;
+
+      .fa-caret-down {
+        display: none;
+      }
+    }
+
+    .collapsed {
+      color: $primary-ovarlay;
+      border-bottom: 1px solid $primary-ovarlay;
+
+      .fa-caret-up {
+        display: none;
+      }
+      .fa-caret-down {
+        display: block;
+      }
+    }
+
+    .collapsing {
+      -webkit-transition: height 0.3s;
+      transition: height 0.3s;
+      display: block;
+    }
+  }
+}
