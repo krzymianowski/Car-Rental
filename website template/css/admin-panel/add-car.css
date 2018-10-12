@@ -126,3 +126,11 @@ body {
       -webkit-transition: height 0.3s;
       transition: height 0.3s;
       display: block; }
+    #content #add-car-nav #add-car-images .files {
+      position: relative; }
+      #content #add-car-nav #add-car-images .files input {
+        outline: 2px dashed #92b0b3;
+        outline-offset: -10px;
+        height: 80px;
+        padding: 25px 40px;
+        text-align: center !important; }
