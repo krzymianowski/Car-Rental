@@ -497,7 +497,37 @@
               <i class="fas fa-info-circle pr-3"></i>Equipment<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
             </li>
             <div id="add-car-equipment" class="collapse">
-              Equipment
+              <div class="container px-1 px-md-5 pb-4 pt-2 d-flex flex-column align-items-center">
+                <label for="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, vel?Lorem ipsum dolor
+                  sit
+                  amet consectetur, adipisicing elit. Fugiat, ipsum!</label>
+
+                <div class="form-group w-100 my-1">
+                  <div id="equipment-items" class="my-2">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <input type="checkbox" checked="checked">
+                        </div>
+                      </div>
+                      <input type="text" class="form-control">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary remove-button" type="button" onclick="removeBtn(this)">Remove</button>
+                      </div>
+                    </div>
+
+                  </div>
+                  <small class="text-left text-muted mb-1 w-100">Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit.
+                    Blanditiis consectetur praesentium error dicta? </small>
+
+                  <div class="input-group my-1">
+                    <button id="add-more-equipment-button" class="btn btn-outline-secondary ml-auto" type="button">Add
+                      more</button>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
             <!-- CAR DESCRIPTIONS -->
@@ -552,6 +582,28 @@
       $('#toggle-menu-2').show();
     });
 
+    // Equipment button
+    $("#add-more-equipment-button").click(function () {
+      $("#equipment-items").append(
+        '<div class="input-group mb-3">' +
+        '<div class="input-group-prepend">' +
+        '<div class="input-group-text">' +
+        '<input type="checkbox" checked="checked">' +
+        '</div>' +
+        '</div>' +
+        '<input type="text" class="form-control">' +
+        '<div class="input-group-append">' +
+        '<button class="btn btn-outline-secondary remove-button" type="button" onclick="removeBtn(this)">Remove</button>' +
+        '</div>' +
+        '</div>');
+
+    });
+
+    // Removing equipment item
+    function removeBtn(param) {
+      $(param).parent().parent().remove();
+
+    };
   </script>
 </body>
 
