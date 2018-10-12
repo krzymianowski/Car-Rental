@@ -10,6 +10,7 @@
     crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/bootstrap.css">
   <link rel="stylesheet" href="../../css/admin-panel.css">
+  <link rel="stylesheet" href="../../css/admin-panel/add-car.css">
 
   <title>Car rental - Admin panel</title>
 </head>
@@ -205,11 +206,60 @@
 
       <!-- CONTENT HERE -->
       <section id="content">
+        <form action="/pages/admin-panel/add-car-confirm.html">
+          <ul id="add-car-nav" class="py-4 px-4 m-0 d-flex flex-column ml-auto mr-auto">
 
+            <!-- BASIC INFORMATION ABOUT CAR -->
+            <li class="py-2 px-1 px-sm-4 px-md-5 d-flex align-items-center active" data-toggle="collapse" data-target="#add-car-basic"
+              aria-expanded="true" aria-controls="add-car-basic">
+              <i class="fas fa-info-circle pr-3"></i>Basic Stuff<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+            </li>
+            <div id="add-car-basic" class="collapse show">
+              Basic information
+            </div>
 
+            <!-- ADVENCED INFORMATION ABOUT CAR -->
+            <li class="py-3 px-1 px-sm-4 px-md-5 d-flex align-items-center collapsed active" data-toggle="collapse"
+              data-target="#add-car-advenced" aria-expanded="true" aria-controls="add-car-advenced">
+              <i class="fas fa-info-circle pr-3"></i>Adcenced Stuff<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+            </li>
+            <div id="add-car-advenced" class="collapse">
+              Advenced information
+            </div>
 
+            <!-- CAR EQUIPMENT -->
+            <li class="py-3 px-1 px-sm-4 px-md-5 d-flex align-items-center collapsed active" data-toggle="collapse"
+              data-target="#add-car-equipment" aria-expanded="true" aria-controls="add-car-equipment">
+              <i class="fas fa-info-circle pr-3"></i>Equipment<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+            </li>
+            <div id="add-car-equipment" class="collapse">
+              Equipment
+            </div>
 
+            <!-- CAR DESCRIPTIONS -->
+            <li class="py-3 px-1 px-sm-4 px-md-5 d-flex align-items-center collapsed active" data-toggle="collapse"
+              data-target="#add-car-description" aria-expanded="true" aria-controls="add-car-description">
+              <i class="fas fa-info-circle pr-3"></i>Description<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+            </li>
+            <div id="add-car-description" class="collapse">
+              Descriptions
+            </div>
 
+            <!-- CAR IMAGES -->
+            <li class="py-3 px-1 px-sm-4 px-md-5 d-flex align-items-center collapsed active" data-toggle="collapse"
+              data-target="#add-car-images" aria-expanded="true" aria-controls="add-car-images">
+              <i class="fas fa-info-circle pr-3"></i>Images<i class="fas fa-caret-down ml-auto"></i><i class="fas fa-caret-up ml-auto"></i>
+            </li>
+            <div id="add-car-images" class="collapse">
+              Car Images
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <li class="d-flex pb-3 pt-5 px-0 mt-auto w-100">
+              <button type="submit" class="btn btn-info ml-auto">Next</button>
+            </li>
+          </ul>
+        </form>
       </section>
     </div>
   </div>
