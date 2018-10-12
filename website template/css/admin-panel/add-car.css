@@ -134,3 +134,5 @@ body {
         height: 80px;
         padding: 25px 40px;
         text-align: center !important; }
+  #content .new-item {
+    outline: 1px dashed #2573c1; }
